@@ -1,7 +1,7 @@
 /** @format */
 
-import Layout from "../../components/Layout";
-import Post from "../../components/Post";
+import Layout from "../components/Layout";
+import Post from "../components/Post";
 import { getAllPostsData } from "../../lib/posts";
 
 export default function Blog({ posts }) {

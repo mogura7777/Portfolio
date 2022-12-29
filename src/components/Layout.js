@@ -14,10 +14,11 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
         <nav className="bg-gray-800 w-screen">
           <div className="flex items-center pl-8 h-14">
             <div className="flex space-x-4">
-              <Link href="/">
-                <span className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
-                  Home
-                </span>
+              <Link
+                href="/"
+                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+              >
+                Home
               </Link>
               <Link
                 href="/blog-page"
