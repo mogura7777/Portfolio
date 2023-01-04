@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Layout({ children, title = "HP by Nextjs" }) {
   return (
-    <div className="flex justify-center items-center flex-col min-h-screen text-gray-600 text-sm font-mono">
+    <div className="body">
       <Head>
         <title>{title}</title>
       </Head>
@@ -36,9 +36,7 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
           </div>
         </nav>
       </header>
-      <main className="flex flex-1 justify-center items-center flex-col w-screen">
-        {children}
-      </main>
+      <main className="body__box">{children}</main>
       <footer className="w-full h-12 flex justify-center items-center border-t">
         <a
           className="flex items-center"

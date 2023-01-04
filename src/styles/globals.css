@@ -31,3 +31,23 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ttl {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+.txt {
+  margin: 0 0 20px;
+}
+.body__box {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.Home__box {
+  margin: 0 0 40px;
+}
+.Home__img {
+  max-width: 300px;
+  margin-right: 20px;
+}
