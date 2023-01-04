@@ -2,10 +2,13 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Helvetica, "游ゴシック", "Yu Gothic", YuGothic, HiraKakuProN-W3,
+    "メイリオ", Meiryo, sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.9;
+  text-align: left;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
@@ -33,11 +36,18 @@ a {
 @tailwind utilities;
 
 .ttl {
-  font-size: 24px;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-size: 44px;
+  margin: 0 0 10px;
+}
+.sttl {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
   margin: 0 0 10px;
 }
 .txt {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 .body__box {
   width: 1000px;
@@ -48,12 +58,12 @@ a {
   margin: 0 0 40px;
 }
 .Home__img {
-  max-width: 300px;
+  max-width: 140px;
   margin-right: 20px;
-}
-.Home__img {
-  max-width: 300px;
-  margin-right: 20px;
+  img {
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
 .no_page {
   padding: 140px 40px;

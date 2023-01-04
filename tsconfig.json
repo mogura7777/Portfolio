@@ -21,7 +21,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/pages/_blog-page.js",
-    "src/pages/blog-page.js"
+    "src/pages/blog.js"
   ],
   "exclude": ["node_modules"]
 }
