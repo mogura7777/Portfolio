@@ -3,7 +3,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
+import { ChangeThemeButton } from "./ChangeThemeButton";
 export default function Layout({ children, title = "HP by Nextjs" }) {
   return (
     <div className="body">
@@ -44,6 +44,9 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
               >
                 Contact
               </Link>
+            </div>
+            <div className="header__btn hover:bg-gray-700 px-3 py-2 rounded">
+              <ChangeThemeButton></ChangeThemeButton>
             </div>
           </div>
         </nav>

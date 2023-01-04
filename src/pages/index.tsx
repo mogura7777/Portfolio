@@ -3,7 +3,6 @@
 import type { NextPage } from "next";
 import Layout from "../components/Layout";
 import MyImage from "../components/Image";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
