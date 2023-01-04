@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <Layout title="Home">
       <div className="flex Home__box">
         <div className="Home__img">
-          <MyImage fname="./img/001.png" />
+          <MyImage fname="../img/001.png" />
         </div>
         <div>
           <h1 className="ttl">Profile</h1>

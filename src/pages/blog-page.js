@@ -1,22 +1,29 @@
 /** @format */
-
 import Layout from "../components/Layout";
-import Post from "../components/Post";
-import { getAllPostsData } from "../../lib/posts";
+import Link from "next/link";
+import { client } from "../libs/client";
 
-export default function Blog({ posts }) {
+export default function Blog({ blog }) {
   return (
     <Layout title="Blog">
-      <ul className="m-10">
-        {posts && posts.map((post) => <Post key={post.id} post={post} />)}
+      <ul>
+        {blog.map((blog) => (
+          <li key={blog.id}>
+            <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
+          </li>
+        ))}
       </ul>
     </Layout>
   );
 }
 
-export async function getStaticProps() {
-  const posts = await getAllPostsData();
+// データをテンプレートに受け渡す部分の処理を記述します
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "blog" });
+
   return {
-    props: { posts },
+    props: {
+      blog: data.contents,
+    },
   };
-}
+};
