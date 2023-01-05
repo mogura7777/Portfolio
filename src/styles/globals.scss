@@ -7,7 +7,7 @@ html,
 body {
   font-family: Helvetica, "游ゴシック", "Yu Gothic", YuGothic, HiraKakuProN-W3,
     "メイリオ", Meiryo, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   line-height: 1.9;
   text-align: left;
@@ -85,9 +85,21 @@ a {
   }
 }
 
-.nav__body {
-  display: flex;
+.nav {
+  padding: 10px 20px;
+  .nav__body {
+    display: flex;
+    .nav__body_list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .nav__body_btn {
+      display: flex;
+      margin: 0 0 0 auto;
+    }
+  }
 }
+
 .footer {
   border-top: 1px solid #eee;
   padding: 20px 10px;

@@ -11,9 +11,9 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
         <title>{title}</title>
       </Head>
       <header>
-        <nav className="bg-gray-800 w-screen nav">
+        <nav className="bg-gray-800 nav">
           <div className="nav__body">
-            <div className="flex space-x-4">
+            <div className="nav__body_list">
               <Link
                 href="/"
                 className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
@@ -51,7 +51,7 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
                 Contact
               </Link>
             </div>
-            <div className="header__btn hover:bg-gray-700 px-3 py-2 rounded">
+            <div className="nav__body_btn hover:bg-gray-700 px-3 py-2 rounded">
               <ChangeThemeButton></ChangeThemeButton>
             </div>
           </div>
