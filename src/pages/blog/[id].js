@@ -14,7 +14,7 @@ export default function BlogId({ blog }) {
           __html: `${blog.body}`,
         }}
       />
-      <Link href="/blog-page">
+      <Link href="/blog">
         <div className="flex cursor-pointer mt-12">
           <svg
             className="w-6 h-6 mr-3"

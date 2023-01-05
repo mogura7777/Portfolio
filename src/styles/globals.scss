@@ -1,4 +1,7 @@
 /** @format */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html,
 body {
@@ -31,10 +34,6 @@ a {
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .ttl {
   font-family: "Lato", sans-serif;
   font-weight: 100;
@@ -50,9 +49,9 @@ a {
   margin: 0 0 10px;
 }
 .body__box {
-  width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px 20px;
 }
 .Home__box {
   margin: 0 0 40px;
@@ -66,9 +65,36 @@ a {
   }
 }
 .no_page {
-  padding: 140px 40px;
+  padding: 140px 0;
   text-align: center;
 }
 .header__btn {
   margin: 0 20px 0 auto;
+}
+.Blog__box {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+  &:last-child {
+    border: none;
+  }
+  .Blog__link {
+    display: flex;
+  }
+  .Blog__data {
+    margin: 0 10px 0 0;
+  }
+}
+
+.nav__body {
+  display: flex;
+}
+.footer {
+  border-top: 1px solid #eee;
+  padding: 20px 10px;
+  .footer__sns {
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    margin: 0 0 10px;
+  }
 }

@@ -17,7 +17,7 @@ export default function Post({ post }) {
       </p>
       <p className="mb-8 text-xl font-bold">{post.title}</p>
       <p className="px-10">{post.body}</p>
-      <Link href="/blog-page">
+      <Link href="/blog">
         <div className="flex cursor-pointer mt-12">
           <svg
             className="w-6 h-6 mr-3"
