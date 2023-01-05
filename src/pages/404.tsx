@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import { client } from "../libs/client";
 
-export default function Custom404({ blog }) {
+export default function Custom404({}) {
   return (
     <Layout title="404">
       <div className="no_page">
