@@ -3,25 +3,34 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import { client } from "../libs/client";
 import { formatDate } from "../libs/util";
-
-// import type { Blog, Tag } from "types/blog";
+import type { InferGetStaticPropsType, NextPage } from "next";
+import type { Blog, Tag } from "types/blog";
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "blog" });
-
+  const blog = await client.get({ endpoint: "blog" });
+  // const tag = await client.get({ endpoint: "tag" });
   return {
     props: {
-      blog: data.contents,
+      blogs: blog.contents,
+      // tags: tag.contents,
     },
   };
 };
 
-export default function Blog({ blog }) {
+type Props = {
+  blogs: Blog[];
+  // tags: Tag[];
+};
+
+const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  // tags,
+  blogs,
+}: Props) => {
   return (
     <Layout title="Blog">
       <h1 className="ttl">Blog</h1>
       <ul>
-        {blog.map((blog) => (
+        {blogs.map((blog) => (
           <li className="Blog__box" key={blog.id}>
             <Link className="Blog__link" href={`/blog/${blog.id}`}>
               <div className="Blog__data">{formatDate(blog.publishedAt)}</div>
@@ -32,4 +41,6 @@ export default function Blog({ blog }) {
       </ul>
     </Layout>
   );
-}
+};
+
+export default Home;
