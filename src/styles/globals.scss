@@ -145,3 +145,24 @@ a {
     margin: 0 4px 0 0;
   }
 }
+.Blog__data {
+  margin: 0;
+}
+.Blog__ttl {
+  font-size: 32px;
+  font-weight: lighter;
+  margin: 0 0 20px;
+}
+.Blog__body {
+  h1 {
+    font-size: 24px;
+    margin: 0 0 4px;
+  }
+  ul {
+    margin: 0 0 0 10px;
+  }
+  ul > li {
+    margin: 0;
+    line-height: 1.6;
+  }
+}

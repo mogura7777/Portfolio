@@ -3,13 +3,15 @@
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import { client } from "../../libs/client";
+import { formatDate } from "../../libs/util";
 
 export default function BlogId({ blog }) {
   return (
     <Layout title={blog.title}>
-      <h1>{blog.title}</h1>
-      <p>{blog.publishedAt}</p>
+      <p className="Blog__data">{formatDate(blog.publishedAt)}</p>
+      <h1 className="Blog__ttl">{blog.title}</h1>
       <div
+        className="Blog__body"
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
