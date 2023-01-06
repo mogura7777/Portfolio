@@ -9,7 +9,16 @@ export default function BlogId({ blog }) {
   return (
     <Layout title={blog.title}>
       <p className="Blog__data">{formatDate(blog.publishedAt)}</p>
+      <div className="flex">
+        <p>カテゴリー：</p>
+        <ul className="flex">
+          {blog.tags.map((tag) => (
+            <li key={tag.id}>{tag.tag}</li>
+          ))}
+        </ul>
+      </div>
       <h1 className="Blog__ttl">{blog.title}</h1>
+
       <div
         className="Blog__body"
         dangerouslySetInnerHTML={{
