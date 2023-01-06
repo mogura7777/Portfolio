@@ -1,11 +1,11 @@
 /** @format */
 
 import Layout from "../components/Layout";
-import Nopage from "../components/Nopage";
+import TodoApp from "../components/TodoApp";
 export default function Contact() {
   return (
     <Layout title="Contact">
-      <Nopage></Nopage>
+      <TodoApp />
     </Layout>
   );
 }

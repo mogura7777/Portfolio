@@ -110,3 +110,38 @@ a {
     margin: 0 0 10px;
   }
 }
+.TodoForm__box {
+  display: flex;
+  margin: 0 0 10px;
+  .TodoForm__input {
+    min-width: 24%;
+    border-bottom: 1px solid #333;
+    padding: 0 4px;
+    margin: 0 10px 0 0;
+  }
+  .form__btn {
+    padding: 0 10px;
+    height: 100%;
+    background: #eee;
+  }
+}
+.TodoList {
+  margin: 0 0 20px;
+  .TodoList__item {
+    display: flex;
+    align-items: center;
+    margin: 0 0 4px;
+  }
+  .TodoList__item_ttl {
+    margin: 0 10px 0 0;
+    padding: 4px;
+    min-width: 24%;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  .TodoList__item_btn {
+    padding: 4px 10px;
+    background: #eee;
+    margin: 0 4px 0 0;
+  }
+}
