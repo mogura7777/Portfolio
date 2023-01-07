@@ -54,7 +54,13 @@ a {
   padding: 20px 20px;
 }
 .Home__box {
+  display: flex;
   margin: 0 0 40px;
+}
+@media screen and (max-width: 480px) {
+  .Home__box {
+    display: block;
+  }
 }
 .Home__img {
   max-width: 140px;
@@ -62,6 +68,23 @@ a {
   img {
     object-fit: cover;
     border-radius: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Home__img {
+    max-width: 50%;
+    margin: 0 auto 20px;
+  }
+}
+.Skill__box {
+  margin: 0 0 20px;
+}
+.History__list {
+  margin: 0 0 0 20px;
+  list-style-type: disc;
+  // list-style-position: inside;
+  & > li {
+    margin: 0 0 4px;
   }
 }
 .no_page {
