@@ -1,6 +1,5 @@
 /** @format */
 
-import Link from "next/link";
 export default function MyImage(props) {
   let fname = "./" + props.fname;
   let size = props.size + "px";

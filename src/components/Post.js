@@ -1,7 +1,9 @@
+/** @format */
+
 import Link from "next/link";
 export default function Post({ post }) {
   return (
-    <div>
+    <li>
       <span>{post.id}</span>
       {" : "}
       <Link href={`/posts/${post.id}`}>
@@ -9,6 +11,6 @@ export default function Post({ post }) {
           {post.title}
         </span>
       </Link>
-    </div>
+    </li>
   );
 }

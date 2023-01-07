@@ -38,7 +38,8 @@ a {
   font-family: "Lato", sans-serif;
   font-weight: 100;
   font-size: 44px;
-  margin: 0 0 10px;
+  margin: 0 0 30px;
+  line-height: 1.4;
 }
 .sttl {
   font-family: "Lato", sans-serif;
@@ -59,16 +60,23 @@ a {
   }
 }
 .body__box {
+  display: flex;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 20px;
+  padding: 60px 20px 20px;
 }
-.Home__box {
+.body__side {
+  width: 20%;
+}
+.body__main {
+  flex: 1;
+}
+.Home__body {
   display: flex;
-  margin: 0 0 40px;
+  margin: 0 0 70px;
 }
 @media screen and (max-width: 480px) {
-  .Home__box {
+  .Home__body {
     display: block;
   }
 }
@@ -85,6 +93,12 @@ a {
     max-width: 50%;
     margin: 0 auto 20px;
   }
+}
+.History__body {
+  margin: 0 0 70px;
+}
+.Skill__body {
+  margin: 0 0 70px;
 }
 .Skill__box {
   margin: 0 0 20px;

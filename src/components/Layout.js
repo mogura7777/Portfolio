@@ -2,9 +2,8 @@
 
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
 import { ChangeThemeButton } from "./ChangeThemeButton";
-export default function Layout({ children, title = "HP by Nextjs" }) {
+export default function Layout({ children, title = "" }) {
   return (
     <div className="body">
       <Head>
@@ -25,12 +24,6 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
                 className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
               >
                 Blog
-              </Link>
-              <Link
-                href="/_blog-page"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                SampleBlog
               </Link>
               <Link
                 href="/work"
@@ -57,7 +50,22 @@ export default function Layout({ children, title = "HP by Nextjs" }) {
           </div>
         </nav>
       </header>
-      <main className="body__box">{children}</main>
+      <div className="body__box">
+        {/* <aside className="body__side">
+          <nav>
+            <p>カテゴリー一覧</p>
+            <ul>
+              <li>
+                <a href="/news/">新着情報</a>
+              </li>
+              <li>
+                <a href="/other/">その他</a>
+              </li>
+            </ul>
+          </nav>
+        </aside> */}
+        <main className="body__main">{children}</main>
+      </div>
       <footer className="footer">
         <div className="footer__sns">
           <a

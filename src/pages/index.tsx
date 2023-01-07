@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <Layout title="Home">
       <h1 className="ttl">Profile</h1>
-      <div className="Home__box">
+      <div className="Home__body">
         <div className="Home__img">
           <MyImage fname="../img/001.png" />
         </div>
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <h1 className="ttl">History</h1>
-      <div className="History__box">
+      <div className="History__body">
         <ul className="History__list">
           <li>
             幼少期は、兵庫県の自然に囲まれて育ちました。
@@ -55,17 +55,19 @@ const Home: NextPage = () => {
         </ul>
       </div>
       <h1 className="ttl">Skill</h1>
-      <div className="Skill__box">
-        <h2 className="sttl">HTML5プロフェッショナル認定試験 レベル1 取得</h2>
-        <p className="txt">
-          HTML5、CSS3などの最新のマークアップを使ってマルチデバイスに対応したWebコンテンツをデザイン・制作できる。
-        </p>
-      </div>
-      <div className="Skill__box">
-        <h2 className="sttl">HTML5プロフェッショナル認定試験 レベル2 取得</h2>
-        <p className="txt">
-          JavaScriptなどの最新のマークアップを使ってシステム間連携や最新のマルチメディア技術に対応したWebアプリケーションや動的Webコンテンツの開発・設計ができる。
-        </p>
+      <div className="Skill__body">
+        <div className="Skill__box">
+          <h2 className="sttl">HTML5プロフェッショナル認定試験 レベル1 取得</h2>
+          <p className="txt">
+            HTML5、CSS3などの最新のマークアップを使ってマルチデバイスに対応したWebコンテンツをデザイン・制作できる。
+          </p>
+        </div>
+        <div className="Skill__box">
+          <h2 className="sttl">HTML5プロフェッショナル認定試験 レベル2 取得</h2>
+          <p className="txt">
+            JavaScriptなどの最新のマークアップを使ってシステム間連携や最新のマルチメディア技術に対応したWebアプリケーションや動的Webコンテンツの開発・設計ができる。
+          </p>
+        </div>
       </div>
       <h1 className="ttl">Illustration</h1>
     </Layout>
