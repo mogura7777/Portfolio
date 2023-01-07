@@ -29,11 +29,16 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <Layout title="Blog">
       <h1 className="ttl">Blog</h1>
-      <ul>
+      <ul className="Blog__list">
         {blogs.map((blog) => (
-          <li className="Blog__box" key={blog.id}>
+          <li className="Blog__item" key={blog.id}>
             <Link className="Blog__link" href={`/blog/${blog.id}`}>
               <div className="Blog__data">{formatDate(blog.publishedAt)}</div>
+              <ul className="tag">
+                {blog.tags.map((tag) => (
+                  <li key={tag.id}>{tag.tag}</li>
+                ))}
+              </ul>
               <div className="Blog__sttl">{blog.title}</div>
             </Link>
           </li>
