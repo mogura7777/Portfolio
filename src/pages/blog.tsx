@@ -5,26 +5,31 @@ import { client } from "../libs/client";
 import { formatDate } from "../libs/util";
 import type { InferGetStaticPropsType, NextPage } from "next";
 import type { Blog, Tag } from "types/blog";
-// データをテンプレートに受け渡す部分の処理を記述します
+import { Pagination } from "../components/Pagination";
+type Props = {
+  blogs: Blog[];
+  tags: Tag[];
+  totalCount: number;
+};
 export const getStaticProps = async () => {
-  const blog = await client.get({ endpoint: "blog" });
+  const blog = await client.get({
+    endpoint: "blog",
+    queries: { offset: 0, limit: 5 },
+  });
   const tag = await client.get({ endpoint: "tag" });
   return {
     props: {
       blogs: blog.contents,
       tags: tag.contents,
+      totalCount: blog.totalCount,
     },
   };
-};
-
-type Props = {
-  blogs: Blog[];
-  tags: Tag[];
 };
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   tags,
   blogs,
+  totalCount,
 }: Props) => {
   return (
     <Layout title="Blog">
@@ -44,6 +49,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </li>
         ))}
       </ul>
+      <Pagination totalCount={totalCount} />
     </Layout>
   );
 };

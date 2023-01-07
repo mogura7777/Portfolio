@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class">
       <NextNprogress
-        color="#efefef"
+        color="#fff"
         startPosition={0.3}
         stopDelayMs={200}
         height={2}
