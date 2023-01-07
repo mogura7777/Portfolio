@@ -4,12 +4,12 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import { client } from "../../libs/client";
 import { formatDate } from "../../libs/util";
-import type { InferGetStaticPropsType, NextPage, GetStaticPaths } from "next";
-import type { Blog, Tag } from "types/blog";
-type Props = {
-  blogs: Blog[];
-  tags: Tag[];
-};
+// import type { InferGetStaticPropsType, NextPage, GetStaticPaths } from "next";
+// import type { Blog, Tag } from "types/blog";
+// type Props = {
+//   blogs: Blog[];
+//   tags: Tag[];
+// };
 
 // export const getStaticPaths: GetStaticPaths = async () => {
 //   const repos = await client.get({ endpoint: "post" });
@@ -18,9 +18,9 @@ type Props = {
 //   return { paths, fallback: false };
 // };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
-  const paths = data.contents.map((content: Blog) => `/blog/${content.id}`);
+  const paths = data.contents.map((content) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
