@@ -133,14 +133,6 @@ const TodoApp = () => {
       <TodoList>
         <h1 className="ttl">Todo</h1>
         {TaskLists}
-        {/* {tasks.length > 0 ? (
-          TaskLists
-        ) : (
-          <span className="no-task">
-            <i className="fas fa-tasks" />
-            <span className="no-task-p">Add tasks above</span>
-          </span>
-        )} */}
       </TodoList>
       <TodoForm
         onSubmit={handleSubmit}

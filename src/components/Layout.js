@@ -38,6 +38,12 @@ export default function Layout({ children, title = "" }) {
                 Todo
               </Link>
               <Link
+                href="/library"
+                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+              >
+                Library
+              </Link>
+              <Link
                 href="/contact"
                 className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
               >

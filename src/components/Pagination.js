@@ -1,6 +1,5 @@
 /** @format */
 
-//components/Pagination.js
 import Link from "next/link";
 
 export const Pagination = ({ totalCount }) => {

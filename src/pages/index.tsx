@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         </div>
         <div>
           <h2>Masashi Kawamata</h2>
-          <p className="txt">1986年福岡県で生まれ</p>
+          <p className="txt">1986年福岡県生まれ</p>
 
           <p className="txt">
             現在は自社開発アプリのフロントエンド/UI設計を担当しています。
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
           <li>
             幼少期は、兵庫県の自然に囲まれて育ちました。
             <br />
-            イモリとアマガエルが友達。
+            イモリとアマガエルを捕まえる日々。
           </li>
           <li>
             小学校時代は、兄の影響で野球に打ち込む。
@@ -35,7 +35,9 @@ const Home: NextPage = () => {
             途中ジャッキー・チェンに憧れ体操を始める。
           </li>
           <li>
-            中学校校時代は、スラムダンクの影響でバスケ部に入部したかったが、田舎の中学校のためバスケ部が無く断念し、野球に打ち込む。
+            中学校校時代は、スラムダンクの影響でバスケ部に入部の予定
+            <br />
+            中学校にバスケ部がなく引き続き野球に打ち込む。
           </li>
           <li>
             高校時代は、友人の誘いでバドミントンに入部。中学校の野球の遠投の経験が活かされ県大会に出場。
@@ -57,6 +59,10 @@ const Home: NextPage = () => {
       <h1 className="ttl">Skill</h1>
       <div className="Skill__body">
         <div className="Skill__box">
+          <h2 className="sttl">普通自動二輪・普通自動車免許 取得</h2>
+          <p className="txt">年に数回運転します。</p>
+        </div>
+        <div className="Skill__box">
           <h2 className="sttl">HTML5プロフェッショナル認定試験 レベル1 取得</h2>
           <p className="txt">
             HTML5、CSS3などの最新のマークアップを使ってマルチデバイスに対応したWebコンテンツをデザイン・制作できる。
@@ -67,6 +73,10 @@ const Home: NextPage = () => {
           <p className="txt">
             JavaScriptなどの最新のマークアップを使ってシステム間連携や最新のマルチメディア技術に対応したWebアプリケーションや動的Webコンテンツの開発・設計ができる。
           </p>
+        </div>
+        <div className="Skill__box">
+          <h2 className="sttl">基本情報技術者試験 取得予定</h2>
+          <p className="txt">只今、学習中</p>
         </div>
       </div>
       <h1 className="ttl">Illustration</h1>

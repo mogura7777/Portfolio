@@ -43,7 +43,6 @@ a {
 .sttl {
   font-family: "Lato", sans-serif;
   font-size: 20px;
-  margin: 0 0 10px;
 }
 .txt {
   margin: 0 0 10px;
@@ -239,5 +238,36 @@ a {
   & li:hover {
     opacity: 0.7;
     transition: 0.3s ease-in-out;
+  }
+}
+.btn {
+  display: flex;
+  align-items: center;
+  background: #eee;
+  padding: 10px 20px;
+  border-radius: 50px;
+  .btn__icon {
+    margin: 0 10px 0 0;
+  }
+}
+.Contact__box {
+  display: flex;
+  margin: 0 0 20px;
+  .Contact__box_item {
+    margin: 0 10px 0 0;
+  }
+}
+.Contact__detail {
+  margin: 0 0 20px;
+}
+.Contact__message {
+  margin: 0 0 20px;
+}
+.Contact__list {
+  .Contact__list_item {
+    background: #eee;
+    margin: 0 0 10px;
+    padding: 4px 10px;
+    cursor: pointer;
   }
 }
