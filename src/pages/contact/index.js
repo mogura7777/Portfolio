@@ -95,41 +95,39 @@ export default function Index() {
   }, [message]);
 
   return (
-    <div>
-      <Layout title="Contact">
-        <h1 className="ttl">Contact</h1>
-        <div className="Contact__body">
-          <div className="Contact__box">
-            {auth.currentUser != null ? (
-              <button className="btn Contact__box_item" onClick={doLogin}>
-                <SiGoogle className="btn__icon" />
-                ログアウト
-              </button>
-            ) : (
-              <button className="btn Contact__box_item" onClick={doLogin}>
-                <SiGoogle className="btn__icon" />
-                ログイン
-              </button>
-            )}
+    <Layout title="Contact">
+      <h1 className="ttl">Contact</h1>
+      <div className="Contact__body">
+        <div className="Contact__box">
+          {auth.currentUser != null ? (
+            <button className="btn Contact__box_item" onClick={doLogin}>
+              <SiGoogle className="btn__icon" />
+              ログアウト
+            </button>
+          ) : (
+            <button className="btn Contact__box_item" onClick={doLogin}>
+              <SiGoogle className="btn__icon" />
+              ログイン
+            </button>
+          )}
 
-            {auth.currentUser != null ? (
-              <button
-                className="btn btn-add Contact__box_item"
-                onClick={doAction}
-              >
-                メンバーを追加する
-              </button>
-            ) : null}
-          </div>
-          {/* <p className="Contact__message">ログイン：{message}さん</p> */}
-          <div className="Contact__caption">
-            {auth.currentUser != null
-              ? "メッセージを送るメンバーを選択してください"
-              : "Googleアカウント ログイン時にメッセージ機能が利用できます"}
-          </div>
-          <ul className="Contact__list">{data}</ul>
+          {auth.currentUser != null ? (
+            <button
+              className="btn btn-add Contact__box_item"
+              onClick={doAction}
+            >
+              メンバーを追加する
+            </button>
+          ) : null}
         </div>
-      </Layout>
-    </div>
+        {/* <p className="Contact__message">ログイン：{message}さん</p> */}
+        <div className="Contact__caption">
+          {auth.currentUser != null
+            ? "メッセージを送るメンバーを選択してください"
+            : "Googleアカウント ログイン時にメッセージ機能が利用できます"}
+        </div>
+        <ul className="Contact__list">{data}</ul>
+      </div>
+    </Layout>
   );
 }

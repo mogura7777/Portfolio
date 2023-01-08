@@ -113,43 +113,41 @@ export default function Info() {
   }, [message]);
 
   return (
-    <div>
-      <Layout title="Info & messages.">
-        <h1 className="ttl">Contact</h1>
-        <div className="Contact__body">
-          {/* <h5 className="mb-4">{message}</h5> */}
-          <div className="text-left">
-            <div className="Contact__">
-              <div>{mydata != null ? mydata.name : ""}さんへ</div>
-              {/* <div>Mail: {mydata != null ? mydata.mail : ""}</div> */}
-              {/* <div>Tel: {mydata != null ? mydata.tel : ""}</div> */}
-              {/* <div>Memo: {mydata != null ? mydata.memo : ""}</div> */}
-            </div>
-            <div className="Contact__detail">
-              <label>
-                <div>メッセージ内容</div>
-                <textarea
-                  type="text"
-                  onChange={onChangeCmt}
-                  className="form-control"
-                ></textarea>
-              </label>
-            </div>
+    <Layout title="Info & messages.">
+      <h1 className="ttl">Contact</h1>
+      <div className="Contact__body">
+        {/* <h5 className="mb-4">{message}</h5> */}
+        <div className="text-left">
+          <div className="Contact__">
+            <div>{mydata != null ? mydata.name : ""}さんへ</div>
+            {/* <div>Mail: {mydata != null ? mydata.mail : ""}</div> */}
+            {/* <div>Tel: {mydata != null ? mydata.tel : ""}</div> */}
+            {/* <div>Memo: {mydata != null ? mydata.memo : ""}</div> */}
           </div>
-          <div className="Contact__box">
-            <button
-              onClick={doAction}
-              className="btn btn-primary Contact__box_item"
-            >
-              メッセージを送る
-            </button>
-            <button onClick={goBack} className="btn Contact__box_item">
-              戻る
-            </button>
+          <div className="Contact__detail">
+            <label>
+              <div>メッセージ内容</div>
+              <textarea
+                type="text"
+                onChange={onChangeCmt}
+                className="form-control"
+              ></textarea>
+            </label>
           </div>
         </div>
-        <ul className="list-group">{msgdata}</ul>
-      </Layout>
-    </div>
+        <div className="Contact__box">
+          <button
+            onClick={doAction}
+            className="btn btn-primary Contact__box_item"
+          >
+            メッセージを送る
+          </button>
+          <button onClick={goBack} className="btn Contact__box_item">
+            戻る
+          </button>
+        </div>
+      </div>
+      <ul className="list-group">{msgdata}</ul>
+    </Layout>
   );
 }

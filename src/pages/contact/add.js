@@ -63,29 +63,28 @@ export default function Add() {
   };
 
   return (
-    <div>
-      <Layout title="Create data.">
-        <h1 className="ttl">Contact</h1>
-        <div className="Contact__body">
-          <h5 className="mb-4">{message}</h5>
-          <div className="Contact__detail">
-            <div className="form-group">
-              <label>Name:</label>
-              <input
-                type="text"
-                onChange={onChangeName}
-                className="form-control"
-              />
-            </div>
-            <div className="form-group">
-              <label>Mail:</label>
-              <input
-                type="text"
-                onChange={onChangeMail}
-                className="form-control"
-              />
-            </div>
-            {/* <div className="form-group">
+    <Layout title="Create data.">
+      <h1 className="ttl">Contact</h1>
+      <div className="Contact__body">
+        <h5 className="mb-4">{message}</h5>
+        <div className="Contact__detail">
+          <div className="form-group">
+            <label>Name:</label>
+            <input
+              type="text"
+              onChange={onChangeName}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label>Mail:</label>
+            <input
+              type="text"
+              onChange={onChangeMail}
+              className="form-control"
+            />
+          </div>
+          {/* <div className="form-group">
               <label>Tel:</label>
               <input
                 type="text"
@@ -93,28 +92,27 @@ export default function Add() {
                 className="form-control"
               />
             </div> */}
-            <div className="form-group">
-              <label>Memo:</label>
-              <input
-                type="text"
-                onChange={onChangeMemo}
-                className="form-control"
-              />
-            </div>
-          </div>
-          <div className="Contact__box">
-            <button
-              onClick={doAction}
-              className="btn btn-primary Contact__box_item"
-            >
-              メンバーに追加する
-            </button>
-            <button onClick={goBack} className="btn Contact__box_item">
-              戻る
-            </button>
+          <div className="form-group">
+            <label>Memo:</label>
+            <input
+              type="text"
+              onChange={onChangeMemo}
+              className="form-control"
+            />
           </div>
         </div>
-      </Layout>
-    </div>
+        <div className="Contact__box">
+          <button
+            onClick={doAction}
+            className="btn btn-primary Contact__box_item"
+          >
+            メンバーに追加する
+          </button>
+          <button onClick={goBack} className="btn Contact__box_item">
+            戻る
+          </button>
+        </div>
+      </div>
+    </Layout>
   );
 }
