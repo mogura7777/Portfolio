@@ -1,10 +1,10 @@
 /** @format */
 
-import "../../components/fire";
 import { useState, useEffect } from "react";
-import Layout from "../../components/layout";
+import Layout from "../../components/Layout";
 import firebase from "firebase";
 import { useRouter } from "next/router";
+import "../../components/fire";
 
 const db = firebase.firestore();
 const auth = firebase.auth();

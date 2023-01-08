@@ -1,6 +1,6 @@
 /** @format */
 
-import firebase from "firebase/app";
+import firebase from "firebase";
 
 // ☆各プロジェクトの設定を記述
 const firebaseConfig = {
