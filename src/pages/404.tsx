@@ -1,8 +1,5 @@
 /** @format */
 import Layout from "../components/Layout";
-import Link from "next/link";
-import { client } from "../libs/client";
-
 export default function Custom404({}) {
   return (
     <Layout title="404">

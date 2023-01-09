@@ -1,11 +1,10 @@
 /** @format */
-
-import { useState, useEffect } from "react";
-import Layout from "../../components/Layout";
-import { useRouter } from "next/router";
 import firebase from "firebase";
-import "../../components/fire";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { SiFacebook, SiGithub, SiGoogle, SiTwitter } from "react-icons/si";
+import Layout from "../../components/Layout";
+import "../../components/fire";
 const db = firebase.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -24,7 +23,7 @@ export default function Index() {
   // ログイン処理
   const login = () => {
     auth
-      .signInWithRedirect(provider)
+      .signInWithPopup(provider)
       .then((result) => {
         setUser(result.user.displayName);
         setMessage("logined: " + result.user.displayName);

@@ -1,11 +1,11 @@
 /** @format */
-import Layout from "../components/Layout";
-import Link from "next/link";
-import { client } from "../libs/client";
-import { formatDate } from "../libs/util";
 import type { InferGetStaticPropsType, NextPage } from "next";
+import Link from "next/link";
 import type { Blog, Tag } from "types/blog";
-import { Pagination } from "../components/Pagination";
+import { client } from "../../libs/client";
+import { formatDate } from "../../libs/util";
+import Layout from "../../components/Layout";
+import { Pagination } from "../../components/Pagination";
 type Props = {
   blogs: Blog[];
   tags: Tag[];
