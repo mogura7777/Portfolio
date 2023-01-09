@@ -1,18 +1,23 @@
 /** @format */
 
 import React from "react";
-
-const TodoForm = (props) => {
+type Props = {
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
+  value: string | number;
+  onChange: React.ChangeEventHandler<HTMLInputElement>;
+  reference: string;
+  isEditing: string;
+};
+const TodoForm = (props: Props) => {
   return (
     <div className="TodoForm">
       <form className="TodoForm__box" onSubmit={props.onSubmit}>
         <input
           className="TodoForm__input"
           type="text"
-          placeholder="Add a task..."
+          placeholder="タスクを追加"
           value={props.value}
           onChange={props.onChange}
-          maxLength="40"
           ref={props.reference}
           required
         />

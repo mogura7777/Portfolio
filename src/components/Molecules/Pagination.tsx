@@ -1,11 +1,14 @@
 /** @format */
 
 import Link from "next/link";
-
-export const Pagination = ({ totalCount }) => {
+import { ReactNode } from "react";
+type Props = {
+  totalCount: number;
+};
+export const Pagination = ({ totalCount }: Props) => {
   const PER_PAGE = 5;
 
-  const range = (start, end) =>
+  const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
 
   return (

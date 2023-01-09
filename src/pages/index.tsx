@@ -91,7 +91,9 @@ const Home: NextPage = () => {
           </div>
         </div>
       </ScrollRevealContainer>
-      <h1 className="ttl">Illustration</h1>
+      <ScrollRevealContainer move="left">
+        <h1 className="ttl">Illustration</h1>
+      </ScrollRevealContainer>
     </Layout>
   );
 };

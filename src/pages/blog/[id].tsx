@@ -4,29 +4,22 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import { client } from "../../libs/client";
 import { formatDate } from "../../libs/util";
-// import type { InferGetStaticPropsType, NextPage, GetStaticPaths } from "next";
-// import type { Blog, Tag } from "types/blog";
-// type Props = {
-//   blogs: Blog[];
-//   tags: Tag[];
-// };
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const repos = await client.get({ endpoint: "post" });
-//   const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i);
-//   const paths = range(1, Math.ceil(repos.totalCount / BLOG_PER_PAGE)).map((repo) => `/page/${repo}`);
-//   return { paths, fallback: false };
-// };
-
+import type { Blog, Tag } from "types/blog";
+type Params = {
+  blog: Blog;
+};
+type Context = {
+  params: Blog;
+};
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
-  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  const paths = data.contents.map((content: Blog) => `/blog/${content.id}`);
   return { paths, fallback: false };
 };
 
 // データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
+export const getStaticProps = async (context: Context) => {
+  const id = String(context.params.id);
   const data = await client.get({ endpoint: "blog", contentId: id });
 
   return {
@@ -36,7 +29,7 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export default function BlogId({ blog }) {
+export default function BlogId({ blog }: Params) {
   return (
     <Layout title={blog.title}>
       <div className="Blog__header">

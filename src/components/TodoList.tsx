@@ -1,8 +1,11 @@
 /** @format */
 
 import React from "react";
-
-const TodoList = (props) => {
+import { ReactNode } from "react";
+type Props = {
+  children: ReactNode;
+};
+const TodoList = (props: Props) => {
   return <ul className="TodoList">{props.children}</ul>;
 };
 

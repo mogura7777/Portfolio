@@ -2,8 +2,13 @@
 
 import Head from "next/head";
 import Link from "next/link";
-import { ChangeThemeButton } from "./ChangeThemeButton";
-export default function Layout({ children, title = "" }) {
+import { ChangeThemeButton } from "./Atoms/ChangeThemeButton";
+import { ReactNode } from "react";
+type Props = {
+  children: ReactNode;
+  title: string;
+};
+export default function Layout({ children, title = "" }: Props) {
   return (
     <div className="body">
       <Head>

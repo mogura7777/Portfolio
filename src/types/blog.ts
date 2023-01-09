@@ -3,7 +3,7 @@
 // src/types/blog.ts
 
 export type Blog = {
-  id: string;
+  id: string | number;
   body: string;
   title: string;
   tags: Tag[];
