@@ -24,7 +24,7 @@ export default function Index() {
   // ログイン処理
   const login = () => {
     auth
-      .signInWithPopup(provider)
+      .signInWithRedirect(provider)
       .then((result) => {
         setUser(result.user.displayName);
         setMessage("logined: " + result.user.displayName);
