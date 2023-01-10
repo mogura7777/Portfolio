@@ -68,22 +68,22 @@ export default function Add() {
       <div className="Contact__body">
         <h5 className="mb-4">{message}</h5>
         <div className="Contact__detail">
-          <div className="form-group">
-            <label>Name:</label>
+          <label className="Contact__detail_box">
+            <div className="Contact__detail_ttl">Name:</div>
             <input
               type="text"
               onChange={onChangeName}
-              className="form-control"
+              className="Contact__input"
             />
-          </div>
-          <div className="form-group">
-            <label>Mail:</label>
+          </label>
+          <label className="Contact__detail_box">
+            <div className="Contact__detail_ttl">Mail:</div>
             <input
               type="text"
               onChange={onChangeMail}
-              className="form-control"
+              className="Contact__input"
             />
-          </div>
+          </label>
           {/* <div className="form-group">
               <label>Tel:</label>
               <input
@@ -92,14 +92,14 @@ export default function Add() {
                 className="form-control"
               />
             </div> */}
-          <div className="form-group">
-            <label>Memo:</label>
+          <label className="Contact__detail_box">
+            <div className="Contact__detail_ttl">Memo:</div>
             <input
               type="text"
               onChange={onChangeMemo}
-              className="form-control"
+              className="Contact__input"
             />
-          </div>
+          </label>
         </div>
         <div className="Contact__box">
           <button
