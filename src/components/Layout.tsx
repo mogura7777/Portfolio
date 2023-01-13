@@ -30,23 +30,18 @@ export default function Layout({ children, title = "" }: Props) {
               >
                 Blog
               </Link>
-              <Link
-                href="/work"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Work
-              </Link>
-              <Link
-                href="/todo"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Todo
-              </Link>
+
               <Link
                 href="/library"
                 className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
               >
                 Library
+              </Link>
+              <Link
+                href="/work"
+                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+              >
+                Work
               </Link>
               <Link
                 href="/contact"

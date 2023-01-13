@@ -1,8 +1,8 @@
 /** @format */
 
-import Layout from "../../components/Layout";
+import Layout from "../../../components/Layout";
 import dynamic from "next/dynamic";
-const TodoApp = dynamic(() => import("../../components/TodoApp"), {
+const TodoApp = dynamic(() => import("../../../components/Todo/TodoApp"), {
   //サーバーサイド側でインポートはしない
   ssr: false,
 });

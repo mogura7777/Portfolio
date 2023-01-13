@@ -131,7 +131,11 @@ const TodoApp = () => {
   return (
     <div className="Todo">
       <TodoList>
-        <h1 className="ttl">Todo</h1>
+        <h1 className="ttl">Library</h1>
+        <h2 className="sttl">メモアプリ</h2>
+        <div className="discretion">
+          <p className="txt">ローカルストレージでメモを管理する。</p>
+        </div>
         {TaskLists}
       </TodoList>
       <TodoForm

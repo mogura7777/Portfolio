@@ -19,8 +19,8 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { rectSortingStrategy, SortableContext } from "@dnd-kit/sortable";
-import SortableContainer from "../../../components/SortableContainer";
-import Item from "../../../components/Item";
+import SortableContainer from "../../../components/dndKit/SortableContainer";
+import Item from "../../../components/dndKit/Item";
 
 const fetchPokemon = async () => {
   const index = Math.floor(Math.random() * 905 + 1);
@@ -29,9 +29,9 @@ const fetchPokemon = async () => {
   return result;
 };
 fetchPokemon().then((pokemon) => {
-  console.log(`図鑑番号: ${pokemon["id"]}`);
-  console.log(`名前: ${pokemon["name"]}`);
-  console.log(`画像URL: ${pokemon["sprites"]["front_default"]}`);
+  // console.log(`図鑑番号: ${pokemon["id"]}`);
+  // console.log(`名前: ${pokemon["name"]}`);
+  // console.log(`画像URL: ${pokemon["sprites"]["front_default"]}`);
 });
 
 interface IndexPageProps {
@@ -48,24 +48,18 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
       image: props.front_image,
     },
   ]);
-  const [pokemonListSub, setPokemonListSub] = useState([
-    {
-      id: 0,
-      name: "",
-      image: "",
-    },
-  ]);
   const [items, setItems] = useState<{
     [key: string]: string[];
   }>({
-    container1: [""],
-    container2: [""],
+    container1: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
+    ],
+    container2: [
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
+    ],
   });
 
   // ドラッグ&ドロップでソート可能なリスト
-  const [pokemonList, setFruits] = useState(["パンダ"]);
-  const [pokemonList02, setFruits02] = useState([""]);
-
   const handleClick = async () => {
     const pokemon = await fetchPokemon();
     setPokemonListMain([
@@ -210,10 +204,13 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
   return (
     <Layout title="Library">
       <h1 className="ttl">Library</h1>
-      <div className="Library__body">
+      <div className="pokemon__body">
         <h2 className="sttl">ポケモンアプリ</h2>
-        <button onClick={handleClick}>ポケモンを追加する</button>
-        <div className="Library__body_in">
+        <label>
+          <button className="pokeball" onClick={handleClick}></button>
+          モンスタボールを投げる
+        </label>
+        <div className="pokemon__body_in">
           {/* <ul className="pokemon__list">
             {pokemonListMain.map((pokemon) => (
               <li className="pokemon__list_item" key={pokemon.id}>
@@ -224,43 +221,45 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
               </li>
             ))}
           </ul> */}
-          <div className="pokemon__body">
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCorners}
-              onDragStart={handleDragStart}
-              onDragOver={handleDragOver}
-              onDragEnd={handleDragEnd}
-            >
-              <SortableContainer
-                id="container1"
-                items={items.container1}
-                label="選抜メンバー"
-              />
 
-              <SortableContainer
-                id="container2"
-                items={items.container2}
-                label="控え"
-              />
-              <DragOverlay>
-                {activeId ? <Item id={activeId} /> : null}
-              </DragOverlay>
-            </DndContext>
-          </div>
+          <DndContext
+            sensors={sensors}
+            collisionDetection={closestCorners}
+            onDragStart={handleDragStart}
+            onDragOver={handleDragOver}
+            onDragEnd={handleDragEnd}
+          >
+            <SortableContainer
+              id="container1"
+              items={items.container1}
+              label="選抜メンバー"
+            />
+
+            <SortableContainer
+              id="container2"
+              items={items.container2}
+              label="控え"
+            />
+            <DragOverlay>
+              {activeId ? <Item id={activeId} /> : null}
+            </DragOverlay>
+          </DndContext>
         </div>
       </div>
 
-      <div>メモ：</div>
-      <div>
-        参考:
-        <Link
-          href="https://zenn.dev/t4ich1/articles/539615ca2d69be"
-          className=""
-        >
-          https://zenn.dev/t4ich1/articles/539615ca2d69be
-        </Link>
-      </div>
+      <dl className="discretion">
+        <dt>説明：</dt>
+        <dd className="txt">ローカルストレージでメモを管理する。</dd>
+        <dt>参考:</dt>
+        <dd>
+          <Link
+            href="https://zenn.dev/t4ich1/articles/539615ca2d69be"
+            className=""
+          >
+            https://zenn.dev/t4ich1/articles/539615ca2d69be
+          </Link>
+        </dd>
+      </dl>
     </Layout>
   );
 };

@@ -13,16 +13,9 @@ const SortableContainer = ({
   id,
   items,
   label,
-}: // pokemonList,
-{
+}: {
   id: string;
   items: string[];
-  // nameList: string[];
-  // pokemonList: {
-  //   id: number;
-  //   name: string;
-  //   image: string;
-  // }[];
   label: string;
 }) => {
   const { setNodeRef } = useDroppable({
@@ -36,8 +29,8 @@ const SortableContainer = ({
           ref={setNodeRef}
           className="pokemon__list w-full border-2 border-gray-500/75 p-5 mt-2 rounded-md"
         >
-          {items.map((id: string) => (
-            <li className="pokemon__list_item">
+          {items.map((id: string, index) => (
+            <li key={id} className="pokemon__list_item">
               <SortableItem key={id} id={id} />
             </li>
           ))}

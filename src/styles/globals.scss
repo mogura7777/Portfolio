@@ -34,10 +34,12 @@ a {
 }
 
 .body__box {
-  display: flex;
   max-width: 1000px;
   margin: 0 auto;
   padding: 60px 20px 20px;
+  @media screen and (max-width: 480px) {
+    display: block;
+  }
 }
 .body__side {
   width: 20%;
@@ -162,106 +164,7 @@ a {
   }
 }
 
-// Todo
-.TodoForm__box {
-  display: flex;
-  margin: 0 0 10px;
-  .TodoForm__input {
-    min-width: 24%;
-    border-bottom: 1px solid #333;
-    padding: 0 4px;
-    margin: 0 10px 0 0;
-  }
-  .form__btn {
-    padding: 0 10px;
-    height: 100%;
-    background: #eee;
-  }
-}
-.TodoList {
-  margin: 0 0 20px;
-  .TodoList__item {
-    display: flex;
-    align-items: center;
-    margin: 0 0 4px;
-  }
-  .TodoList__item_ttl {
-    margin: 0 10px 0 0;
-    padding: 4px;
-    min-width: 24%;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.02);
-  }
-  .TodoList__item_btn {
-    padding: 4px 10px;
-    background: #eee;
-    margin: 0 4px 0 0;
-  }
-}
-//
-.Library__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 20px;
-  @media screen and (max-width: 480px) {
-    display: block;
-  }
-  .Library__list_itme {
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
-
-    color: #212121;
-    @media screen and (max-width: 480px) {
-      display: block;
-      margin: 0 0 20px;
-    }
-  }
-  .Library__list_txt {
-    background: #eee;
-    text-align: center;
-  }
-  .Library__img img {
-    margin: 0 auto;
-  }
-}
-.Library__body {
-  margin: 0 0 40px;
-  .Library__body_in {
-    padding: 20px;
-    background-color: #eee;
-  }
-}
-.pokemon__body {
-  // display: flex;
-  .pokemon__box {
-    .pokemon__list {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      background-color: #fff;
-      // margin: 0 0 40px;
-      // width: 100%;
-      // min-height: 100px;
-      clear: both;
-      .pokemon__list_item {
-        // float: left;
-        // width: calc(25% - 22px); /* margin padding分を引く */
-        margin: 1px;
-        padding: 10px;
-        // display: inline-block;
-      }
-      .pokemon__boxin_item {
-      }
-      .pokemon__boxin_item {
-        display: flex;
-        flex-wrap: wrap;
-        width: 50%;
-      }
-    }
-  }
-}
-//
+// Contact
 .Contact__box {
   display: flex;
   margin: 0 0 20px;
@@ -333,7 +236,6 @@ a {
   text-align: center;
 }
 // 共通処理
-
 .ttl {
   font-family: "Lato", sans-serif;
   font-weight: 100;
@@ -347,6 +249,11 @@ a {
 }
 .txt {
   margin: 0 0 10px;
+}
+.discretion {
+  background: #eee;
+  margin: 0 0 40px;
+  padding: 20px;
 }
 .tag {
   display: flex;
@@ -368,19 +275,202 @@ a {
     margin: 0 10px 0 0;
   }
 }
-.clearfix:after {
-  content: "";
-  display: block;
-  clear: both;
+
+// Libraryディレクトリ配下は随時更新するので最下部に記述する★★★★★★★★★
+.Library__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  @media screen and (max-width: 480px) {
+    display: block;
+  }
+  .Library__list_itme {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+
+    color: #212121;
+    @media screen and (max-width: 480px) {
+      display: block;
+      margin: 0 0 20px;
+    }
+  }
+  .Library__list_txt {
+    background: #eee;
+    text-align: center;
+  }
+  .Library__img img {
+    margin: 0 auto;
+  }
 }
-.clearfix:before {
-  content: "";
-  display: block;
-  clear: both;
+// Todo
+.TodoForm__box {
+  display: flex;
+  margin: 0 0 10px;
+  .TodoForm__input {
+    min-width: 24%;
+    border-bottom: 1px solid #333;
+    padding: 0 4px;
+    margin: 0 10px 0 0;
+  }
+  .form__btn {
+    padding: 0 10px;
+    height: 100%;
+    background: #eee;
+  }
 }
-.clearfix {
-  display: block;
+.TodoList {
+  margin: 0 0 20px;
+  .TodoList__item {
+    display: flex;
+    align-items: center;
+    margin: 0 0 4px;
+  }
+  .TodoList__item_ttl {
+    margin: 0 10px 0 0;
+    padding: 4px;
+    min-width: 24%;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  .TodoList__item_btn {
+    padding: 4px 10px;
+    background: #eee;
+    margin: 0 4px 0 0;
+  }
 }
 .zoom_img {
   transform: scale(1.5);
+}
+.pokemon__body {
+  margin: 0 0 40px;
+  .pokemon__body_in {
+    padding: 20px;
+    background-color: #eee;
+  }
+  // display: flex;
+  .pokeball {
+    position: relative;
+    zoom: 50%;
+    display: inline-block;
+
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    background: #b71c1c;
+    border-radius: 50%;
+    box-shadow: inset 0 -72px 0 -37px #fff, inset 0 -76px 0 -35px #000,
+      0 0 0 5px #000;
+    position: relative;
+    transition: 0.4s;
+    transform-origin: bottom center;
+    // Remove mobile tab color
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #fff;
+      top: 50px;
+      left: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+      box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 5px #fff, 0 0 0 10px #000;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: inset -7px 0 5px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    &:hover {
+      cursor: pointer;
+      animation: anti-wiggle 1s ease-in-out;
+    }
+
+    &:hover:after {
+      animation: wiggle 1s ease-in-out;
+    }
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+
+    @keyframes wiggle {
+      20% {
+        box-shadow: inset -5px 0 5px 0 rgba(0, 0, 0, 0.4);
+        transform: rotate(7deg);
+      }
+
+      40% {
+        box-shadow: inset -11px 0 5px 0 rgba(0, 0, 0, 0.4);
+        transform: rotate(-14deg);
+      }
+
+      60% {
+        box-shadow: inset -5px 0 5px 0 rgba(0, 0, 0, 0.4);
+        transform: rotate(4deg);
+      }
+
+      80% {
+        box-shadow: inset -8px 0 5px 0 rgba(0, 0, 0, 0.4);
+        transform: rotate(-2deg);
+      }
+
+      100% {
+        box-shadow: inset -7px 0 5px 0 rgba(0, 0, 0, 0.4);
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes anti-wiggle {
+      20% {
+        transform: translateX(4px) rotate(-7deg);
+      }
+
+      40% {
+        transform: translateX(-8px) rotate(14deg);
+      }
+
+      60% {
+        transform: translateX(2px) rotate(-4deg);
+      }
+
+      80% {
+        transform: translateX(-1px) rotate(2deg);
+      }
+
+      100% {
+        transform: translateX(0px) rotate(0deg);
+      }
+    }
+  }
+  .pokemon__box {
+    .pokemon__list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      clear: both;
+      .pokemon__list_item {
+        margin: 1px;
+        padding: 10px;
+      }
+      .pokemon__boxin_item {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+      }
+    }
+  }
 }
