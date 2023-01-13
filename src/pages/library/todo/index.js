@@ -2,8 +2,11 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList";
+
+import Layout from "../../../components/Layout";
+import TodoForm from "../../../components/Todo/TodoForm";
+import TodoList from "../../../components/Todo/TodoList";
+import Discretion from "../../../components/Molecules/Discretion";
 const TodoApp = () => {
   const initialState = () => JSON.parse(localStorage.getItem("Tasks")) || [];
   const [tasks, setTasks] = useState(initialState);
@@ -11,7 +14,10 @@ const TodoApp = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editId, setEditId] = useState("");
   const inputRef = useRef(null);
-
+  const [linkList, setLinkList] = useState([]);
+  const [text, setText] = useState(
+    "ローカルストレージでタスクを管理できます。"
+  );
   const handleChange = (e) => {
     const { value } = e.target;
     setNewTask((prevState) => (prevState = value));
@@ -129,24 +135,24 @@ const TodoApp = () => {
     );
   });
   return (
-    <div className="Todo">
-      <TodoList>
-        <h1 className="ttl">Library</h1>
-        <h2 className="sttl">メモアプリ</h2>
-        <div className="discretion">
-          <p className="txt">ローカルストレージでメモを管理する。</p>
-        </div>
-        {TaskLists}
-      </TodoList>
-      <TodoForm
-        onSubmit={handleSubmit}
-        value={newTask}
-        onChange={handleChange}
-        onClick={!isEditing ? handleClear : handleCancel}
-        isEditing={isEditing}
-        reference={inputRef}
-      />
-    </div>
+    <Layout title="Todo">
+      <h1 className="ttl">Library</h1>
+      <div className="todo__body">
+        <TodoList>
+          <h2 className="sttl">メモアプリ</h2>
+          {TaskLists}
+        </TodoList>
+        <TodoForm
+          onSubmit={handleSubmit}
+          value={newTask}
+          onChange={handleChange}
+          onClick={!isEditing ? handleClear : handleCancel}
+          isEditing={isEditing}
+          reference={inputRef}
+        />
+      </div>
+      <Discretion text={text} linkList={linkList}></Discretion>
+    </Layout>
   );
 };
 

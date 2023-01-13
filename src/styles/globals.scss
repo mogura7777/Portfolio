@@ -88,6 +88,14 @@ a {
     margin: 0 0 4px;
   }
 }
+.Illust_list {
+  display: flex;
+  flex-wrap: wrap;
+  .Illust_list_item {
+    width: 33%;
+    margin: 0 0 20px;
+  }
+}
 // Blog
 .Blog__box {
   border-bottom: 1px solid #eee;
@@ -254,6 +262,20 @@ a {
   background: #eee;
   margin: 0 0 40px;
   padding: 20px;
+  .discretion__ttl {
+    margin: 0 0 4px;
+  }
+  .discretion__box {
+    background: #fcfcfc;
+    margin: 0 0 20px;
+    padding: 10px 20px;
+  }
+  .discretion__link {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .tag {
   display: flex;
@@ -348,10 +370,20 @@ a {
     padding: 20px;
     background-color: #eee;
   }
-  // display: flex;
-  .pokeball {
+  .pokemon__btn_wrap {
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    margin: 0 0 10px;
+    cursor: pointer;
+    &:hover {
+      color: rgb(24, 157, 205);
+    }
+  }
+  .pokemon__btn {
     position: relative;
-    zoom: 50%;
+    zoom: 40%;
     display: inline-block;
 
     margin: 20px;
@@ -465,11 +497,6 @@ a {
       .pokemon__list_item {
         margin: 1px;
         padding: 10px;
-      }
-      .pokemon__boxin_item {
-        display: flex;
-        flex-wrap: wrap;
-        width: 50%;
       }
     }
   }

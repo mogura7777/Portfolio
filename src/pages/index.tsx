@@ -59,6 +59,9 @@ const Home: NextPage = () => {
               <br />
               コーディングやCMSの構築、アクセス解析などの業務を経験しました。
             </li>
+            <li>
+              現在は自社開発アプリのフロントエンド/UI設計を担当しています。
+            </li>
           </ul>
         </div>
       </ScrollRevealContainer>
@@ -93,6 +96,26 @@ const Home: NextPage = () => {
       </ScrollRevealContainer>
       <ScrollRevealContainer move="left">
         <h1 className="ttl">Illustration</h1>
+        <ul className="Illust_list">
+          <li className="Illust_list_item">
+            <MyImage fname="../img/001.png" size={300} />
+          </li>
+          <li className="Illust_list_item">
+            <MyImage fname="../img/002.jpg" size={300} />
+          </li>
+          <li className="Illust_list_item">
+            <MyImage fname="../img/003.jpg" size={300} />
+          </li>
+          <li className="Illust_list_item">
+            <MyImage fname="../img/004.jpg" size={300} />
+          </li>
+          <li className="Illust_list_item">
+            <MyImage fname="../img/005.jpg" size={300} />
+          </li>
+          <li className="Illust_list_item">
+            <MyImage fname="../img/006.jpg" size={300} />
+          </li>
+        </ul>
       </ScrollRevealContainer>
     </Layout>
   );

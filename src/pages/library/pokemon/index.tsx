@@ -18,9 +18,9 @@ import {
   DragEndEvent,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import { rectSortingStrategy, SortableContext } from "@dnd-kit/sortable";
 import SortableContainer from "../../../components/dndKit/SortableContainer";
 import Item from "../../../components/dndKit/Item";
+import Discretion from "../../../components/Molecules/Discretion";
 
 const fetchPokemon = async () => {
   const index = Math.floor(Math.random() * 905 + 1);
@@ -41,6 +41,13 @@ interface IndexPageProps {
 }
 
 const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
+  const [linkList, setLinkList] = useState([
+    "https://github.com/clauderic/dnd-kit",
+    "https://zenn.dev/t4ich1/articles/539615ca2d69be",
+  ]);
+  const [text, setText] = useState(
+    "モンスタボールを投げて、メンバーを増やせます。ドラッグ＆ドロップでメンバーを入れ替え。"
+  );
   const [pokemonListMain, setPokemonListMain] = useState([
     {
       id: props.id,
@@ -202,12 +209,12 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     setActiveId(undefined);
   };
   return (
-    <Layout title="Library">
+    <Layout title="Pokemon">
       <h1 className="ttl">Library</h1>
       <div className="pokemon__body">
         <h2 className="sttl">ポケモンアプリ</h2>
-        <label>
-          <button className="pokeball" onClick={handleClick}></button>
+        <label className="pokemon__btn_wrap">
+          <button className="pokemon__btn" onClick={handleClick}></button>
           モンスタボールを投げる
         </label>
         <div className="pokemon__body_in">
@@ -247,19 +254,7 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
         </div>
       </div>
 
-      <dl className="discretion">
-        <dt>説明：</dt>
-        <dd className="txt">ローカルストレージでメモを管理する。</dd>
-        <dt>参考:</dt>
-        <dd>
-          <Link
-            href="https://zenn.dev/t4ich1/articles/539615ca2d69be"
-            className=""
-          >
-            https://zenn.dev/t4ich1/articles/539615ca2d69be
-          </Link>
-        </dd>
-      </dl>
+      <Discretion text={text} linkList={linkList}></Discretion>
     </Layout>
   );
 };
