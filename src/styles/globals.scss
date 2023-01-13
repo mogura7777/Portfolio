@@ -203,15 +203,26 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 20px;
+  @media screen and (max-width: 480px) {
+    display: block;
+  }
   .Library__list_itme {
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
+
     color: #212121;
+    @media screen and (max-width: 480px) {
+      display: block;
+      margin: 0 0 20px;
+    }
   }
   .Library__list_txt {
     background: #eee;
     text-align: center;
+  }
+  .Library__img img {
+    margin: 0 auto;
   }
 }
 .Library__body {
@@ -219,6 +230,35 @@ a {
   .Library__body_in {
     padding: 20px;
     background-color: #eee;
+  }
+}
+.pokemon__body {
+  // display: flex;
+  .pokemon__box {
+    .pokemon__list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      // margin: 0 0 40px;
+      // width: 100%;
+      // min-height: 100px;
+      clear: both;
+      .pokemon__list_item {
+        // float: left;
+        // width: calc(25% - 22px); /* margin padding分を引く */
+        margin: 1px;
+        padding: 10px;
+        // display: inline-block;
+      }
+      .pokemon__boxin_item {
+      }
+      .pokemon__boxin_item {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+      }
+    }
   }
 }
 //
@@ -327,4 +367,20 @@ a {
   .btn__icon {
     margin: 0 10px 0 0;
   }
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix:before {
+  content: "";
+  display: block;
+  clear: both;
+}
+.clearfix {
+  display: block;
+}
+.zoom_img {
+  transform: scale(1.5);
 }

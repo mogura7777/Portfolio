@@ -1,9 +1,6 @@
 /** @format */
 
-import { useState } from "react";
-import { GetServerSideProps, NextPage } from "next";
-import Link from "next/link";
-import Layout from "../../../components/Layout";
+import React, { useState } from "react";
 import {
   DndContext,
   DragOverlay,
@@ -18,66 +15,19 @@ import {
   DragEndEvent,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import { rectSortingStrategy, SortableContext } from "@dnd-kit/sortable";
-import SortableContainer from "../../../components/SortableContainer";
-import Item from "../../../components/Item";
+import SortableContainer from "./SortableContainer";
+import Item from "./Item";
 
-const fetchPokemon = async () => {
-  const index = Math.floor(Math.random() * 905 + 1);
-  const res = await fetch("https://pokeapi.co/api/v2/pokemon/" + index);
-  const result = await res.json();
-  return result;
-};
-fetchPokemon().then((pokemon) => {
-  console.log(`図鑑番号: ${pokemon["id"]}`);
-  console.log(`名前: ${pokemon["name"]}`);
-  console.log(`画像URL: ${pokemon["sprites"]["front_default"]}`);
-});
-
-interface IndexPageProps {
-  id: number;
-  name: string;
-  front_image: string;
-}
-
-const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
-  const [pokemonListMain, setPokemonListMain] = useState([
-    {
-      id: props.id,
-      name: props.name,
-      image: props.front_image,
-    },
-  ]);
-  const [pokemonListSub, setPokemonListSub] = useState([
-    {
-      id: 0,
-      name: "",
-      image: "",
-    },
-  ]);
+const Contaienr = () => {
+  // ドラッグ&ドロップでソート可能なリスト
   const [items, setItems] = useState<{
     [key: string]: string[];
   }>({
-    container1: [""],
-    container2: [""],
+    container1: ["A", "B", "C"],
+    container2: ["D", "E", "F"],
+    container3: ["G", "H", "I"],
+    container4: [],
   });
-
-  // ドラッグ&ドロップでソート可能なリスト
-  const [pokemonList, setFruits] = useState(["パンダ"]);
-  const [pokemonList02, setFruits02] = useState([""]);
-
-  const handleClick = async () => {
-    const pokemon = await fetchPokemon();
-    setPokemonListMain([
-      ...pokemonListMain,
-      {
-        id: pokemon["id"],
-        name: pokemon["name"],
-        image: pokemon["sprites"]["front_default"],
-      },
-    ]);
-    items.container1.push(pokemon["sprites"]["front_default"]);
-  };
 
   //DragOverlay用のid
   const [activeId, setActiveId] = useState<UniqueIdentifier>();
@@ -132,7 +82,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     }
 
     setItems((prev) => {
-      console.log("🚀prev", prev);
       // 移動元のコンテナの要素配列を取得
       const activeItems = prev[activeContainer];
       // 移動先のコンテナの要素配列を取得
@@ -207,73 +156,42 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     }
     setActiveId(undefined);
   };
+
   return (
-    <Layout title="Library">
-      <h1 className="ttl">Library</h1>
-      <div className="Library__body">
-        <h2 className="sttl">ポケモンアプリ</h2>
-        <button onClick={handleClick}>ポケモンを追加する</button>
-        <div className="Library__body_in">
-          {/* <ul className="pokemon__list">
-            {pokemonListMain.map((pokemon) => (
-              <li className="pokemon__list_item" key={pokemon.id}>
-                <div className="pokemon__list_txt">{pokemon.name}</div>
-                <div className="pokemon__list_img">
-                  <img src={pokemon.image} />
-                </div>
-              </li>
-            ))}
-          </ul> */}
-          <div className="pokemon__body">
-            <DndContext
-              sensors={sensors}
-              collisionDetection={closestCorners}
-              onDragStart={handleDragStart}
-              onDragOver={handleDragOver}
-              onDragEnd={handleDragEnd}
-            >
-              <SortableContainer
-                id="container1"
-                items={items.container1}
-                label="選抜メンバー"
-              />
-
-              <SortableContainer
-                id="container2"
-                items={items.container2}
-                label="控え"
-              />
-              <DragOverlay>
-                {activeId ? <Item id={activeId} /> : null}
-              </DragOverlay>
-            </DndContext>
-          </div>
-        </div>
-      </div>
-
-      <div>メモ：</div>
-      <div>
-        参考:
-        <Link
-          href="https://zenn.dev/t4ich1/articles/539615ca2d69be"
-          className=""
-        >
-          https://zenn.dev/t4ich1/articles/539615ca2d69be
-        </Link>
-      </div>
-    </Layout>
+    <div className="flex flex-row mx-auto">
+      <DndContext
+        sensors={sensors}
+        collisionDetection={closestCorners}
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+      >
+        {/* SortableContainer */}
+        {/* <SortableContainer
+          id="container1"
+          items={items.container1}
+          label="container1"
+        />
+        <SortableContainer
+          id="container2"
+          label="container2"
+          items={items.container2}
+        />
+        <SortableContainer
+          id="container3"
+          label="container3"
+          items={items.container3}
+        />
+        <SortableContainer
+          id="container4"
+          label="container4"
+          items={items.container4}
+        /> */}
+        {/* DragOverlay */}
+        <DragOverlay>{activeId ? <Item id={activeId} /> : null}</DragOverlay>
+      </DndContext>
+    </div>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const pokemon = await fetchPokemon();
-  return {
-    props: {
-      id: pokemon["id"],
-      name: pokemon["name"],
-      front_image: pokemon["sprites"]["front_default"],
-    },
-  };
-};
-
-export default IndexPage;
+export default Contaienr;
