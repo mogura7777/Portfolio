@@ -4,6 +4,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { ChangeThemeButton } from "./Atoms/ChangeThemeButton";
 import { BreadCrumb } from "./Molecules/BreadCrumb";
+import { Links } from "./Molecules/Links";
+import { SpMenu } from "./Molecules/SpMenu";
 import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
@@ -19,37 +21,7 @@ export default function Layout({ children, title = "" }: Props) {
         <nav className="bg-gray-800 nav">
           <div className="nav__body">
             <div className="nav__body_list">
-              <Link
-                href="/"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Home
-              </Link>
-              <Link
-                href="/blog"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Blog
-              </Link>
-
-              <Link
-                href="/library"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Library
-              </Link>
-              <Link
-                href="/work"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Work
-              </Link>
-              <Link
-                href="/contact"
-                className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
-              >
-                Contact
-              </Link>
+              <Links></Links>
             </div>
             <div className="nav__body_btn hover:bg-gray-700 px-3 py-2 rounded">
               <ChangeThemeButton></ChangeThemeButton>
@@ -57,6 +29,7 @@ export default function Layout({ children, title = "" }: Props) {
           </div>
         </nav>
       </header>
+      <SpMenu></SpMenu>
       <div className="body__box">
         {/* <aside className="body__side">
           <nav>

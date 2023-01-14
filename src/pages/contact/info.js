@@ -130,7 +130,7 @@ export default function Info() {
               <textarea
                 type="text"
                 onChange={onChangeCmt}
-                className="form-control"
+                className="Contact__text_box"
               ></textarea>
             </label>
           </div>

@@ -21,7 +21,7 @@ export const BreadCrumb: NextPage = () => {
           <Link href={"/"}>Home</Link>
         </li>
         {paths.map((x, i) => (
-          <li>
+          <li key={i}>
             <Link href={roots[i + 1]} key={i}>
               {x}
             </Link>
