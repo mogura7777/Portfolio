@@ -3,6 +3,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { ChangeThemeButton } from "./Atoms/ChangeThemeButton";
+import { BreadCrumb } from "./Molecules/BreadCrumb";
 import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
@@ -70,7 +71,11 @@ export default function Layout({ children, title = "" }: Props) {
             </ul>
           </nav>
         </aside> */}
-        <main className="body__main">{children}</main>
+        <main className="body__main">
+          {" "}
+          <BreadCrumb></BreadCrumb>
+          {children}
+        </main>
       </div>
       <footer className="footer">
         <div className="footer__sns">
