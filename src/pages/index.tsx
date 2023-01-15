@@ -1,14 +1,26 @@
 /** @format */
 
 import type { NextPage } from "next";
+import { useState } from "react";
 import Layout from "../components/Layout";
 import MyImage from "../components/Image";
+import Carousel from "../components/Molecules/Carousel";
 import dynamic from "next/dynamic";
 const ScrollRevealContainer = dynamic(
   import("../components/ScrollRevealContainer"),
   { ssr: false }
 );
+// カルーセルにする画像のソースをリストにします
+
 const Home: NextPage = () => {
+  const [linkList, setLinkList] = useState([
+    "./img/006.jpg",
+    "./img/002.jpg",
+    "./img/003.jpg",
+    "./img/004.jpg",
+    "./img/001.png",
+    "./img/005.jpg",
+  ]);
   return (
     <Layout title="Home">
       <div className="About__body">
@@ -46,21 +58,28 @@ const Home: NextPage = () => {
               <p className="timeline-date">幼少期</p>
               <div className="timeline-content">
                 <h3>兵庫県の自然に囲まれて育ちました。</h3>
-                <p>イモリとアマガエルを捕まえる日々。</p>
+                <p>昆虫に興味を持ち、山や川に探索する日々。</p>
               </div>
             </li>
             <li>
               <p className="timeline-date">小学生時代</p>
               <div className="timeline-content">
-                <h3>兄の影響で野球に打ち込む。</h3>
-                <p>途中ジャッキー・チェンに憧れ体操を始める。</p>
+                <h3>兄の影響で野球チームに所属する。</h3>
+                <p>途中、ジャッキー・チェンに憧れ体操教室に通い始める。</p>
               </div>
             </li>
             <li>
               <p className="timeline-date">中学生時代</p>
               <div className="timeline-content">
-                <h3>スラムダンクの影響でバスケ部に入部の予定</h3>
-                <p>中学校にバスケ部がなく引き続き野球に打ち込む。</p>
+                <p>
+                  何も考えずに野球に入部。
+                  <br />
+                  体育大学上がりの鬼監督に精神と肉体を鍛えられる。
+                  <br />
+                  引退試合後は、陸上部が部員不足のため、助っ人として入部。
+                  <br />
+                  夏休みは走り込みの日々。毎日、山道を10キロほど走ってました。
+                </p>
               </div>
             </li>
             <li>
@@ -69,28 +88,38 @@ const Home: NextPage = () => {
                 <h3>友人の誘いでバドミントンに入部。</h3>
                 <p>
                   中学校の野球の猛練習の経験が活かされ、団体メンバーに選ばれて県大会に出場。
+                  <br />
+                  この頃、影響を受けた美術部の先生の影響で美大を目指すことに。
+                  <br />
+                  高校2年の終わり頃に画塾に通い出す。
                 </p>
               </div>
             </li>
             <li>
               <p className="timeline-date">大学生時代</p>
               <div className="timeline-content">
-                <h3>
-                  美術大学でイラスト科を専攻。主にアナログのイラストを描いていました。この頃、岡村隆史さんに憧れてブレイクダンスをはじめる。卒業目前にしてぎりぎりウィンドミルを習得。
-                </h3>
                 <p>
-                  大学の講義終わりは、生活費を稼ぐためほぼバイトの日々。
+                  美術大学でイラスト科を専攻。主にアナログのイラストを描いていました。
                   <br />
-                  4年間、扶養枠内をギリギリキープする。
+                  大学の講義終わりは、生活費を稼ぐためほぼバイトの日々。扶養枠内をギリギリをせめる。
+                  <br />
+                  ブレイクダンスをはじめる。卒業目前にしてぎりぎりウィンドミルを習得。
+                </p>
+              </div>
+            </li>
+            <li>
+              <p className="timeline-date">職業訓練校</p>
+              <div className="timeline-content">
+                <p>
+                  ホームページの基礎を学び、
+                  その後、大阪の高度総合事務センター事業でWeb制作に携わる。
                 </p>
               </div>
             </li>
             <li>
               <p className="timeline-date">社会人</p>
               <div className="timeline-content">
-                <h3>
-                  独学でホームページを学んだのちに、大阪のWEB制作会社に就職。
-                </h3>
+                <h3>大阪のWEB制作会社に就職。</h3>
                 <p>
                   コーディングやCMSの構築、アクセス解析などの業務を経験しました。
                   <br />
@@ -101,7 +130,7 @@ const Home: NextPage = () => {
               <p className="timeline-date">現在</p>
               <div className="timeline-content">
                 <h3>自社開発アプリのフロントエンド/UI設計を担当しています。</h3>
-                <p>随時更新...</p>
+                <p className="txt02">随時更新...</p>
               </div>
             </li>
           </ul>
@@ -150,7 +179,8 @@ const Home: NextPage = () => {
 
       <h1 className="ttl">Illustration</h1>
       <ScrollRevealContainer move="left">
-        <ul className="Illust_list">
+        <Carousel linkList={linkList}></Carousel>
+        {/* <ul className="Illust_list">
           <li className="Illust_list_item">
             <MyImage fname="../img/001.png" size={300} />
           </li>
@@ -169,7 +199,7 @@ const Home: NextPage = () => {
           <li className="Illust_list_item">
             <MyImage fname="../img/006.jpg" size={300} />
           </li>
-        </ul>
+        </ul> */}
       </ScrollRevealContainer>
     </Layout>
   );

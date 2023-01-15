@@ -17,7 +17,6 @@ export const getStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async (context: Context) => {
   const id = String(context.params.id);
   const data = await client.get({ endpoint: "blog", contentId: id });
@@ -51,7 +50,7 @@ export default function BlogId({ blog }: Params) {
         }}
       />
       <Link href="/blog">
-        <div className="flex cursor-pointer mt-12">
+        <div className="Blog__nav">
           <svg
             className="w-6 h-6 mr-3"
             fill="currentColor"

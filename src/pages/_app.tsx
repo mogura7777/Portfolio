@@ -1,6 +1,7 @@
 /** @format */
 
 import "styles/globals.scss";
+import "swiper/css/bundle";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import NextNprogress from "nextjs-progressbar";

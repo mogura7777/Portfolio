@@ -135,6 +135,9 @@ a {
 .txt {
   margin: 0 0 20px;
 }
+.txt02 {
+  margin: 40px 0;
+}
 .discretion {
   background: #eee;
   margin: 0 0 40px;
@@ -174,7 +177,23 @@ a {
     margin: 0 10px 0 0;
   }
 }
-
+.slide-img {
+  display: block;
+  width: 100%;
+  // height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 260px;
+}
+.swiper {
+  .swiper-pagination-bullet-active {
+    background: #000;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: rgb(108, 91, 7);
+  }
+}
 /* ヘッダー */
 .sp_menu {
   position: fixed;
@@ -446,6 +465,11 @@ a {
   .Blog__header_ttl {
     font-size: 30px;
   }
+}
+.Blog__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Pagination {
   display: flex;

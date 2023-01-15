@@ -8,7 +8,7 @@ export default function Library() {
     <Layout title="Library">
       <h1 className="ttl">Library</h1>
       <div>
-        <p className="txt">随時、実装したアプリを掲載していきます。</p>
+        <p className="txt">実装したアプリを掲載していきます。</p>
       </div>
       <ul className="Library__list">
         <li className="Library__list_itme">
