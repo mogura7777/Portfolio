@@ -5,6 +5,6 @@
 import { createClient } from "microcms-js-sdk";
 
 export const client = createClient({
-  serviceDomain: process.env.SERVICE_DOMAIN || "",
-  apiKey: process.env.API_KEY || "",
+  serviceDomain: process.env.SERVICE_DOMAIN || "kawamata",
+  apiKey: process.env.API_KEY || "4J3WzbXypCvCVWrkrnw3OfTfE3wZQKYQowLI",
 });
