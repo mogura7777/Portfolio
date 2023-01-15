@@ -5,12 +5,11 @@ import { NextPage } from "next";
 import { Links } from "../Molecules/Links";
 export const SpMenu: NextPage = () => {
   const [active, setActive] = useState(false);
-
   const classToggle = () => {
     setActive(!active);
   };
   return (
-    <>
+    <div>
       <button
         className={
           active
@@ -36,6 +35,6 @@ export const SpMenu: NextPage = () => {
           </nav>
         </div>
       </div>
-    </>
+    </div>
   );
 };

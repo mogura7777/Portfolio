@@ -83,7 +83,7 @@ export default function Layout({ children, title = "" }: Props) {
           </a>
         </div>
         <small className="flex justify-center items-center">
-          © KAWAMATA All Rights Reserved.
+          © Mogura All Rights Reserved.
         </small>
       </footer>
     </div>

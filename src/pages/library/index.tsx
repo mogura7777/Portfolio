@@ -7,7 +7,9 @@ export default function Library() {
   return (
     <Layout title="Library">
       <h1 className="ttl">Library</h1>
-      <p className="txt">実装したアプリを掲載していきます。</p>
+      <div>
+        <p className="txt">随時、実装したアプリを掲載していきます。</p>
+      </div>
       <ul className="Library__list">
         <li className="Library__list_itme">
           <Link href="./library/pokemon" className="">

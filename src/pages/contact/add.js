@@ -4,7 +4,7 @@ import firebase from "firebase";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
-import "../../components/fire";
+import "../../libs/firebase/client";
 
 const db = firebase.firestore();
 const auth = firebase.auth();

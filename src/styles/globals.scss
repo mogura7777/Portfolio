@@ -8,7 +8,6 @@ body {
   font-family: Helvetica, "游ゴシック", "Yu Gothic", YuGothic, HiraKakuProN-W3,
     "メイリオ", Meiryo, sans-serif;
   font-size: 16px;
-  // color: #333;
   line-height: 1.9;
   text-align: left;
   -webkit-text-size-adjust: 100%;
@@ -53,17 +52,17 @@ a {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    white-space: nowrap; /*改行しない*/
-    overflow-x: auto; /*はみ出た部分を隠す*/
-    -webkit-overflow-scrolling: touch; /*ぬるっとスクロールさせる*/
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     & > li {
       color: #444;
     }
   }
   .breadcrumb__list li:not(:last-of-type)::after {
     content: "›";
-    margin: 0 0.6em; /* 記号の左右の余白 */
-    color: #777; /* 記号の色 */
+    margin: 0 10px;
+    color: #777;
   }
 }
 
@@ -71,7 +70,7 @@ a {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px 20px 20px;
-  @media screen and (max-width: 480px) {
+  @media (width <= 480px) {
     display: block;
   }
 }
@@ -108,7 +107,6 @@ a {
   .footer__sns {
     display: flex;
     justify-content: center;
-    // align-items: center;
     margin: 0 0 10px;
   }
 }
@@ -129,8 +127,13 @@ a {
   font-family: "Lato", sans-serif;
   font-size: 20px;
 }
+.list {
+  list-style: disc;
+  list-style-position: inside;
+  margin: 0 0 0 10px;
+}
 .txt {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 .discretion {
   background: #eee;
@@ -240,8 +243,7 @@ a {
   border-color: transparent;
   z-index: 9999;
 }
-
-@media screen and (min-width: 960px) {
+@media (width >= 480px) {
   .hamburger__btn {
     display: none;
   }
@@ -283,16 +285,31 @@ a {
 }
 
 // HOME
-.Home__body {
+.About__body {
+  background: rgb(249, 248, 248);
+  border: 4px solid #eee;
+  padding: 40px 40px;
+  margin: 40px 0 70px;
+  .About__body_sttl {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .About__body_txt {
+    color: #333;
+  }
+}
+.Profile__body {
   display: flex;
   margin: 0 0 70px;
 }
 @media (width <= 480px) {
-  .Home__body {
+  .Profile__body {
     display: block;
   }
 }
-.Home__img {
+.Profile__img {
   max-width: 140px;
   margin-right: 20px;
   img {
@@ -300,20 +317,16 @@ a {
     border-radius: 50%;
   }
 }
-@media screen and (max-width: 480px) {
-  .Home__img {
+@media (width <= 480px) {
+  .Profile__img {
     max-width: 50%;
     margin: 0 auto 20px;
   }
 }
 .History__body {
   margin: 0 0 70px;
-}
-.Skill__body {
-  margin: 0 0 70px;
-}
-.Skill__box {
-  margin: 0 0 20px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .History__list {
   margin: 0 0 0 20px;
@@ -323,6 +336,48 @@ a {
     margin: 0 0 4px;
   }
 }
+.timeline {
+  list-style: none;
+}
+.timeline > li {
+  margin-bottom: 60px;
+}
+@media (min-width: 640px) {
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+  .timeline-date {
+    width: 110px;
+    float: left;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .timeline-content {
+    width: 75%;
+    float: left;
+    border-left: 3px #faebd1 solid;
+    padding: 0 0 20px 30px;
+  }
+  .timeline-content:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background: #fba524;
+    position: absolute;
+    left: 106px;
+    top: 24px;
+    border-radius: 100%;
+  }
+}
+.Skill__body {
+  margin: 0 0 70px;
+}
+.Skill__box {
+  margin: 0 0 20px;
+}
+
 .Illust_list {
   display: flex;
   flex-wrap: wrap;
@@ -346,7 +401,7 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 480px) {
+@media (width <= 480px) {
   .Blog__sttl {
     width: 100%;
   }
@@ -452,7 +507,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 20px;
-  @media screen and (max-width: 480px) {
+  @media (width <= 480px) {
     display: block;
   }
   .Library__list_itme {
@@ -461,7 +516,7 @@ a {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.16);
 
     color: #212121;
-    @media screen and (max-width: 480px) {
+    @media (width <= 480px) {
       display: block;
       margin: 0 0 20px;
     }
@@ -501,8 +556,6 @@ a {
     margin: 0 10px 0 0;
     padding: 4px;
     min-width: 24%;
-    // border-radius: 4px;
-    // background-color: rgba(0, 0, 0, 0.02);
   }
   .TodoList__item_btn {
     padding: 4px 10px;
@@ -518,6 +571,11 @@ a {
   .pokemon__body_in {
     padding: 20px;
     background-color: #eee;
+  }
+  @media (width <= 480px) {
+    .pokemon__body_in {
+      margin: 0 -20px;
+    }
   }
   .pokemon__btn_wrap {
     display: flex;

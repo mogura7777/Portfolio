@@ -15,19 +15,23 @@ export const BreadCrumb: NextPage = () => {
   for (let i = 0; i < paths.length; i++) roots.push(roots[i] + "/" + paths[i]);
 
   return (
-    <div className="breadcrumb">
-      <ol className="breadcrumb__list">
-        <li>
-          <Link href={"/"}>Home</Link>
-        </li>
-        {paths.map((x, i) => (
-          <li key={i}>
-            <Link href={roots[i + 1]} key={i}>
-              {x}
-            </Link>
-          </li>
-        ))}
-      </ol>
-    </div>
+    <>
+      {router.asPath.length === 1 ? null : (
+        <div className="breadcrumb">
+          <ol className="breadcrumb__list">
+            <li>
+              <Link href={"/"}>Home</Link>
+            </li>
+            {paths.map((x, i) => (
+              <li key={i}>
+                <Link href={roots[i + 1]} key={i}>
+                  {x}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
+    </>
   );
 };

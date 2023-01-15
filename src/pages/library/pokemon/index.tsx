@@ -21,7 +21,11 @@ import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import SortableContainer from "../../../components/dndKit/SortableContainer";
 import Item from "../../../components/dndKit/Item";
 import Discretion from "../../../components/Molecules/Discretion";
-
+interface IndexPageProps {
+  id: number;
+  name: string;
+  front_image: string;
+}
 const fetchPokemon = async () => {
   const index = Math.floor(Math.random() * 905 + 1);
   const res = await fetch("https://pokeapi.co/api/v2/pokemon/" + index);
@@ -33,12 +37,6 @@ fetchPokemon().then((pokemon) => {
   // console.log(`名前: ${pokemon["name"]}`);
   // console.log(`画像URL: ${pokemon["sprites"]["front_default"]}`);
 });
-
-interface IndexPageProps {
-  id: number;
-  name: string;
-  front_image: string;
-}
 
 const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
   const [linkList, setLinkList] = useState([
