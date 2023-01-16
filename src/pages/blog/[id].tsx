@@ -7,9 +7,14 @@ import { formatDate } from "../../libs/util";
 import type { Blog, Tag } from "types/blog";
 type Params = {
   blog: Blog;
+  prev: any;
+  next: any;
 };
 type Context = {
   params: Blog;
+};
+type ListApi = {
+  contents: Blog[];
 };
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: "blog" });
@@ -20,15 +25,35 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: Context) => {
   const id = String(context.params.id);
   const data = await client.get({ endpoint: "blog", contentId: id });
+  const prev = await client.get<ListApi>({
+    endpoint: "blog",
+    queries: {
+      limit: 1,
+      orders: "-publishedAt",
+      filters: `publishedAt[less_than]${data.publishedAt}`,
+    },
+  });
+  const next = await client.get<ListApi>({
+    endpoint: "blog",
+    queries: {
+      limit: 1,
+      orders: "publishedAt",
+      filters: `publishedAt[greater_than]${data.publishedAt}`,
+    },
+  });
 
+  const prevEntry = prev.contents[0] || {};
+  const nextEntry = next.contents[0] || {};
   return {
     props: {
       blog: data,
+      prev: prevEntry,
+      next: nextEntry,
     },
   };
 };
 
-export default function BlogId({ blog }: Params) {
+export default function BlogId({ blog, prev, next }: Params) {
   return (
     <Layout title={blog.title}>
       <div className="Blog__header">
@@ -42,31 +67,35 @@ export default function BlogId({ blog }: Params) {
         </div>
         <h1 className="Blog__header_ttl">{blog.title}</h1>
       </div>
-
       <div
         className="Blog__body"
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
       />
-      <Link href="/blog">
-        <div className="Blog__nav">
-          <svg
-            className="w-6 h-6 mr-3"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
+      <div className="Blog__nav">
+        {prev.id ? (
+          <div className="Blog__nav_link">
+            <Link className="arrow_l" href={prev.id}>
+              {prev.title}
+            </Link>
+          </div>
+        ) : null}
 
-          <span>一覧へ戻る</span>
+        <div className="Blog__nav_link">
+          <Link href="/blog">
+            <span>一覧へ戻る</span>
+          </Link>
         </div>
-      </Link>
+
+        {next.id ? (
+          <div className="Blog__nav_link">
+            <Link className="arrow_r" href={next.id}>
+              {next.title}
+            </Link>
+          </div>
+        ) : null}
+      </div>
     </Layout>
   );
 }
