@@ -22,11 +22,11 @@ const Home: NextPage = () => {
   return (
     <Layout title="Home">
       <div className="About__body">
-        <h1 className="About__body_sttl">サイトにつきまして</h1>
+        <h1 className="About__body_sttl">ポートフォリオサイトにつきまして</h1>
         <p className="About__body_txt">
           Next.js、TypeScriptを使用して作成しています。
           <br />
-          ポートフォリオサイトして制作していましたが、今後は技術ブログとしても活用する予定です。
+          今後は、技術ブログとして活用する予定です。
           <br />
           ※誤字やリファクタリングなどの報告、Twitterより歓迎中です。
         </p>

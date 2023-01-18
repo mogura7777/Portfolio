@@ -217,6 +217,7 @@ $dark-color: rgb(72, 79, 85);
 }
 .Blog__nav_link {
   display: flex;
+  flex: 1;
   align-items: center;
   a {
     transition: all 0.5s ease 0s;
@@ -224,6 +225,12 @@ $dark-color: rgb(72, 79, 85);
   a:hover {
     color: rgb(0, 153, 255);
     font-weight: bold;
+  }
+  &.Blog__nav_link_center {
+    justify-content: center;
+  }
+  &.Blog__nav_link_right {
+    justify-content: right;
   }
 }
 .arrow_l {

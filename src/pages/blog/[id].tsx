@@ -74,27 +74,25 @@ export default function BlogId({ blog, prev, next }: Params) {
         }}
       />
       <div className="Blog__nav">
-        {prev.id ? (
-          <div className="Blog__nav_link">
+        <div className="Blog__nav_link Blog__nav_link_left">
+          {prev.id ? (
             <Link className="arrow_l" href={prev.id}>
               {prev.title}
             </Link>
-          </div>
-        ) : null}
-
-        <div className="Blog__nav_link">
+          ) : null}
+        </div>
+        <div className="Blog__nav_link Blog__nav_link_center">
           <Link href="/blog">
             <span>一覧へ戻る</span>
           </Link>
         </div>
-
-        {next.id ? (
-          <div className="Blog__nav_link">
+        <div className="Blog__nav_link Blog__nav_link_right">
+          {next.id ? (
             <Link className="arrow_r" href={next.id}>
               {next.title}
             </Link>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
     </Layout>
   );
