@@ -15,7 +15,7 @@ const Discretion = (props: Props) => {
       </div>
       <div className="discretion__box">
         <dt className="discretion__ttl">参考:</dt>
-        <dd className="discretion__txt">
+        <dd className="discretion__txt discretion__link_wrap">
           {props.linkList.map((id: string, index) => (
             <Link
               key={id}
