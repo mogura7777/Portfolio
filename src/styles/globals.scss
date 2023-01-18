@@ -26,19 +26,42 @@ a {
     color-scheme: dark;
   }
 }
-
+$dark-color: rgb(72, 79, 85);
 /* ライトテーマで適用 */
 .dark {
   .tag {
     & li {
-      background: #000;
+      background: $dark-color;
     }
+  }
+  .About__body {
+    background-color: $dark-color;
   }
   .Pagination {
     & li {
       cursor: pointer;
-      color: #000;
+      color: $dark-color;
     }
+  }
+  .discretion {
+    background-color: $dark-color;
+  }
+  .pokemon__body {
+    .pokemon__body_in {
+      background-color: $dark-color;
+    }
+  }
+  .Blog__body {
+    span {
+      color: #fff !important;
+    }
+  }
+  .btn {
+    background-color: $dark-color;
+  }
+  .form__btn,
+  .fas {
+    color: $dark-color;
   }
 }
 
@@ -56,7 +79,7 @@ a {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     & > li {
-      color: #444;
+      // color: #444;
     }
   }
   .breadcrumb__list li:not(:last-of-type)::after {
@@ -83,6 +106,7 @@ a {
 
 // レイアウト
 .nav {
+  background: rgb(23, 29, 31);
   padding: 10px 20px;
   .nav__body {
     display: flex;
@@ -143,12 +167,14 @@ a {
   margin: 0 0 40px;
   padding: 20px;
   .discretion__ttl {
-    margin: 0 0 4px;
+    min-width: 50px;
+    margin: 0 0 4px 0;
   }
   .discretion__box {
-    background: #fcfcfc;
-    margin: 0 0 20px;
-    padding: 10px 20px;
+    display: flex;
+    // background: #fcfcfc;
+    // margin: 0 0 20px;
+    // padding: 10px 20px;
   }
   .discretion__link {
     display: block;
@@ -370,13 +396,9 @@ a {
   padding: 40px 40px;
   margin: 40px 0 70px;
   .About__body_sttl {
-    color: #333;
     font-size: 20px;
     font-weight: 600;
     margin: 0 0 10px;
-  }
-  .About__body_txt {
-    color: #333;
   }
 }
 .Profile__body {

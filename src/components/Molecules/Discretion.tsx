@@ -9,16 +9,25 @@ type Props = {
 const Discretion = (props: Props) => {
   return (
     <dl className="discretion">
-      <dt className="discretion__ttl">説明：</dt>
-      <dd className="discretion__box">{props.text}</dd>
-      <dt className="discretion__ttl">参考:</dt>
-      <dd className="discretion__box">
-        {props.linkList.map((id: string, index) => (
-          <Link key={id} target="_blank" className="discretion__link" href={id}>
-            {id}
-          </Link>
-        ))}
-      </dd>
+      <div className="discretion__box">
+        <dt className="discretion__ttl">説明：</dt>
+        <dd className="discretion__txt">{props.text}</dd>
+      </div>
+      <div className="discretion__box">
+        <dt className="discretion__ttl">参考:</dt>
+        <dd className="discretion__txt">
+          {props.linkList.map((id: string, index) => (
+            <Link
+              key={id}
+              target="_blank"
+              className="discretion__link"
+              href={id}
+            >
+              {id}
+            </Link>
+          ))}
+        </dd>
+      </div>
     </dl>
   );
 };

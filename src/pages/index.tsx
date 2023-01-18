@@ -10,8 +10,6 @@ const ScrollRevealContainer = dynamic(
   import("../components/ScrollRevealContainer"),
   { ssr: false }
 );
-// カルーセルにする画像のソースをリストにします
-
 const Home: NextPage = () => {
   const [linkList, setLinkList] = useState([
     "./img/006.jpg",
@@ -180,26 +178,6 @@ const Home: NextPage = () => {
       <h1 className="ttl">Illustration</h1>
       <ScrollRevealContainer move="left">
         <Carousel linkList={linkList}></Carousel>
-        {/* <ul className="Illust_list">
-          <li className="Illust_list_item">
-            <MyImage fname="../img/001.png" size={300} />
-          </li>
-          <li className="Illust_list_item">
-            <MyImage fname="../img/002.jpg" size={300} />
-          </li>
-          <li className="Illust_list_item">
-            <MyImage fname="../img/003.jpg" size={300} />
-          </li>
-          <li className="Illust_list_item">
-            <MyImage fname="../img/004.jpg" size={300} />
-          </li>
-          <li className="Illust_list_item">
-            <MyImage fname="../img/005.jpg" size={300} />
-          </li>
-          <li className="Illust_list_item">
-            <MyImage fname="../img/006.jpg" size={300} />
-          </li>
-        </ul> */}
       </ScrollRevealContainer>
     </Layout>
   );
