@@ -170,6 +170,11 @@ $dark-color: rgb(72, 79, 85);
     min-width: 50px;
     margin: 0 0 4px 0;
   }
+  .discretion__txt {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .discretion__box {
     display: flex;
     // background: #fcfcfc;
@@ -809,6 +814,7 @@ $dark-color: rgb(72, 79, 85);
       clear: both;
       .pokemon__list_item {
         margin: 1px;
+        touch-action: none;
         padding: 10px;
       }
     }
