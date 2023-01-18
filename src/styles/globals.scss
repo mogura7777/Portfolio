@@ -182,9 +182,6 @@ $dark-color: rgb(72, 79, 85);
   }
   .discretion__box {
     display: flex;
-    // background: #fcfcfc;
-    // margin: 0 0 20px;
-    // padding: 10px 20px;
   }
   .discretion__link {
     display: block;
@@ -288,11 +285,11 @@ $dark-color: rgb(72, 79, 85);
 }
 .swiper {
   .swiper-pagination-bullet-active {
-    background: #000;
+    background: rgb(68, 68, 68);
   }
   .swiper-button-next,
   .swiper-button-prev {
-    color: rgb(108, 91, 7);
+    color: rgb(68, 68, 68);
   }
 }
 /* ヘッダー */
