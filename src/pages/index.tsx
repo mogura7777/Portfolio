@@ -2,14 +2,15 @@
 
 import type { NextPage } from "next";
 import { useState } from "react";
-import Layout from "../components/Layout";
-import MyImage from "../components/Image";
-import Carousel from "../components/Molecules/Carousel";
+import { Layout } from "../components/Layout";
+import { MyImage } from "../components/Image";
+import { Carousel } from "../components/Molecules/Carousel";
 import dynamic from "next/dynamic";
 const ScrollRevealContainer = dynamic(
-  import("../components/ScrollRevealContainer"),
+  () => import("../components/ScrollRevealContainer"),
   { ssr: false }
 );
+
 const Home: NextPage = () => {
   const [linkList, setLinkList] = useState([
     "./img/006.jpg",

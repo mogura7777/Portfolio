@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import { GetServerSideProps, NextPage } from "next";
-import Link from "next/link";
-import Layout from "../../../components/Layout";
+import { Layout } from "../../../components/Layout";
 import {
   DndContext,
   DragOverlay,
@@ -18,9 +17,9 @@ import {
   DragEndEvent,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import SortableContainer from "../../../components/dndKit/SortableContainer";
-import Item from "../../../components/dndKit/Item";
-import Discretion from "../../../components/Molecules/Discretion";
+import { SortableContainer } from "../../../components/dndKit/SortableContainer";
+import { Item } from "../../../components/dndKit/Item";
+import { Discretion } from "../../../components/Molecules/Discretion";
 interface IndexPageProps {
   id: number;
   name: string;

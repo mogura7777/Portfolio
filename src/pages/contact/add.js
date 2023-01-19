@@ -3,7 +3,7 @@
 import firebase from "firebase";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Layout from "../../components/Layout";
+import { Layout } from "../../components/Layout";
 import "../../libs/firebase/client";
 
 const db = firebase.firestore();

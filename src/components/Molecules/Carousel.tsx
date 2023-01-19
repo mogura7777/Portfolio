@@ -1,7 +1,7 @@
 /** @format */
 
 import Image from "next/image";
-import MyImage from "components/Image";
+import { MyImage } from "components/Image";
 import { Swiper, SwiperSlide } from "swiper/react"; //カルーセル用のタグをインポート
 import SwiperCore, { Pagination, Navigation } from "swiper"; //使いたい機能をインポート
 
@@ -11,7 +11,7 @@ type Props = {
   linkList: string[];
 };
 
-const Carousel = (props: Props) => {
+export const Carousel = (props: Props) => {
   return (
     <Swiper
       slidesPerView={1}
@@ -37,5 +37,3 @@ const Carousel = (props: Props) => {
     </Swiper>
   );
 };
-
-export default Carousel;

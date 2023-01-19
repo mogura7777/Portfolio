@@ -3,9 +3,9 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { UniqueIdentifier } from "@dnd-kit/core";
-import MyImage from "../Image";
+import { MyImage } from "../Image";
 
-const SortableItem = ({ id }: { id: UniqueIdentifier }) => {
+export const SortableItem = ({ id }: { id: UniqueIdentifier }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
 
@@ -20,5 +20,3 @@ const SortableItem = ({ id }: { id: UniqueIdentifier }) => {
     </div>
   );
 };
-
-export default SortableItem;

@@ -5,8 +5,6 @@ import { ReactNode } from "react";
 type Props = {
   children: ReactNode;
 };
-const TodoList = (props: Props) => {
+export const TodoList = (props: Props) => {
   return <ul className="TodoList">{props.children}</ul>;
 };
-
-export default TodoList;

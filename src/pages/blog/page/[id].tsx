@@ -4,7 +4,7 @@ import Link from "next/link";
 import { formatDate } from "../../../libs/util";
 import { Pagination } from "../../../components/Molecules/Pagination";
 import { client } from "../../../libs/client";
-import Layout from "../../../components/Layout";
+import { Layout } from "../../../components/Layout";
 type Params = {
   params: Blog;
 };

@@ -7,9 +7,9 @@ import {
   horizontalListSortingStrategy,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
-import SortableItem from "./SortableItem";
+import { SortableItem } from "./SortableItem";
 
-const SortableContainer = ({
+export const SortableContainer = ({
   id,
   items,
   label,
@@ -39,5 +39,3 @@ const SortableContainer = ({
     </div>
   );
 };
-
-export default SortableContainer;

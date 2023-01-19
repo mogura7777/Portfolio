@@ -1,7 +1,7 @@
 /** @format */
 
 import { useState, useEffect } from "react";
-import Layout from "../../components/Layout";
+import { Layout } from "../../components/Layout";
 import firebase from "firebase";
 import { useRouter } from "next/router";
 import "../../libs/firebase/client";

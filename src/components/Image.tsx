@@ -5,7 +5,7 @@ type Props = {
   fulname?: string;
   size?: number;
 };
-export default function MyImage(props: Props) {
+export const MyImage = (props: Props) => {
   let fname = "./" + props.fname;
   let fulname = props.fulname;
   let className = props.className;
@@ -17,4 +17,4 @@ export default function MyImage(props: Props) {
       src={props.fname ? fname : fulname}
     />
   );
-}
+};

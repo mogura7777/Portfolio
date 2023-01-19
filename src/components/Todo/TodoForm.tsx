@@ -8,7 +8,7 @@ type Props = {
   reference: string;
   isEditing: string;
 };
-const TodoForm = (props: Props) => {
+export const TodoForm = (props: Props) => {
   return (
     <div className="TodoForm">
       <form className="TodoForm__box" onSubmit={props.onSubmit}>
@@ -33,5 +33,3 @@ const TodoForm = (props: Props) => {
     </div>
   );
 };
-
-export default TodoForm;

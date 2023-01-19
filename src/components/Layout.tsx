@@ -11,7 +11,8 @@ type Props = {
   children: ReactNode;
   title: string;
 };
-export default function Layout({ children, title = "" }: Props) {
+
+export const Layout = ({ children, title = "" }: Props) => {
   return (
     <div className="body">
       <Head>
@@ -88,4 +89,4 @@ export default function Layout({ children, title = "" }: Props) {
       </footer>
     </div>
   );
-}
+};

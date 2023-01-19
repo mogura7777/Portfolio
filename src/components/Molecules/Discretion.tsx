@@ -6,7 +6,7 @@ type Props = {
   text?: string | number;
   linkList: string[];
 };
-const Discretion = (props: Props) => {
+export const Discretion = (props: Props) => {
   return (
     <dl className="discretion">
       <div className="discretion__box">
@@ -31,5 +31,3 @@ const Discretion = (props: Props) => {
     </dl>
   );
 };
-
-export default Discretion;

@@ -3,10 +3,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-import Layout from "../../../components/Layout";
-import TodoForm from "../../../components/Todo/TodoForm";
-import TodoList from "../../../components/Todo/TodoList";
-import Discretion from "../../../components/Molecules/Discretion";
+import { Layout } from "../../../components/Layout";
+import { TodoForm } from "../../../components/Todo/TodoForm";
+import { TodoList } from "../../../components/Todo/TodoList";
+import { Discretion } from "../../../components/Molecules/Discretion";
 const TodoApp = () => {
   const initialState = () => JSON.parse(localStorage.getItem("Tasks")) || [];
   const [tasks, setTasks] = useState(initialState);

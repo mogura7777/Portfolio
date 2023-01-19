@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Blog, Tag } from "types/blog";
 import { client } from "../../libs/client";
 import { formatDate } from "../../libs/util";
-import Layout from "../../components/Layout";
+import { Layout } from "../../components/Layout";
 import { Pagination } from "../../components/Molecules/Pagination";
 type Props = {
   blogs: Blog[];
