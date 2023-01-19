@@ -1,7 +1,7 @@
 /** @format */
 
-import { Layout } from "../../components/Layout";
-import { MyImage } from "../../components/Image";
+import { Layout } from "src/components/Layout";
+import { MyImage } from "src/components/Image";
 import Link from "next/link";
 export default function Library() {
   return (

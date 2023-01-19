@@ -1,10 +1,10 @@
 /** @format */
 
 import Link from "next/link";
-import { Layout } from "../../components/Layout";
-import { client } from "../../libs/client";
-import { formatDate } from "../../libs/util";
-import type { Blog, Tag } from "types/blog";
+import { Layout } from "src/components/Layout";
+import { client } from "src/libs/client";
+import { formatDate } from "src/libs/util";
+import type { Blog, Tag } from "src/types/blog";
 type Params = {
   blog: Blog;
   prev: any;

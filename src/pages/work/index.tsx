@@ -1,7 +1,7 @@
 /** @format */
 
-import { Layout } from "../../components/Layout";
-import { Nopage } from "../../components/Nopage";
+import { Layout } from "src/components/Layout";
+import { Nopage } from "src/components/Nopage";
 
 export default function Contact() {
   return (

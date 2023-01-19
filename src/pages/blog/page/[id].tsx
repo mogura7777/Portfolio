@@ -1,10 +1,10 @@
 /** @format */
-import type { Blog, Tag } from "types/blog";
+import type { Blog, Tag } from "src/types/blog";
 import Link from "next/link";
-import { formatDate } from "../../../libs/util";
-import { Pagination } from "../../../components/Molecules/Pagination";
-import { client } from "../../../libs/client";
-import { Layout } from "../../../components/Layout";
+import { formatDate } from "src/libs/util";
+import { Pagination } from "src/components/Molecules/Pagination";
+import { client } from "src/libs/client";
+import { Layout } from "src/components/Layout";
 type Params = {
   params: Blog;
 };

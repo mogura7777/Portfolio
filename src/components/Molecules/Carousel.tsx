@@ -1,7 +1,7 @@
 /** @format */
 
 import Image from "next/image";
-import { MyImage } from "components/Image";
+import { MyImage } from "src/components/Image";
 import { Swiper, SwiperSlide } from "swiper/react"; //カルーセル用のタグをインポート
 import SwiperCore, { Pagination, Navigation } from "swiper"; //使いたい機能をインポート
 

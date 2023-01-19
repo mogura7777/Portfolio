@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
-import { Links } from "../Molecules/Links";
+import { Links } from "src/components/Molecules/Links";
 export const SpMenu: NextPage = () => {
   const [active, setActive] = useState(false);
   const classToggle = () => {
