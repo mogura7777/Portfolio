@@ -1,9 +1,9 @@
 /** @format */
 
 import React from "react";
-import { useFormState } from "src/pages/contact/useFormState";
-import { useSendContactForm } from "src/pages/contact/useSendContactForm";
-import { ContactParams } from "src/pages/contact/ContactParams";
+import { useFormState } from "src/state/useFormState";
+import { useSendContactForm } from "src/state/useSendContactForm";
+import { ContactParams } from "src/types/ContactParams";
 import { Layout } from "src/components/Layout";
 
 const IndexPage: React.FC = () => {
