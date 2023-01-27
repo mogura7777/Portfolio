@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Layout } from "src/components/Layout";
 import firebase from "firebase";
 import { useRouter } from "next/router";
-import "../../libs/firebase/client";
+import "src/libs/firebase/client";
 
 const db = firebase.firestore();
 const auth = firebase.auth();
@@ -19,7 +19,7 @@ export default function Info() {
   // ログインしてなければトップページに戻る
   useEffect(() => {
     if (auth.currentUser == null) {
-      router.push("/contact");
+      router.push("/library/message/");
     }
   }, []);
 
@@ -62,7 +62,7 @@ export default function Info() {
               .doc(auth.currentUser.email)
               .update({ flag: true })
               .then((ref) => {
-                router.push("/contact");
+                router.push("/library/message/");
               });
           });
       });
@@ -70,7 +70,7 @@ export default function Info() {
 
   // トップページに戻る
   const goBack = (e) => {
-    router.push("/contact");
+    router.push("/library/message/");
   };
 
   // アドレスデータとメッセージを取得し表示

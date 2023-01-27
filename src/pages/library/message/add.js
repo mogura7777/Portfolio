@@ -4,7 +4,7 @@ import firebase from "firebase";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Layout } from "src/components/Layout";
-import "../../libs/firebase/client";
+import "src/libs/firebase/client";
 
 const db = firebase.firestore();
 const auth = firebase.auth();
@@ -20,7 +20,7 @@ export default function Add() {
   // ログインしてなければトップページに戻る
   useEffect(() => {
     if (auth.currentUser == null) {
-      router.push("/contact");
+      router.push("/library/message/");
     }
   }, []);
 
@@ -53,13 +53,13 @@ export default function Add() {
       .doc(mail)
       .set(ob)
       .then((ref) => {
-        router.push("/contact");
+        router.push("/library/message/");
       });
   };
 
   // トップページに戻る
   const goBack = (e) => {
-    router.push("/contact");
+    router.push("/library/message/");
   };
 
   return (

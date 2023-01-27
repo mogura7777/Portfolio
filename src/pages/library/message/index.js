@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { SiFacebook, SiGithub, SiGoogle, SiTwitter } from "react-icons/si";
 import { Layout } from "src/components/Layout";
-import "../../libs/firebase/client";
+import { Discretion } from "src/components/Molecules/Discretion";
+import "src/libs/firebase/client";
 const db = firebase.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -19,7 +20,10 @@ export default function Index() {
     "Googleログイン後にメッセージ機能が利用できます。"
   );
   const router = useRouter();
-
+  const [linkList, setLinkList] = useState([]);
+  const [text, setText] = useState(
+    "Googleアカウント ログイン時にメッセージ機能が利用できます。Firebase Authenticationを使用しています。"
+  );
   // ログイン処理
   const login = () => {
     auth
@@ -54,13 +58,13 @@ export default function Index() {
 
   // /addへの移動
   const doAction = (e) => {
-    router.push("/contact/add");
+    router.push("/library/message/add");
   };
 
   // アドレスのページへの移動
   const doLink = (e) => {
     const id = e.target.id;
-    router.push("/contact/info?id=" + id);
+    router.push("/library/message/info?id=" + id);
   };
 
   // アドレスデータの取得と表示
@@ -95,8 +99,9 @@ export default function Index() {
 
   return (
     <Layout title="Contact">
-      <h1 className="ttl">Contact</h1>
+      <h1 className="ttl">Library</h1>
       <div className="Contact__body">
+        <h2 className="sttl">メセージアプリ</h2>
         <div className="Contact__box">
           {auth.currentUser != null ? (
             <button className="btn Contact__box_item" onClick={doLogin}>
@@ -123,10 +128,11 @@ export default function Index() {
         <div className="Contact__caption">
           {auth.currentUser != null
             ? "メッセージを送るメンバーを選択してください"
-            : "Googleアカウント ログイン時にメッセージ機能が利用できます"}
+            : ""}
         </div>
         <ul className="Contact__list">{data}</ul>
       </div>
+      <Discretion text={text} linkList={linkList}></Discretion>
     </Layout>
   );
 }
