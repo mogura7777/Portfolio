@@ -1,7 +1,7 @@
 /** @format */
 import type { InferGetStaticPropsType, NextPage } from "next";
 import Link from "next/link";
-import type { Blog, Tag } from "src/types/blog";
+import type { Blog, Tag } from "src/models/blog";
 import { client } from "src/libs/client";
 import { formatDate } from "src/libs/util";
 import { Layout } from "src/components/Layout";
@@ -14,7 +14,7 @@ type Props = {
 export const getStaticProps = async () => {
   const blog = await client.get({
     endpoint: "blog",
-    queries: { offset: 0, limit: 5 },
+    queries: { offset: 0, limit: 10 },
   });
   const tag = await client.get({ endpoint: "tag" });
   return {

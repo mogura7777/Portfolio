@@ -1,12 +1,11 @@
 /** @format */
 
 import Link from "next/link";
+import { PER_PAGE } from "src/libs/fields";
 type Props = {
   totalCount: number;
 };
 export const Pagination = ({ totalCount }: Props) => {
-  const PER_PAGE = 5;
-
   const range = (start: number, end: number) =>
     [...Array(end - start + 1)].map((_, i) => start + i);
 

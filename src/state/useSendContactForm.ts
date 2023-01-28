@@ -1,7 +1,7 @@
 /** @format */
 
 import { useCallback, useState } from "react";
-import { ContactParams } from "src/types/ContactParams";
+import { ContactParams } from "src/models/ContactParams";
 import { useRouter } from "next/router";
 
 const SUBJECT_TITLE = "お問い合わせ";

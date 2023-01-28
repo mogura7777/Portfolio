@@ -3,11 +3,11 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import { Layout } from "src/components/Layout";
-import { MyImage } from "src/components/Image";
+import { MyImage } from "src/components/Atoms/Image";
 import { Carousel } from "src/components/Molecules/Carousel";
 import dynamic from "next/dynamic";
 const ScrollRevealContainer = dynamic(
-  () => import("src/components/ScrollRevealContainer"),
+  () => import("src/components/Molecules/ScrollRevealContainer"),
   { ssr: false }
 );
 

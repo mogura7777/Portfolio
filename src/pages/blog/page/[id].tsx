@@ -1,10 +1,11 @@
 /** @format */
-import type { Blog, Tag } from "src/types/blog";
+import type { Blog, Tag } from "src/models/blog";
 import Link from "next/link";
 import { formatDate } from "src/libs/util";
 import { Pagination } from "src/components/Molecules/Pagination";
 import { client } from "src/libs/client";
 import { Layout } from "src/components/Layout";
+import { PER_PAGE } from "src/libs/fields";
 type Params = {
   params: Blog;
 };
@@ -13,7 +14,6 @@ type Props = {
   tags: Tag[];
   totalCount: number;
 };
-const PER_PAGE = 5;
 // 動的なページを作成
 export const getStaticPaths = async () => {
   const repos = await client.get({ endpoint: "blog" });
@@ -33,7 +33,7 @@ export const getStaticProps = async (context: Params) => {
   const id = Number(context.params.id);
   const data = await client.get({
     endpoint: "blog",
-    queries: { offset: (id - 1) * 5, limit: 5 },
+    queries: { offset: (id - 1) * 10, limit: 10 },
   });
 
   return {

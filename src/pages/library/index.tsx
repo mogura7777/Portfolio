@@ -1,7 +1,7 @@
 /** @format */
 
 import { Layout } from "src/components/Layout";
-import { MyImage } from "src/components/Image";
+import { MyImage } from "src/components/Atoms/Image";
 import Link from "next/link";
 export default function Library() {
   return (

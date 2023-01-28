@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Layout } from "src/components/Layout";
 import { client } from "src/libs/client";
 import { formatDate } from "src/libs/util";
-import type { Blog, Tag } from "src/types/blog";
+import type { Blog, Tag } from "src/models/blog";
 type Params = {
   blog: Blog;
   prev: any;
