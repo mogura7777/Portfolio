@@ -155,15 +155,19 @@ textarea:hover {
 .Contact__btn {
   // display: flex;
   font-size: 12px;
-  color: #b3aca7;
+  color: #4d3a2d;
   cursor: pointer;
   border: solid 1px #b3aca7;
   margin: 0 auto;
   padding: 10px 20px;
+  &::before {
+    display: inline-block;
+    padding: 0 6px 0 0px;
+  }
 }
 
 .Contact__btn:hover {
-  color: #e2dedb;
+  color: #917864;
 }
 $dark-color: rgb(72, 79, 85);
 /* ライトテーマで適用 */
@@ -299,7 +303,14 @@ $dark-color: rgb(72, 79, 85);
 }
 .sttl {
   font-family: "Lato", sans-serif;
+  font-weight: bold;
   font-size: 20px;
+}
+.sttl02 {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 20px;
 }
 .list {
   list-style: disc;
@@ -314,7 +325,7 @@ $dark-color: rgb(72, 79, 85);
 }
 .discretion {
   background: #eee;
-  margin: 0 0 40px;
+  margin: 70px 0 40px;
   padding: 20px;
   .discretion__ttl {
     min-width: 50px;
@@ -809,6 +820,14 @@ $dark-color: rgb(72, 79, 85);
     background: #eee;
   }
 }
+.todo__list {
+  display: flex;
+  border-bottom: 2px solid #333;
+  margin: 0 0 20px;
+  & > li {
+    margin: 0 20px 0 0;
+  }
+}
 .TodoList {
   margin: 0 0 20px;
   .TodoList__item {
@@ -959,6 +978,7 @@ $dark-color: rgb(72, 79, 85);
     }
   }
   .pokemon__box {
+    margin: 0 0 40px;
     .pokemon__list {
       width: 100%;
       display: flex;

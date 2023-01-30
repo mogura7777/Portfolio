@@ -36,7 +36,16 @@ fetchPokemon().then((pokemon) => {
   // console.log(`名前: ${pokemon["name"]}`);
   // console.log(`画像URL: ${pokemon["sprites"]["front_default"]}`);
 });
-
+export const getServerSideProps: GetServerSideProps = async () => {
+  const pokemon = await fetchPokemon();
+  return {
+    props: {
+      id: pokemon["id"],
+      name: pokemon["name"],
+      front_image: pokemon["sprites"]["front_default"],
+    },
+  };
+};
 const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
   const [linkList, setLinkList] = useState([
     "https://github.com/clauderic/dnd-kit",
@@ -117,7 +126,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     if (!overId) return;
 
     // ドラッグ、ドロップ時のコンテナ取得
-    // container1,container2,container3,container4のいずれかを持つ
     const activeContainer = findContainer(id);
     const overContainer = findContainer(over?.id);
 
@@ -130,7 +138,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     }
 
     setItems((prev) => {
-      console.log("🚀prev", prev);
       // 移動元のコンテナの要素配列を取得
       const activeItems = prev[activeContainer];
       // 移動先のコンテナの要素配列を取得
@@ -142,13 +149,10 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
 
       let newIndex;
       if (overId in prev) {
-        // We're at the root droppable of a container
         newIndex = overItems.length + 1;
       } else {
         const isBelowLastItem = over && overIndex === overItems.length - 1;
-
         const modifier = isBelowLastItem ? 1 : 0;
-
         newIndex = overIndex >= 0 ? overIndex + modifier : overItems.length + 1;
       }
 
@@ -177,7 +181,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     if (!overId) return;
 
     // ドラッグ、ドロップ時のコンテナ取得
-    // container1,container2,container3,container4のいずれかを持つ
     const activeContainer = findContainer(id);
     const overContainer = findContainer(over?.id);
 
@@ -215,17 +218,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
           モンスタボールを投げる
         </label>
         <div className="pokemon__body_in">
-          {/* <ul className="pokemon__list">
-            {pokemonListMain.map((pokemon) => (
-              <li className="pokemon__list_item" key={pokemon.id}>
-                <div className="pokemon__list_txt">{pokemon.name}</div>
-                <div className="pokemon__list_img">
-                  <img src={pokemon.image} />
-                </div>
-              </li>
-            ))}
-          </ul> */}
-
           <DndContext
             sensors={sensors}
             collisionDetection={closestCorners}
@@ -254,17 +246,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
       <Discretion text={text} linkList={linkList}></Discretion>
     </Layout>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const pokemon = await fetchPokemon();
-  return {
-    props: {
-      id: pokemon["id"],
-      name: pokemon["name"],
-      front_image: pokemon["sprites"]["front_default"],
-    },
-  };
 };
 
 export default IndexPage;

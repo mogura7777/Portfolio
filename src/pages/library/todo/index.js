@@ -1,5 +1,4 @@
 /** @format */
-
 import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,9 +14,9 @@ const TodoApp = () => {
   const [editId, setEditId] = useState("");
   const inputRef = useRef(null);
   const [linkList, setLinkList] = useState([]);
-  const [text, setText] = useState(
-    "ローカルストレージでタスクを管理できます。"
-  );
+  const [completedList, setCompletedList] = useState([]);
+  const text = `ローカルストレージでタスクを管理できます。
+  今後はソート・検索機能を追加予定`;
   const handleChange = (e) => {
     const { value } = e.target;
     setNewTask((prevState) => (prevState = value));
@@ -58,9 +57,17 @@ const TodoApp = () => {
     setEditId("");
     inputRef.current.focus();
   };
-
+  // 完了タスク
+  const handleCompletedList = (list) => {
+    const array = list.filter((e) => e.completed);
+    setCompletedList(array);
+  };
   const handleDelete = (id) => {
     setTasks((prevState) => prevState.filter((task) => task.id !== id));
+    console.log("🚀 ~ file: index.js:68 ~ handleDelete ~ task", tasks);
+    // const newArr = (prevState) => prevState.filter((task) => task.id !== id);
+    // setTasks(newArr);
+    // handleCompletedList(newArr);
   };
 
   const handleEdit = (id) => {
@@ -78,12 +85,14 @@ const TodoApp = () => {
       const index = indexArr.indexOf(id);
       newArr.splice(index, 1, { id, title, completed: false });
       setTasks((prevState) => (prevState = newArr));
+      handleCompletedList(newArr);
     } else {
       const newArr = tasks.slice();
       const indexArr = newArr.map((arr) => arr.id);
       const index = indexArr.indexOf(id);
       newArr.splice(index, 1, { id, title, completed: true });
       setTasks((prevState) => (prevState = newArr));
+      handleCompletedList(newArr);
     }
   };
 
@@ -99,6 +108,7 @@ const TodoApp = () => {
     textDecoration: "line-through",
     fontWeight: "100",
     fontStyle: "italic",
+    backgroundColor: "#eee",
   };
   const TaskLists = tasks.map((task) => {
     return (
@@ -139,7 +149,11 @@ const TodoApp = () => {
       <h1 className="ttl">Library</h1>
       <div className="todo__body">
         <TodoList>
-          <h2 className="sttl">メモアプリ</h2>
+          <h2 className="sttl02">Todoアプリ</h2>
+          <ul className="todo__list">
+            <li>全体タスク：{tasks.length}</li>
+            <li>完了タスク：{completedList.length}</li>
+          </ul>
           {TaskLists}
         </TodoList>
         <TodoForm

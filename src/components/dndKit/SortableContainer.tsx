@@ -24,7 +24,7 @@ export const SortableContainer = ({
   return (
     <div className="pokemon__box">
       <SortableContext id={id} items={items} strategy={rectSortingStrategy}>
-        <h3 className="sttl">{label}</h3>
+        <h3 className="">{label}</h3>
         <ul
           ref={setNodeRef}
           className="pokemon__list w-full border-2 border-gray-500/75 p-5 mt-2 rounded-md"
