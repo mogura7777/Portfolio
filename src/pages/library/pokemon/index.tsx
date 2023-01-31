@@ -31,11 +31,6 @@ const fetchPokemon = async () => {
   const result = await res.json();
   return result;
 };
-fetchPokemon().then((pokemon) => {
-  // console.log(`図鑑番号: ${pokemon["id"]}`);
-  // console.log(`名前: ${pokemon["name"]}`);
-  // console.log(`画像URL: ${pokemon["sprites"]["front_default"]}`);
-});
 export const getServerSideProps: GetServerSideProps = async () => {
   const pokemon = await fetchPokemon();
   return {
@@ -212,7 +207,7 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     <Layout title="Pokemon">
       <h1 className="ttl">Library</h1>
       <div className="pokemon__body">
-        <h2 className="sttl">ポケモンアプリ</h2>
+        <h2 className="sttl02">ポケモンアプリ</h2>
         <label className="pokemon__btn_wrap">
           <button className="pokemon__btn" onClick={handleClick}></button>
           モンスタボールを投げる

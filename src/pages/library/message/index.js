@@ -101,7 +101,7 @@ export default function Index() {
     <Layout title="Contact">
       <h1 className="ttl">Library</h1>
       <div className="Contact__body">
-        <h2 className="sttl">メセージアプリ</h2>
+        <h2 className="sttl02">メッセージアプリ</h2>
         <div className="Contact__box">
           {auth.currentUser != null ? (
             <button className="btn Contact__box_item" onClick={doLogin}>

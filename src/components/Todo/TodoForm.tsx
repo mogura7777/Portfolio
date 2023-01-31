@@ -25,9 +25,6 @@ export const TodoForm = (props: Props) => {
           <button className="form__btn" type="submit">
             {!props.isEditing ? "＋" : "保存"}
           </button>
-          {/* <button className="form__btn" type="button" onFocus={props.onClick}>
-            {!props.isEditing ? "クリア" : "Cancel"}
-          </button> */}
         </div>
       </form>
     </div>

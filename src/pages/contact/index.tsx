@@ -22,7 +22,7 @@ const IndexPage: React.FC = () => {
     <Layout title="Contact">
       <h1 className="ttl">Contact</h1>
       {errorMessage && <p>{errorMessage}</p>}
-      <form method="post" onSubmit={handleSubmit}>
+      <form className="Contact__body" method="post" onSubmit={handleSubmit}>
         <div className="field">
           <input
             type="text"
