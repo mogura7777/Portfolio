@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.9",
     "@dnd-kit/core": "^6.0.7",
     "@dnd-kit/sortable": "^7.0.2",
     "@dnd-kit/utilities": "^3.2.1",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@next/font": "13.1.1",
     "@sendgrid/mail": "^7.7.0",
     "@types/node": "18.11.17",
@@ -20,7 +23,8 @@
     "dayjs": "^1.11.7",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.1",
-    "firebase": "^8.10.1",
+    "firebase": "^9.16.0",
+    "framer-motion": "^8.5.5",
     "iconoir-react": "^5.5.2",
     "microcms-js-sdk": "^2.3.2",
     "next": "13.1.1",
