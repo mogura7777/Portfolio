@@ -6,7 +6,7 @@ import { Layout } from "src/components/Layout";
 import { MyImage } from "src/components/Atoms/Image";
 import { Carousel } from "src/components/Molecules/Carousel";
 import dynamic from "next/dynamic";
-import { getApp } from "firebase/app";
+import { AuthGuard } from "src/feature/auth/component/AuthGuard/AuthGuard";
 const ScrollRevealContainer = dynamic(
   () => import("src/components/Molecules/ScrollRevealContainer"),
   { ssr: false }
