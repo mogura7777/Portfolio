@@ -12,18 +12,18 @@ initializeFirebaseApp();
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider>
-      <AuthProvider>
-        <ThemeProvider attribute="class">
-          <NextNprogress
-            color="#fff"
-            startPosition={0.3}
-            stopDelayMs={200}
-            height={2}
-            showOnShallow={true}
-          />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </AuthProvider>
+      {/* <AuthProvider> */}
+      <ThemeProvider attribute="class">
+        <NextNprogress
+          color="#fff"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={2}
+          showOnShallow={true}
+        />
+        <Component {...pageProps} />
+      </ThemeProvider>
+      {/* </AuthProvider> */}
     </ChakraProvider>
   );
 }
