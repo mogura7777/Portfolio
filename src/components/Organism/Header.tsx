@@ -4,18 +4,31 @@ import React from "react";
 import { Links } from "../Molecules/Links";
 import { ChangeThemeButton } from "src/components/Atoms/ChangeThemeButton";
 import { useAuthContext } from "src/feature/auth/provider/AuthProvider";
-import { Button, chakra, Container, Heading, useToast } from "@chakra-ui/react";
+import {
+  Avatar,
+  Button,
+  chakra,
+  Container,
+  Flex,
+  Heading,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Spacer,
+  useToast,
+} from "@chakra-ui/react";
 import { FirebaseError } from "@firebase/util";
 import { getAuth, signOut } from "firebase/auth";
-import { useState } from "react";
-import { useRouter } from "next/router";
+import { Navigate } from "src/component/Navigate/Navigate";
+import { useRouter } from "src/hooks/useRouter/useRouter";
+import Link from "next/link";
 export const Header = () => {
   const { user } = useAuthContext();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const toast = useToast();
   const { push } = useRouter();
   const handleSignOut = async () => {
-    setIsLoading(true);
     try {
       const auth = getAuth();
       await signOut(auth);
@@ -24,13 +37,11 @@ export const Header = () => {
         status: "success",
         position: "top",
       });
-      push("/signin");
+      push((path) => path.signin.$url());
     } catch (e) {
       if (e instanceof FirebaseError) {
         console.log(e);
       }
-    } finally {
-      setIsLoading(false);
     }
   };
   return (
@@ -43,17 +54,24 @@ export const Header = () => {
 
           <div className="nav__body_btn">
             <div className="nav__body_ttl">
-              {user ? (
-                <Button
-                  colorScheme={"teal"}
-                  onClick={handleSignOut}
-                  isLoading={isLoading}
-                >
-                  サインアウト
-                </Button>
-              ) : (
-                "ログアウト中"
-              )}
+              <Flex>
+                <Navigate href={(path) => path.$url()}> </Navigate>
+                <Spacer aria-hidden />
+                {user ? (
+                  <Menu>
+                    <MenuButton>
+                      <Avatar flexShrink={0} width={10} height={10} />
+                    </MenuButton>
+                    <MenuList py={0}>
+                      <MenuItem onClick={handleSignOut}>サインアウト</MenuItem>
+                    </MenuList>
+                  </Menu>
+                ) : (
+                  <Button colorScheme={"teal"}>
+                    <Link href={"/signin"}>ログイン</Link>
+                  </Button>
+                )}
+              </Flex>
             </div>
             <div className=" hover:bg-gray-700 px-3 py-2 rounded">
               <ChangeThemeButton></ChangeThemeButton>

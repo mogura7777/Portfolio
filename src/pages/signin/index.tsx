@@ -13,16 +13,20 @@ import {
   Input,
   Spacer,
   useToast,
+  Link,
 } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "@firebase/util";
 import { Layout } from "src/components/Layout";
+import { useRouter } from "src/hooks/useRouter/useRouter";
+import { Navigate } from "src/component/Navigate/Navigate";
 export const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const toast = useToast();
+  const { push } = useRouter();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     console.log({ email, password });
     e.preventDefault();
@@ -36,6 +40,7 @@ export const Page = () => {
         status: "success",
         position: "top",
       });
+      push((path) => path.library.chat.$url());
     } catch (e) {
       toast({
         title: "エラーが発生しました。",
@@ -52,7 +57,7 @@ export const Page = () => {
   return (
     <Layout title="Contact">
       <Container py={14}>
-        <Heading>サインイン</Heading>
+        <Heading>ログイン</Heading>
         <chakra.form onSubmit={handleSubmit}>
           <Spacer height={8} aria-hidden />
           <Grid gap={4}>
@@ -83,6 +88,11 @@ export const Page = () => {
           </Grid>
           <Spacer height={4} aria-hidden />
           <Center>
+            <Button type={"submit"} isLoading={isLoading}>
+              <Navigate href={(path) => path.signup.$url()}>
+                アカウントを作成
+              </Navigate>
+            </Button>
             <Button type={"submit"} isLoading={isLoading}>
               ログイン
             </Button>

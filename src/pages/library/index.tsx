@@ -27,14 +27,14 @@ export default function Library() {
             <p className="Library__list_txt">メモアプリ</p>
           </Link>
         </li>
-        {/* <li className="Library__list_itme">
-          <Link href="./library/message" className="">
+        <li className="Library__list_itme">
+          <Link href="./library/chat" className="">
             <div className="Library__img">
               <MyImage fname="../img/sample.png" size={300} />
             </div>
-            <p className="Library__list_txt">メッセージツール</p>
+            <p className="Library__list_txt">チャットツール</p>
           </Link>
-        </li> */}
+        </li>
       </ul>
     </Layout>
   );

@@ -5,10 +5,8 @@ import { Nopage } from "src/components/Nopage";
 import { AuthGuard } from "src/feature/auth/component/AuthGuard/AuthGuard";
 export default function Contact() {
   return (
-    <AuthGuard>
-      <Layout title="Contact">
-        <Nopage></Nopage>
-      </Layout>
-    </AuthGuard>
+    <Layout title="Contact">
+      <Nopage></Nopage>
+    </Layout>
   );
 }

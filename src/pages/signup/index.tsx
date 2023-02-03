@@ -13,6 +13,7 @@ import {
   Input,
   Spacer,
   useToast,
+  Link,
 } from "@chakra-ui/react";
 import { FormEvent, useState } from "react";
 import {
@@ -21,6 +22,8 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { FirebaseError } from "@firebase/util";
+import { Layout } from "src/components/Layout";
+import { Navigate } from "src/component/Navigate/Navigate";
 export const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -59,44 +62,51 @@ export const Page = () => {
   };
 
   return (
-    <Container py={14}>
-      <Heading>サインアップ</Heading>
-      <chakra.form onSubmit={handleSubmit}>
-        <Spacer height={8} aria-hidden />
-        <Grid gap={4}>
-          <Box display={"contents"}>
-            <FormControl>
-              <FormLabel>メールアドレス</FormLabel>
-              <Input
-                type={"email"}
-                name={"email"}
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-            </FormControl>
-            <FormControl>
-              <FormLabel>パスワード</FormLabel>
-              <Input
-                type={"password"}
-                name={"password"}
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-            </FormControl>
-          </Box>
-        </Grid>
-        <Spacer height={4} aria-hidden />
-        <Center>
-          <Button type={"submit"} isLoading={isLoading}>
-            アカウントを作成
-          </Button>
-        </Center>
-      </chakra.form>
-    </Container>
+    <Layout title="Contact">
+      <Container py={14}>
+        <Heading>新規アカウント作成</Heading>
+        <chakra.form onSubmit={handleSubmit}>
+          <Spacer height={8} aria-hidden />
+          <Grid gap={4}>
+            <Box display={"contents"}>
+              <FormControl>
+                <FormLabel>メールアドレス</FormLabel>
+                <Input
+                  type={"email"}
+                  name={"email"}
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+              </FormControl>
+              <FormControl>
+                <FormLabel>パスワード</FormLabel>
+                <Input
+                  type={"password"}
+                  name={"password"}
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+              </FormControl>
+            </Box>
+          </Grid>
+          <Spacer height={4} aria-hidden />
+          <Center>
+            {/* <Button type={"submit"} isLoading={isLoading}>
+              <Navigate href={(path) => path.signup.$url()}>
+                <Link lineHeight={1}>アカウントを作成</Link>
+              </Navigate>
+            </Button> */}
+            <Button type={"submit"} isLoading={isLoading}>
+              新規登録
+            </Button>
+          </Center>
+        </chakra.form>
+      </Container>
+    </Layout>
   );
 };
 
