@@ -8,7 +8,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 // UTC -> "2022_04" のフォーマットに変換
-export const formatDate = (date) => {
+export const formatDate = (date: dayjs.ConfigType) => {
   const formattedDate = dayjs.utc(date).tz("Asia/Tokyo").format("YYYY.MM.DD");
   return formattedDate;
 };

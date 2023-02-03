@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { Links } from "./Links";
+import { Links } from "../Molecules/Links";
 import { ChangeThemeButton } from "src/components/Atoms/ChangeThemeButton";
 import { useAuthContext } from "src/feature/auth/provider/AuthProvider";
 import { Button, chakra, Container, Heading, useToast } from "@chakra-ui/react";

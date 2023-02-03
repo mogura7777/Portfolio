@@ -333,6 +333,7 @@ $dark-color: rgb(72, 79, 85);
   font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 20px;
+  margin: 0 0 10px;
 }
 .sttl02 {
   font-family: "Lato", sans-serif;
@@ -678,7 +679,7 @@ $dark-color: rgb(72, 79, 85);
   margin: 0 0 70px;
 }
 .Skill__box {
-  margin: 0 0 20px;
+  margin: 0 0 40px;
 }
 
 .Illust_list {
@@ -847,7 +848,7 @@ $dark-color: rgb(72, 79, 85);
   .TodoForm__input {
     min-width: 24%;
     border-bottom: 1px solid #333;
-    padding: 0 4px;
+    padding: 8px 8px;
     margin: 0 10px 0 0;
   }
   .form__btn {
