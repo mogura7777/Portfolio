@@ -1,10 +1,10 @@
 /** @format */
 
 import Head from "next/head";
+import { ReactNode } from "react";
 import { BreadCrumb } from "./Molecules/BreadCrumb";
 import { Header } from "./Organism/Header";
-import { SpMenu } from "./Molecules/SpMenu";
-import { ReactNode } from "react";
+import { SpMenu } from "./Organism/SpMenu";
 import { Footer } from "./Organism/Footer";
 type Props = {
   children: ReactNode;

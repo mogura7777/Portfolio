@@ -34,6 +34,12 @@ export const pagesPath = {
     },
     $url: (url?: { hash?: string }) => ({ pathname: '/library' as const, hash: url?.hash })
   },
+  "parts": {
+    "modal": {
+      $url: (url?: { hash?: string }) => ({ pathname: '/parts/modal' as const, hash: url?.hash })
+    },
+    $url: (url?: { hash?: string }) => ({ pathname: '/parts' as const, hash: url?.hash })
+  },
   "signin": {
     $url: (url?: { hash?: string }) => ({ pathname: '/signin' as const, hash: url?.hash })
   },
