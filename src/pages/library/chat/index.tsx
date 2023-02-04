@@ -81,7 +81,7 @@ export const Page = () => {
     });
   }, [chats]);
   return (
-    <Layout title="chat">
+    <div title="chat">
       <h1 className="ttl">Library</h1>
       <h2 className="sttl02">チャットアプリ</h2>
       <p>右上のボタンよりログイン後にチャットを利用できます。</p>
@@ -103,7 +103,7 @@ export const Page = () => {
         <Button type={"submit"}>送信</Button>
       </chakra.form>
       <Discretion text={text} linkList={linkList}></Discretion>
-    </Layout>
+    </div>
   );
 };
 

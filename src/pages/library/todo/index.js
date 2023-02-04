@@ -1,8 +1,6 @@
 /** @format */
 import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-
-import { Layout } from "src/components/Layout";
 import { TodoForm } from "src/components/Todo/TodoForm";
 import { TodoList } from "src/components/Todo/TodoList";
 import { Discretion } from "src/components/Molecules/Discretion";
@@ -64,10 +62,6 @@ const TodoApp = () => {
   };
   const handleDelete = (id) => {
     setTasks((prevState) => prevState.filter((task) => task.id !== id));
-    console.log("🚀 ~ file: index.js:68 ~ handleDelete ~ task", tasks);
-    // const newArr = (prevState) => prevState.filter((task) => task.id !== id);
-    // setTasks(newArr);
-    // handleCompletedList(newArr);
   };
 
   const handleEdit = (id) => {
@@ -145,7 +139,7 @@ const TodoApp = () => {
     );
   });
   return (
-    <Layout title="Todo">
+    <div>
       <h1 className="ttl">Library</h1>
       <div className="todo__body">
         <TodoList>
@@ -166,7 +160,7 @@ const TodoApp = () => {
         />
       </div>
       <Discretion text={text} linkList={linkList}></Discretion>
-    </Layout>
+    </div>
   );
 };
 

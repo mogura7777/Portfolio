@@ -1,8 +1,8 @@
 /** @format */
 
 import type { ReactNode } from "react";
-import Link from "next/link";
 import type { UrlObject } from "url";
+import Link from "next/link";
 import { pagesPath, PagesPath } from "src/lib/$path";
 
 type Props = {

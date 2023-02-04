@@ -55,7 +55,7 @@ export const getStaticProps = async (context: Context) => {
 
 export default function BlogId({ blog, prev, next }: Params) {
   return (
-    <Layout title={blog.title}>
+    <div>
       <div className="Blog__header">
         <div className="Blog__header_box">
           <p className="Blog__data">{formatDate(blog.publishedAt)}</p>
@@ -94,6 +94,6 @@ export default function BlogId({ blog, prev, next }: Params) {
           ) : null}
         </div>
       </div>
-    </Layout>
+    </div>
   );
 }

@@ -8,22 +8,52 @@ import NextNprogress from "nextjs-progressbar";
 import { initializeFirebaseApp } from "src/libs/firebase/firebase";
 import { ChakraProvider } from "@chakra-ui/react";
 import { AuthProvider } from "src/feature/auth/provider/AuthProvider";
+import { LayoutMain } from "src/components/LayoutMain";
+import { Layout } from "src/components/Layout";
 initializeFirebaseApp();
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider>
-      <AuthProvider>
-        <ThemeProvider attribute="class">
-          <NextNprogress
-            color="#fff"
-            startPosition={0.3}
-            stopDelayMs={200}
-            height={2}
-            showOnShallow={true}
-          />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </AuthProvider>
-    </ChakraProvider>
-  );
+  switch (pageProps.layout) {
+    case "main": {
+      return (
+        <ChakraProvider>
+          <AuthProvider>
+            <ThemeProvider attribute="class">
+              <NextNprogress
+                color="#fff"
+                startPosition={0.3}
+                stopDelayMs={200}
+                height={2}
+                showOnShallow={true}
+              />
+
+              <LayoutMain>
+                <Component {...pageProps} />
+              </LayoutMain>
+            </ThemeProvider>
+          </AuthProvider>
+        </ChakraProvider>
+      );
+    }
+    default: {
+      return (
+        <ChakraProvider>
+          <AuthProvider>
+            <ThemeProvider attribute="class">
+              <NextNprogress
+                color="#fff"
+                startPosition={0.3}
+                stopDelayMs={200}
+                height={2}
+                showOnShallow={true}
+              />
+
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
+            </ThemeProvider>
+          </AuthProvider>
+        </ChakraProvider>
+      );
+    }
+  }
 }

@@ -32,7 +32,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   totalCount,
 }: Props) => {
   return (
-    <Layout title="Blog">
+    <div>
       <h1 className="ttl">Blog</h1>
       <ul className="Blog__list">
         {blogs.map((blog) => (
@@ -50,7 +50,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         ))}
       </ul>
       <Pagination totalCount={totalCount} />
-    </Layout>
+    </div>
   );
 };
 

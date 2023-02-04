@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     "./img/005.jpg",
   ]);
   return (
-    <Layout title="Home">
+    <div>
       <div className="About__body">
         <h1 className="About__body_sttl">ポートフォリオサイトにつきまして</h1>
         <p className="About__body_txt">
@@ -42,8 +42,7 @@ const Home: NextPage = () => {
             <h2>Masashi</h2>
             <p className="txt">
               休日は、午前中にジムでウォーキングしながら読書。
-              <br />
-              午後は娘と公園で遊んで銭湯に行く。ほぼそんなルーティンです。
+              午後は娘と公園で遊んで銭湯に行くのが日課です。
             </p>
           </div>
         </div>
@@ -180,7 +179,7 @@ const Home: NextPage = () => {
       <ScrollRevealContainer move="left">
         <Carousel linkList={linkList}></Carousel>
       </ScrollRevealContainer>
-    </Layout>
+    </div>
   );
 };
 

@@ -204,7 +204,7 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
     setActiveId(undefined);
   };
   return (
-    <Layout title="Pokemon">
+    <div title="Pokemon">
       <h1 className="ttl">Library</h1>
       <div className="pokemon__body">
         <h2 className="sttl02">ポケモンアプリ</h2>
@@ -239,7 +239,7 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
       </div>
 
       <Discretion text={text} linkList={linkList}></Discretion>
-    </Layout>
+    </div>
   );
 };
 

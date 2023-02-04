@@ -55,7 +55,7 @@ export const Page = () => {
     }
   };
   return (
-    <Layout title="Contact">
+    <div>
       <Container py={14}>
         <Heading>ログイン</Heading>
         <chakra.form onSubmit={handleSubmit}>
@@ -99,7 +99,7 @@ export const Page = () => {
           </Center>
         </chakra.form>
       </Container>
-    </Layout>
+    </div>
   );
 };
 

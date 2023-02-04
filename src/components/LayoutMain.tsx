@@ -3,6 +3,7 @@
 import Head from "next/head";
 import { ReactNode } from "react";
 import { BreadCrumb } from "./Molecules/BreadCrumb";
+import { Sidemenu } from "./Molecules/Sidemenu";
 import { Header } from "./Organism/Header";
 import { SpMenu } from "./Organism/SpMenu";
 import { Footer } from "./Organism/Footer";
@@ -11,7 +12,7 @@ type Props = {
   title?: string;
 };
 
-export const Layout = ({ children, title = "" }: Props) => {
+export const LayoutMain = ({ children, title = "" }: Props) => {
   return (
     <div className="body">
       <Head>
@@ -19,8 +20,9 @@ export const Layout = ({ children, title = "" }: Props) => {
       </Head>
       <Header></Header>
       <SpMenu></SpMenu>
-      <div className="body__box">
-        <main className="body__main">
+      <div className="body__box02">
+        <Sidemenu></Sidemenu>
+        <main className="body__main02">
           {" "}
           <BreadCrumb></BreadCrumb>
           {children}

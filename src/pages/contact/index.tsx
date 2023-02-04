@@ -19,7 +19,7 @@ const IndexPage: React.FC = () => {
   };
 
   return (
-    <Layout title="Contact">
+    <div>
       <h1 className="ttl">Contact</h1>
       {errorMessage && <p>{errorMessage}</p>}
       <form className="Contact__body" method="post" onSubmit={handleSubmit}>
@@ -53,7 +53,7 @@ const IndexPage: React.FC = () => {
           お問い合わせをする
         </button>
       </form>
-    </Layout>
+    </div>
   );
 };
 

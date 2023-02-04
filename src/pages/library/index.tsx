@@ -5,7 +5,7 @@ import { MyImage } from "src/components/Atoms/Image";
 import Link from "next/link";
 export default function Library() {
   return (
-    <Layout title="Library">
+    <div>
       <h1 className="ttl">Library</h1>
       <div>
         <p className="txt">実装したアプリを掲載していきます。</p>
@@ -36,6 +36,6 @@ export default function Library() {
           </Link>
         </li>
       </ul>
-    </Layout>
+    </div>
   );
 }
