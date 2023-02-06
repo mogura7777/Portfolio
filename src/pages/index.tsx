@@ -42,6 +42,7 @@ const Home: NextPage = () => {
             <h2>Masashi</h2>
             <p className="txt">
               休日は、午前中にジムでウォーキングしながら読書。
+              <br />
               午後は娘と公園で遊んで銭湯に行くのが日課です。
             </p>
           </div>

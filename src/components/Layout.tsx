@@ -18,13 +18,10 @@ export const Layout = ({ children, title = "" }: Props) => {
         <title>{title}</title>
       </Head>
       <Header></Header>
+      <BreadCrumb></BreadCrumb>
       <SpMenu></SpMenu>
       <div className="body__box">
-        <main className="body__main">
-          {" "}
-          <BreadCrumb></BreadCrumb>
-          {children}
-        </main>
+        <main className="body__main"> {children}</main>
       </div>
       <Footer></Footer>
     </div>

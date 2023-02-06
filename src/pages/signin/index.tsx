@@ -89,11 +89,6 @@ export const Page = () => {
           <Spacer height={4} aria-hidden />
           <Center>
             <Button type={"submit"} isLoading={isLoading}>
-              <Navigate href={(path) => path.signup.$url()}>
-                アカウントを作成
-              </Navigate>
-            </Button>
-            <Button type={"submit"} isLoading={isLoading}>
               ログイン
             </Button>
           </Center>

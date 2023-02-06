@@ -45,13 +45,9 @@ export const Header = () => {
     }
   };
   return (
-    <header>
+    <header className="header">
       <nav className="bg-gray-800 nav">
         <div className="nav__body">
-          <div className="nav__body_list">
-            <Links></Links>
-          </div>
-
           <div className="nav__body_btn">
             <div className="nav__body_ttl">
               <Flex>
@@ -69,15 +65,23 @@ export const Header = () => {
                     </MenuList>
                   </Menu>
                 ) : (
-                  <Button colorScheme={"teal"}>
-                    <Link href={"/signin"}>ログイン</Link>
-                  </Button>
+                  <div>
+                    <Button className="btn01" colorScheme={"teal"}>
+                      <Link href={"/signin"}>ログイン</Link>
+                    </Button>
+                    <Button colorScheme={"teal"}>
+                      <Link href={"/signup"}>新規登録</Link>
+                    </Button>
+                  </div>
                 )}
               </Flex>
             </div>
             <div className=" hover:bg-gray-700 px-3 py-2 rounded">
               <ChangeThemeButton></ChangeThemeButton>
             </div>
+          </div>
+          <div className="nav__body_list">
+            <Links></Links>
           </div>
         </div>
       </nav>

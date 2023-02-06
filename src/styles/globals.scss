@@ -223,6 +223,7 @@ $dark-color: rgb(72, 79, 85);
       color: #fff !important;
     }
   }
+  .chakra-button,
   .btn {
     background-color: $dark-color;
   }
@@ -250,8 +251,12 @@ $dark-color: rgb(72, 79, 85);
 // [data-theme="dark"] .body {
 //   color: white;
 // }
+.header {
+  margin: 0 0 10px;
+}
 .breadcrumb {
-  margin: 0 0 40px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
   .breadcrumb__list {
     display: flex;
     flex-wrap: wrap;
@@ -266,21 +271,38 @@ $dark-color: rgb(72, 79, 85);
     color: #777;
   }
 }
-
+@media (width <= 480px) {
+  .breadcrumb {
+    margin: 10px 10px;
+  }
+}
 .body__box {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px 20px 20px;
-  @media (width <= 480px) {
+}
+@media (width <= 480px) {
+  .body__box {
     display: block;
   }
 }
 .body__box02 {
   display: flex;
 }
+@media (width <= 480px) {
+  .body__box02 {
+    display: block;
+  }
+}
 .body__side {
   width: 230px;
   padding: 40px;
+}
+@media (width <= 480px) {
+  .body__side {
+    width: 100%;
+    padding: 20px;
+  }
 }
 .body__main {
   // padding: 20px 20px 20px;
@@ -306,8 +328,29 @@ $dark-color: rgb(72, 79, 85);
     }
     .nav__body_btn {
       display: flex;
+      order: 2;
       align-items: center;
       margin: 0 0 0 auto;
+    }
+  }
+}
+.btn01 {
+  margin: 0 10px;
+}
+@media (width <= 480px) {
+  .nav {
+    .nav__body {
+      display: block;
+      .nav__body_list {
+        min-height: 30px;
+        display: block;
+        overflow-x: scroll;
+        white-space: nowrap;
+      }
+      .nav__body_btn {
+        justify-content: flex-end;
+        margin: 0 0 10px;
+      }
     }
   }
 }
