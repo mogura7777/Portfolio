@@ -19,11 +19,13 @@ export const LayoutMain = ({ children, title = "" }: Props) => {
         <title>{title}</title>
       </Head>
       <Header></Header>
-      <BreadCrumb></BreadCrumb>
+
       <SpMenu></SpMenu>
       <div className="body__box02">
         <Sidemenu></Sidemenu>
-        <main className="body__main02"> {children}</main>
+        <main className="body__main02">
+          <BreadCrumb></BreadCrumb> {children}
+        </main>
       </div>
       <Footer></Footer>
     </div>

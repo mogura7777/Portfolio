@@ -46,6 +46,7 @@ export const getStaticProps = async (context: Context) => {
   const nextEntry = next.contents[0] || {};
   return {
     props: {
+      layout: "main",
       blog: data,
       prev: prevEntry,
       next: nextEntry,

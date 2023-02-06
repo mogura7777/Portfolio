@@ -22,8 +22,6 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import { FirebaseError } from "@firebase/util";
-import { Layout } from "src/components/Layout";
-import { Navigate } from "src/component/Navigate/Navigate";
 export const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

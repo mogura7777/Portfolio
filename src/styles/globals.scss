@@ -252,11 +252,11 @@ $dark-color: rgb(72, 79, 85);
 //   color: white;
 // }
 .header {
-  margin: 0 0 10px;
+  // margin: 0 0 10px;
 }
 .breadcrumb {
-  max-width: 1000px;
-  margin: 0 auto 40px;
+  // max-width: 1000px;
+  margin: 10px auto 20px;
   .breadcrumb__list {
     display: flex;
     flex-wrap: wrap;
@@ -279,7 +279,7 @@ $dark-color: rgb(72, 79, 85);
 .body__box {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 20px 20px 20px;
+  // padding: 20px 20px 20px;
 }
 @media (width <= 480px) {
   .body__box {
@@ -295,6 +295,7 @@ $dark-color: rgb(72, 79, 85);
   }
 }
 .body__side {
+  background: #eee;
   width: 230px;
   padding: 40px;
 }
@@ -305,11 +306,11 @@ $dark-color: rgb(72, 79, 85);
   }
 }
 .body__main {
-  // padding: 20px 20px 20px;
+  padding: 0 20px;
   flex: 1;
 }
 .body__main02 {
-  padding: 20px 20px 20px;
+  padding: 0 20px;
   flex: 1;
 }
 

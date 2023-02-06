@@ -59,7 +59,10 @@ export const Header = () => {
                       <Avatar flexShrink={0} width={10} height={10} />
                     </MenuButton>
                     <MenuList py={0}>
-                      <MenuItem background={"gray.400"} onClick={handleSignOut}>
+                      <MenuItem background={"gray.600"}>
+                        <Link href={"/mypage"}>マイページ</Link>
+                      </MenuItem>
+                      <MenuItem background={"gray.600"} onClick={handleSignOut}>
                         サインアウト
                       </MenuItem>
                     </MenuList>

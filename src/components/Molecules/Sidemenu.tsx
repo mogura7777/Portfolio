@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Sidemenu: NextPage = () => {
   return (
     <aside className="body__side">
-      <h2 className="sttl">パーツ一覧</h2>
+      <h2 className="sttl">目次</h2>
       <nav>
         <ul>
           <li>
