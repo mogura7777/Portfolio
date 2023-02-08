@@ -11,7 +11,7 @@ import { Toc } from "src/models/common";
 type Props = {
   children: ReactNode;
   title?: string;
-  toc?: Toc[];
+  toc: Toc[];
 };
 
 export const LayoutMain = ({ children, title = "", toc }: Props) => {
@@ -24,7 +24,7 @@ export const LayoutMain = ({ children, title = "", toc }: Props) => {
 
       <SpMenu></SpMenu>
       <div className="body__box02">
-        <Sidemenu toc={toc ? toc : null}></Sidemenu>
+        <Sidemenu toc={toc ? toc : []}></Sidemenu>
         <main className="body__main02">
           <BreadCrumb></BreadCrumb> {children}
         </main>
