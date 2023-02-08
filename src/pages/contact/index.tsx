@@ -3,7 +3,7 @@
 import React from "react";
 import { useFormState } from "src/state/useFormState";
 import { useSendContactForm } from "src/state/useSendContactForm";
-import { ContactParams } from "src/models/ContactParams";
+import { ContactParams } from "src/models/common";
 import { Layout } from "src/components/Layout";
 
 const IndexPage: React.FC = () => {

@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 showOnShallow={true}
               />
 
-              <LayoutMain>
+              <LayoutMain toc={pageProps.table}>
                 <Component {...pageProps} />
               </LayoutMain>
             </ThemeProvider>

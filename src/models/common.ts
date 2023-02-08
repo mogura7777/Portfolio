@@ -5,3 +5,8 @@ export interface ContactParams {
   email: string;
   message: string;
 }
+export type Toc = {
+  text: string;
+  id: string;
+  name: string;
+};

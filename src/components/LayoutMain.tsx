@@ -7,12 +7,14 @@ import { Sidemenu } from "./Molecules/Sidemenu";
 import { Header } from "./Organism/Header";
 import { SpMenu } from "./Organism/SpMenu";
 import { Footer } from "./Organism/Footer";
+import { Toc } from "src/models/common";
 type Props = {
   children: ReactNode;
   title?: string;
+  toc?: Toc[];
 };
 
-export const LayoutMain = ({ children, title = "" }: Props) => {
+export const LayoutMain = ({ children, title = "", toc }: Props) => {
   return (
     <div className="body">
       <Head>
@@ -22,7 +24,7 @@ export const LayoutMain = ({ children, title = "" }: Props) => {
 
       <SpMenu></SpMenu>
       <div className="body__box02">
-        <Sidemenu></Sidemenu>
+        <Sidemenu toc={toc ? toc : null}></Sidemenu>
         <main className="body__main02">
           <BreadCrumb></BreadCrumb> {children}
         </main>

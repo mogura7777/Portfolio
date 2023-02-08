@@ -1,10 +1,11 @@
 /** @format */
 
 import Link from "next/link";
-import { Layout } from "src/components/Layout";
 import { client } from "src/libs/client";
+import { renderToc } from "src/libs/render-toc";
 import { formatDate } from "src/libs/util";
 import type { Blog, Tag } from "src/models/blog";
+
 type Params = {
   blog: Blog;
   prev: any;
@@ -44,9 +45,11 @@ export const getStaticProps = async (context: Context) => {
 
   const prevEntry = prev.contents[0] || {};
   const nextEntry = next.contents[0] || {};
+  const toc = renderToc(data.body);
   return {
     props: {
       layout: "main",
+      table: toc,
       blog: data,
       prev: prevEntry,
       next: nextEntry,
@@ -56,7 +59,7 @@ export const getStaticProps = async (context: Context) => {
 
 export default function BlogId({ blog, prev, next }: Params) {
   return (
-    <div>
+    <>
       <div className="Blog__header">
         <div className="Blog__header_box">
           <p className="Blog__data">{formatDate(blog.publishedAt)}</p>
@@ -95,6 +98,6 @@ export default function BlogId({ blog, prev, next }: Params) {
           ) : null}
         </div>
       </div>
-    </div>
+    </>
   );
 }

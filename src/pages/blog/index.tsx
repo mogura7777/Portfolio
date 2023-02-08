@@ -4,7 +4,6 @@ import Link from "next/link";
 import type { Blog, Tag } from "src/models/blog";
 import { client } from "src/libs/client";
 import { formatDate } from "src/libs/util";
-import { Layout } from "src/components/Layout";
 import { Pagination } from "src/components/Molecules/Pagination";
 type Props = {
   blogs: Blog[];
@@ -27,7 +26,7 @@ export const getStaticProps = async () => {
 };
 
 const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  tags,
+  // tags,
   blogs,
   totalCount,
 }: Props) => {

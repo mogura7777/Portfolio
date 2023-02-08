@@ -278,7 +278,7 @@ $dark-color: rgb(72, 79, 85);
 }
 .body__box {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   // padding: 20px 20px 20px;
 }
 @media (width <= 480px) {
@@ -297,7 +297,7 @@ $dark-color: rgb(72, 79, 85);
 .body__side {
   background: #eee;
   width: 230px;
-  padding: 40px;
+  padding: 40px 20px;
 }
 @media (width <= 480px) {
   .body__side {
@@ -310,6 +310,7 @@ $dark-color: rgb(72, 79, 85);
   flex: 1;
 }
 .body__main02 {
+  min-height: 100vh;
   padding: 0 20px;
   flex: 1;
 }
@@ -376,20 +377,17 @@ $dark-color: rgb(72, 79, 85);
 }
 // 共通処理
 .ttl {
-  font-family: "Lato", sans-serif;
   font-weight: 100;
   font-size: 44px;
   margin: 0 0 30px;
   line-height: 1.4;
 }
 .sttl {
-  font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 20px;
   margin: 0 0 10px;
 }
 .sttl02 {
-  font-family: "Lato", sans-serif;
   font-weight: bold;
   font-size: 20px;
   margin: 0 0 20px;
@@ -404,6 +402,15 @@ $dark-color: rgb(72, 79, 85);
 }
 .txt02 {
   margin: 40px 0;
+}
+.toc__ttl {
+  margin: 0 0 20px;
+  font-size: 20px;
+}
+.toc__list > li {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 10px;
 }
 .discretion {
   background: #eee;

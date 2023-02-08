@@ -1,36 +1,15 @@
 /** @format */
 
-import { NextPage } from "next";
-import Link from "next/link";
+import { TableOfContents } from "src/components/Molecules/TalbleOfContent";
+import { Toc } from "src/models/common";
+type Props = {
+  toc: Toc[];
+};
 
-export const Sidemenu: NextPage = () => {
+export const Sidemenu = ({ toc }: Props) => {
   return (
     <aside className="body__side">
-      <h2 className="sttl">目次</h2>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/parts/modal" className="">
-              モーダル
-            </Link>
-          </li>
-          <li>
-            <Link href="/parts/modal" className="">
-              タブ
-            </Link>
-          </li>
-          <li>
-            <Link href="/parts/modal" className="">
-              ロード
-            </Link>
-          </li>
-          <li>
-            <Link href="/parts/modal" className="">
-              ツールチップ
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <TableOfContents toc={toc} />
     </aside>
   );
 };

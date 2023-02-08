@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { FirebaseError } from "@firebase/util";
 import { getAuth, signOut } from "firebase/auth";
-import { Navigate } from "src/component/Navigate/Navigate";
+import { Navigate } from "src/components/Molecules/Navigate";
 import { useRouter } from "src/hooks/useRouter/useRouter";
 import Link from "next/link";
 export const Header = () => {
