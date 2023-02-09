@@ -1,6 +1,8 @@
 /** @format */
 
-import Link from "next/link";
+import { Sidemenu } from "src/components/Molecules/Sidemenu";
+import { Tabele } from "src/models/common";
+
 export const getStaticProps = async () => {
   return {
     props: {
@@ -16,11 +18,14 @@ export const getStaticProps = async () => {
     },
   };
 };
-export default function Parts() {
+export default function Parts(props: Tabele) {
   return (
-    <div title="Parts">
-      <h1 className="ttl">Parts</h1>
-      <div>一覧</div>
-    </div>
+    <>
+      <Sidemenu toc={props.table}></Sidemenu>
+      <div title="Parts">
+        <h1 className="ttl">Parts</h1>
+        <div>一覧</div>
+      </div>
+    </>
   );
 }

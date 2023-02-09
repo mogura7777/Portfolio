@@ -1,6 +1,8 @@
 /** @format */
 
 import Link from "next/link";
+import { Sidemenu } from "src/components/Molecules/Sidemenu";
+
 import { client } from "src/libs/client";
 import { renderToc } from "src/libs/render-toc";
 import { formatDate } from "src/libs/util";
@@ -45,11 +47,9 @@ export const getStaticProps = async (context: Context) => {
 
   const prevEntry = prev.contents[0] || {};
   const nextEntry = next.contents[0] || {};
-  const toc = renderToc(data.body);
   return {
     props: {
       layout: "main",
-      table: toc,
       blog: data,
       prev: prevEntry,
       next: nextEntry,
@@ -58,8 +58,10 @@ export const getStaticProps = async (context: Context) => {
 };
 
 export default function BlogId({ blog, prev, next }: Params) {
+  // const toc = renderToc(blog.body);
   return (
     <>
+      {/* <Sidemenu toc={toc}></Sidemenu> */}
       <div className="Blog__header">
         <div className="Blog__header_box">
           <p className="Blog__data">{formatDate(blog.publishedAt)}</p>

@@ -2,10 +2,10 @@
 
 import Head from "next/head";
 import { ReactNode } from "react";
-import { BreadCrumb } from "./Molecules/BreadCrumb";
-import { Header } from "./Organism/Header";
-import { SpMenu } from "./Organism/SpMenu";
-import { Footer } from "./Organism/Footer";
+import { BreadCrumb } from "src/components/Molecules/BreadCrumb";
+import { Header } from "src/components/Organism/Header";
+import { SpMenu } from "src/components/Organism/SpMenu";
+import { Footer } from "src/components/Organism/Footer";
 type Props = {
   children: ReactNode;
   title?: string;

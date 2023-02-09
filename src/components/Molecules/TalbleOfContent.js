@@ -12,8 +12,7 @@ export const TableOfContents = ({ toc }) => {
                 {data.text}
               </Link>
             ) : (
-              // <a href={`#${data.id}`}>{data.text}</a>
-              <p>{data.text}</p>
+              <a href={`#${data.id}`}>{data.text}</a>
             )}
           </li>
         ))}

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { formatDate } from "src/libs/util";
 import { Pagination } from "src/components/Molecules/Pagination";
 import { client } from "src/libs/client";
-import { Layout } from "src/components/Layout";
 import { PER_PAGE } from "src/libs/fields";
 type Params = {
   params: Blog;
@@ -44,10 +43,9 @@ export const getStaticProps = async (context: Params) => {
   };
 };
 
-// pages/blog/[id].js
 export default function BlogPageId({ blogs, totalCount }: Props) {
   return (
-    <Layout title="Blog">
+    <>
       <h1 className="ttl">Blog</h1>
       <ul className="Blog__list">
         {blogs?.map((blog) => (
@@ -65,6 +63,6 @@ export default function BlogPageId({ blogs, totalCount }: Props) {
         ))}
       </ul>
       <Pagination totalCount={totalCount} />
-    </Layout>
+    </>
   );
 }
