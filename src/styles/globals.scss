@@ -283,6 +283,7 @@ $dark-color: rgb(72, 79, 85);
 }
 @media (width <= 480px) {
   .body__box {
+    padding: 0 20px;
     display: block;
   }
 }
@@ -291,6 +292,7 @@ $dark-color: rgb(72, 79, 85);
 }
 @media (width <= 480px) {
   .body__box02 {
+    padding: 0 20px;
     display: block;
   }
 }
@@ -795,7 +797,7 @@ $dark-color: rgb(72, 79, 85);
   line-height: 1;
 }
 .Blog__body {
-  margin: 0 20px 70px;
+  margin: 0 0 70px;
   h1 {
     font-size: 24px;
     margin: 0 0 4px;
