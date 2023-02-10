@@ -1,30 +1,21 @@
 /** @format */
 
-import { Sidemenu } from "src/components/Molecules/Sidemenu";
-import { Tabele } from "src/models/common";
-
 export const getStaticProps = async () => {
   return {
     props: {
       layout: "main",
-      table: [
-        {
-          text: "モーダル",
-          id: "/parts/modal",
-          link: "/parts/modal",
-          name: "h1",
-        },
-      ],
     },
   };
 };
-export default function Parts(props: Tabele) {
+export default function Parts() {
   return (
     <>
-      <Sidemenu toc={props.table}></Sidemenu>
       <div title="Parts">
         <h1 className="ttl">Parts</h1>
-        <div>一覧</div>
+        <div className="toc-content">
+          一覧
+          <h2>モーダル</h2>
+        </div>
       </div>
     </>
   );

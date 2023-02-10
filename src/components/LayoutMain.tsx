@@ -1,23 +1,19 @@
 /** @format */
 
 import Head from "next/head";
-import { ReactNode } from "react";
 import { BreadCrumb } from "./Molecules/BreadCrumb";
-import { Sidemenu } from "./Molecules/Sidemenu";
 import { Header } from "src/components/Organism/Header";
 import { SpMenu } from "src/components/Organism/SpMenu";
 import { Footer } from "src/components/Organism/Footer";
-import { Toc } from "src/models/common";
-import { renderToc } from "src/libs/render-toc";
+import Toc from "src/components/Molecules/Toc";
+import { ReactNode } from "react";
 type Props = {
-  // children: ReactNode;
-  children: any;
+  children: ReactNode;
   title?: string;
   toc: any;
 };
 
 export const LayoutMain = ({ children, title = "" }: Props) => {
-  // const toc = renderToc(children.props);
   return (
     <div className="body">
       <Head>
@@ -27,7 +23,11 @@ export const LayoutMain = ({ children, title = "" }: Props) => {
 
       <SpMenu></SpMenu>
       <div className="body__box02">
-        {/* <Sidemenu toc={toc ? toc : []}></Sidemenu> */}
+        <aside className="body__side">
+          <div className="body__side_in">
+            <Toc></Toc>
+          </div>
+        </aside>
         <main className="body__main02">
           <BreadCrumb></BreadCrumb> {children}
         </main>
