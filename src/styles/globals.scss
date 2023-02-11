@@ -273,7 +273,7 @@ $dark-color: rgb(72, 79, 85);
 }
 @media (width <= 480px) {
   .breadcrumb {
-    margin: 10px 10px;
+    margin: 10px 0;
   }
 }
 .body__box {
@@ -292,14 +292,8 @@ $dark-color: rgb(72, 79, 85);
 }
 @media (width <= 480px) {
   .body__box02 {
-    padding: 0 20px;
     display: block;
   }
-}
-
-.body__main {
-  // padding: 0 20px;
-  // flex: 1;
 }
 .body__main02 {
   min-height: 100vh;
@@ -314,7 +308,7 @@ $dark-color: rgb(72, 79, 85);
 .body__side {
   background: #eee;
   min-width: 270px;
-  max-width: 270px;
+  width: 270px;
   min-height: 100vh;
   padding: 40px 20px;
 }
@@ -322,17 +316,103 @@ $dark-color: rgb(72, 79, 85);
   .body__side {
     width: 100%;
     min-height: auto;
-    padding: 20px;
+    padding: 14px;
+    position: sticky;
+    top: 0;
   }
 }
 .body__side_in {
   position: sticky;
   top: 40px;
 }
-.toc {
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+// summary::after {
+//   content: "+";
+//   position: absolute;
+//   top: 18px;
+//   right: 0;
+//   transform: translateY(-50%);
+//   transition: transform 0.5s;
+//   font-size: 24px;
+// }
+
+// details[open] summary::after {
+//   content: "-";
+//   transform: translateY(-50%) rotate(45deg);
+// }
+// details[open] summary::before {
+//   display: block;
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   margin: auto;
+//   width: 30px;
+//   height: 2px;
+//   background-color: #40180a;
+//   transition: 0.2s;
+//   transform: rotate(90deg);
+//   -webkit-transform: rotate(90deg);
+// }
+// details[open] .answer {
+//   animation: fadein 0.5s ease;
+// }
+
+summary::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 0;
+  margin: auto;
+  width: 16px;
+  height: 2px;
+  background-color: #40180a;
+  transition: 0.2s;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+summary::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 0;
+  margin: auto;
+  width: 16px;
+  height: 2px;
+  background-color: #40180a;
+  transition: 0.3s;
+}
+details[open] summary::before {
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+}
+details[open] summary::after {
+  background-color: transparent;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.toc-list-item {
+  margin: 0 0 10px;
+}
+.toc__body {
+  position: relative;
 }
 .toc__ttl {
-  margin: 0 0 20px;
   font-size: 20px;
 }
 .toc__list > li {

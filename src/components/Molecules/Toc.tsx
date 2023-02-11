@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import tocbot from "tocbot";
 
 const Toc = () => {
@@ -13,41 +13,20 @@ const Toc = () => {
     });
     return () => tocbot.destroy();
   });
-
+  const [active, setActive] = useState(false);
+  const classToggle = () => {
+    setActive(!active);
+  };
   return (
-    <div className="">
-      <h2>目次</h2>
-      <div className="toc-body mt-1 mb-1"></div>
-      <style jsx global>{`
-        .toc {
-          border-radius: 0.25rem;
-          padding: 1rem;
-          font-size: 1rem;
-        }
-
-        .toc-list .toc-list {
-          padding-left: 1rem;
-          padding-top: 0.5rem;
-        }
-
-        .toc-list-item {
-          padding-bottom: 0.5rem;
-        }
-
-        .toc-list-item:last-child {
-          padding-bottom: 0;
-        }
-
-        .toc-link {
-          color: rgba(156, 163, 175, 0.7);
-        }
-
-        .is-active-link {
-          color: #282828;
-          font-weight: 700;
-        }
-      `}</style>
-    </div>
+    <details className="toc__body" open>
+      <summary
+        className="selected toc__ttl toggle_title toggle_btn"
+        onClick={classToggle}
+      >
+        目次
+      </summary>
+      <div className="toc-body mt-1 mb-1 answer"></div>
+    </details>
   );
 };
 
