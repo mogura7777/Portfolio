@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import tocbot from "tocbot";
-
+import { isMobile } from "react-device-detect";
 const Toc = () => {
   useEffect(() => {
     tocbot.init({
@@ -18,15 +18,29 @@ const Toc = () => {
     setActive(!active);
   };
   return (
-    <details className="toc__body" open>
-      <summary
-        className="selected toc__ttl toggle_title toggle_btn"
-        onClick={classToggle}
-      >
-        目次
-      </summary>
-      <div className="toc-body mt-1 mb-1 answer"></div>
-    </details>
+    <>
+      {isMobile ? (
+        <details className="toc__body">
+          <summary
+            className="selected toc__ttl toggle_title toggle_btn"
+            onClick={classToggle}
+          >
+            目次
+          </summary>
+          <div className="toc-body mt-1 mb-1 answer"></div>
+        </details>
+      ) : (
+        <details className="toc__body" open>
+          <summary
+            className="selected toc__ttl toggle_title toggle_btn"
+            onClick={classToggle}
+          >
+            目次
+          </summary>
+          <div className="toc-body mt-1 mb-1 answer"></div>
+        </details>
+      )}
+    </>
   );
 };
 

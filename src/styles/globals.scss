@@ -331,62 +331,20 @@ summary {
 summary::-webkit-details-marker {
   display: none;
 }
-// summary::after {
-//   content: "+";
-//   position: absolute;
-//   top: 18px;
-//   right: 0;
-//   transform: translateY(-50%);
-//   transition: transform 0.5s;
-//   font-size: 24px;
-// }
-
-// details[open] summary::after {
-//   content: "-";
-//   transform: translateY(-50%) rotate(45deg);
-// }
-// details[open] summary::before {
-//   display: block;
-//   content: "";
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   margin: auto;
-//   width: 30px;
-//   height: 2px;
-//   background-color: #40180a;
-//   transition: 0.2s;
-//   transform: rotate(90deg);
-//   -webkit-transform: rotate(90deg);
-// }
-// details[open] .answer {
-//   animation: fadein 0.5s ease;
-// }
 
 summary::before {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 14px;
-  right: 0;
-  margin: auto;
-  width: 16px;
-  height: 2px;
-  background-color: #40180a;
-  transition: 0.2s;
   transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
 }
+summary::before,
 summary::after {
-  display: block;
   content: "";
+  display: block;
   position: absolute;
-  top: 14px;
+  top: 12px;
   right: 0;
   margin: auto;
-  width: 16px;
+  width: 14px;
   height: 2px;
   background-color: #40180a;
   transition: 0.3s;
@@ -414,6 +372,11 @@ details[open] summary::after {
 }
 .toc__ttl {
   font-size: 20px;
+}
+@media (width <= 480px) {
+  .toc__ttl {
+    font-size: 16px;
+  }
 }
 .toc__list > li {
   font-size: 14px;
