@@ -325,6 +325,12 @@ $dark-color: rgb(72, 79, 85);
   position: sticky;
   top: 40px;
 }
+@media (width <= 480px) {
+  .body__side_in {
+    position: relative;
+    top: 0;
+  }
+}
 summary {
   list-style: none;
 }
@@ -364,14 +370,18 @@ details[open] summary::after {
     opacity: 1;
   }
 }
+.is-active-li {
+  font-weight: bold;
+}
 .toc-list-item {
-  margin: 0 0 10px;
+  margin: 10px 0;
 }
 .toc__body {
   position: relative;
 }
 .toc__ttl {
   font-size: 20px;
+  cursor: pointer;
 }
 @media (width <= 480px) {
   .toc__ttl {
@@ -960,6 +970,20 @@ details[open] summary::after {
   .Library__img img {
     margin: 0 auto;
   }
+}
+.Parts__body {
+  margin: 0 0 40px;
+}
+.Parts__list {
+  list-style: disc;
+  margin: 0 0 0 20px;
+}
+.Parts__list_itme {
+  align-items: center;
+}
+.Parts__img {
+  border: 1px solid #eee;
+  margin: 0 10px 0 0;
 }
 // Todo
 .TodoForm__box {

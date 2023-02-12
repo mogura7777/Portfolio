@@ -29,7 +29,7 @@ export const SpMenu: NextPage = () => {
             className={active ? "sp_menu__nav active" : "sp_menu__nav"}
             id="js-nav"
           >
-            <div className="sp_menu__link">
+            <div className="sp_menu__link" onClick={classToggle}>
               <Links></Links>
             </div>
           </nav>

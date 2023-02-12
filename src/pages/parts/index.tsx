@@ -1,22 +1,35 @@
 /** @format */
-
-export const getStaticProps = async () => {
-  return {
-    props: {
-      layout: "main",
-    },
-  };
-};
+import Link from "next/link";
+import { MyImage } from "src/components/Atoms/Image";
+// export const getStaticProps = async () => {
+//   return {
+//     props: {
+//       layout: "main",
+//     },
+//   };
+// };
 export default function Parts() {
   return (
-    <>
-      <div title="Parts">
-        <h1 className="ttl">Parts</h1>
-        <div className="toc-content">
-          一覧
-          <h2>モーダル</h2>
-        </div>
-      </div>
-    </>
+    <div>
+      <h1 className="ttl">Parts</h1>
+      <p className="txt">パーツ集を掲載していきます。</p>
+      <ul className="Parts__list">
+        <li className="Parts__list_itme">
+          <Link href="./parts/modal/" className="">
+            <p className="Parts__list_txt">モーダル</p>
+          </Link>
+        </li>
+        <li className="Parts__list_itme">
+          <Link href="./parts/modal/" className="">
+            <p className="Parts__list_txt">タブ</p>
+          </Link>
+        </li>
+        <li className="Parts__list_itme">
+          <Link href="./parts/modal/" className="">
+            <p className="Parts__list_txt">テキスト</p>
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 }

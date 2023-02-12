@@ -21,23 +21,17 @@ const Toc = () => {
     <>
       {isMobile ? (
         <details className="toc__body">
-          <summary
-            className="selected toc__ttl toggle_title toggle_btn"
-            onClick={classToggle}
-          >
+          <summary className="selected toc__ttl" onClick={classToggle}>
             目次
           </summary>
-          <div className="toc-body mt-1 mb-1 answer"></div>
+          <div className="toc-body"></div>
         </details>
       ) : (
         <details className="toc__body" open>
-          <summary
-            className="selected toc__ttl toggle_title toggle_btn"
-            onClick={classToggle}
-          >
+          <summary className="selected toc__ttl" onClick={classToggle}>
             目次
           </summary>
-          <div className="toc-body mt-1 mb-1 answer"></div>
+          <div className="toc-body"></div>
         </details>
       )}
     </>
