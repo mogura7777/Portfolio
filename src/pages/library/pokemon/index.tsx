@@ -205,7 +205,9 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
   };
   return (
     <div title="Pokemon">
-      <h1 className="ttl">Library</h1>
+      <h1 className="ttl">
+        Library<span className="ttl__read">ライブラリ</span>
+      </h1>
       <div className="pokemon__body">
         <h2 className="sttl02">ポケモンアプリ</h2>
         <label className="pokemon__btn_wrap">
@@ -229,7 +231,7 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
             <SortableContainer
               id="container2"
               items={items.container2}
-              label="控え"
+              label="控えメンバー"
             />
             <DragOverlay>
               {activeId ? <Item id={activeId} /> : null}

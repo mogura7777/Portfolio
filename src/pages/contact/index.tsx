@@ -20,7 +20,9 @@ const IndexPage: React.FC = () => {
 
   return (
     <div>
-      <h1 className="ttl">Contact</h1>
+      <h1 className="ttl">
+        Contact<span className="ttl__read">お問い合わせ</span>
+      </h1>
       {errorMessage && <p>{errorMessage}</p>}
       <form className="Contact__body" method="post" onSubmit={handleSubmit}>
         <div className="field">

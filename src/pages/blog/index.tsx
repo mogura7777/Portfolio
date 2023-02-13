@@ -32,7 +32,9 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }: Props) => {
   return (
     <div>
-      <h1 className="ttl">Blog</h1>
+      <h1 className="ttl">
+        Blog<span className="ttl__read">ブログ</span>
+      </h1>
       <ul className="Blog__list">
         {blogs.map((blog) => (
           <li className="Blog__item" key={blog.id}>

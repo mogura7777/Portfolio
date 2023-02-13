@@ -11,7 +11,9 @@ import { MyImage } from "src/components/Atoms/Image";
 export default function Parts() {
   return (
     <div>
-      <h1 className="ttl">Parts</h1>
+      <h1 className="ttl">
+        Parts<span className="ttl__read">パーツ</span>
+      </h1>
       <p className="txt">パーツ集を掲載していきます。</p>
       <ul className="Parts__list">
         <li className="Parts__list_itme">

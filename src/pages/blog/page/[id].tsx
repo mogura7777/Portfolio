@@ -46,7 +46,9 @@ export const getStaticProps = async (context: Params) => {
 export default function BlogPageId({ blogs, totalCount }: Props) {
   return (
     <>
-      <h1 className="ttl">Blog</h1>
+      <h1 className="ttl">
+        Blog<span className="ttl__read">ブログ</span>
+      </h1>
       <ul className="Blog__list">
         {blogs?.map((blog) => (
           <li className="Blog__item" key={blog.id}>

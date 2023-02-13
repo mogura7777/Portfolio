@@ -2,11 +2,9 @@
 
 import type { NextPage } from "next";
 import { useState } from "react";
-import { Layout } from "src/components/Layout";
 import { MyImage } from "src/components/Atoms/Image";
 import { Carousel } from "src/components/Molecules/Carousel";
 import dynamic from "next/dynamic";
-import { AuthGuard } from "src/feature/auth/component/AuthGuard/AuthGuard";
 const ScrollRevealContainer = dynamic(
   () => import("src/components/Molecules/ScrollRevealContainer"),
   { ssr: false }
@@ -28,11 +26,11 @@ const Home: NextPage = () => {
           Next.js、TypeScriptを使用して作成しています。
           <br />
           今後は、技術ブログとして活用する予定です。
-          <br />
-          ※誤字やリファクタリングなどの報告、Twitterより歓迎中です。
         </p>
       </div>
-      <h1 className="ttl">Profile</h1>
+      <h1 className="ttl">
+        Profile<span className="ttl__read">プロフィール</span>
+      </h1>
       <ScrollRevealContainer move="left">
         <div className="Profile__body">
           <div className="Profile__img">
@@ -49,7 +47,9 @@ const Home: NextPage = () => {
         </div>
       </ScrollRevealContainer>
 
-      <h1 className="ttl">History</h1>
+      <h1 className="ttl">
+        History<span className="ttl__read">これまでの経緯</span>
+      </h1>
       <ScrollRevealContainer move="left">
         <div className="History__body">
           <ul className="timeline">
@@ -136,7 +136,9 @@ const Home: NextPage = () => {
         </div>
       </ScrollRevealContainer>
 
-      <h1 className="ttl">Skill</h1>
+      <h1 className="ttl">
+        Skill<span className="ttl__read">スキル</span>
+      </h1>
       <ScrollRevealContainer move="left">
         <div className="Skill__body">
           <div className="Skill__box">
@@ -176,7 +178,9 @@ const Home: NextPage = () => {
         </div>
       </ScrollRevealContainer>
 
-      <h1 className="ttl">Illustration</h1>
+      <h1 className="ttl">
+        Illustration<span className="ttl__read">イラストレーション</span>
+      </h1>
       <ScrollRevealContainer move="left">
         <Carousel linkList={linkList}></Carousel>
       </ScrollRevealContainer>

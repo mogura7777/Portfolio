@@ -82,7 +82,9 @@ export const Page = () => {
   }, [chats]);
   return (
     <div title="chat">
-      <h1 className="ttl">Library</h1>
+      <h1 className="ttl">
+        Library<span className="ttl__read">ライブラリ</span>
+      </h1>
       <h2 className="sttl02">チャットアプリ</h2>
       <p>右上のボタンよりログイン後にチャットを利用できます。</p>
 

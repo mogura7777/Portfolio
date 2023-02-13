@@ -5,7 +5,9 @@ import Link from "next/link";
 export default function Library() {
   return (
     <div>
-      <h1 className="ttl">Library</h1>
+      <h1 className="ttl">
+        Library<span className="ttl__read">ライブラリ</span>
+      </h1>
       <div>
         <p className="txt">実装したアプリを掲載していきます。</p>
       </div>

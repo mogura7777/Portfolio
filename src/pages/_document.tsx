@@ -5,10 +5,16 @@ export default function Document() {
   return (
     <Html lang="ja-JP">
       <Head>
-        {/* <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700&display=swap"
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
           rel="stylesheet"
-        /> */}
+        />
         <link
           href="https://fonts.googleapis.com/css?family=Lato:100,700,400"
           rel="stylesheet"

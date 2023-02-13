@@ -140,7 +140,9 @@ const TodoApp = () => {
   });
   return (
     <div>
-      <h1 className="ttl">Library</h1>
+      <h1 className="ttl">
+        Library<span className="ttl__read">ライブラリ</span>
+      </h1>
       <div className="todo__body">
         <TodoList>
           <h2 className="sttl02">Todoアプリ</h2>

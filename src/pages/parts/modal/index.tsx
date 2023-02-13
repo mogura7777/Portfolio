@@ -6,7 +6,9 @@ export default function Parts() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div>
-      <h1 className="ttl">Parts</h1>
+      <h1 className="ttl">
+        Parts<span className="ttl__read">パーツ</span>
+      </h1>
       <div className="Parts__body">
         <button onClick={() => setIsOpen(true)}>モーダルを開く</button>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
