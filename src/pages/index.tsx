@@ -31,12 +31,13 @@ const Home: NextPage = () => {
       <h1 className="ttl">
         Profile<span className="ttl__read">プロフィール</span>
       </h1>
-      <ScrollRevealContainer move="left">
-        <div className="Profile__body">
-          <div className="Profile__img">
-            <MyImage fname="../img/001.png" size={400} />
-          </div>
-          <div>
+
+      <div className="Profile__body">
+        <div className="Profile__img">
+          <MyImage fname="../img/001.png" size={400} />
+        </div>
+        <ScrollRevealContainer move="left">
+          <div className="Profile__box">
             <h2>Masashi</h2>
             <p className="txt">
               休日は、午前中にジムでウォーキングしながら読書。
@@ -44,32 +45,39 @@ const Home: NextPage = () => {
               午後は娘と公園で遊んで銭湯に行くのが日課です。
             </p>
           </div>
-        </div>
-      </ScrollRevealContainer>
+        </ScrollRevealContainer>
+      </div>
 
       <h1 className="ttl">
         History<span className="ttl__read">これまでの経緯</span>
       </h1>
-      <ScrollRevealContainer move="left">
-        <div className="History__body">
-          <ul className="timeline">
-            <li className="timeline__box">
-              <p className="timeline-date">幼少期</p>
-              <div className="timeline-content">
+
+      <div className="History__body">
+        <ul className="timeline">
+          <li className="timeline__box">
+            <p className="timeline-date">幼少期</p>
+
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <h3>兵庫県の自然に囲まれて育ちました。</h3>
                 <p>昆虫に興味を持ち、山や川に探索する日々。</p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">小学生時代</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">小学生時代</p>
+
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <h3>兄の影響で野球チームに所属する。</h3>
                 <p>途中、ジャッキー・チェンに憧れ体操教室に通い始める。</p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">中学生時代</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">中学生時代</p>
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <p>
                   何も考えずに野球に入部。
                   <br />
@@ -79,11 +87,13 @@ const Home: NextPage = () => {
                   <br />
                   夏休みは走り込みの日々。毎日、山道を10キロほど走ってました。
                 </p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">高校生時代</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">高校生時代</p>
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <h3>友人の誘いでバドミントンに入部。</h3>
                 <p>
                   中学校の野球の猛練習の経験が活かされ、団体メンバーに選ばれて県大会に出場。
@@ -92,11 +102,13 @@ const Home: NextPage = () => {
                   <br />
                   高校2年の終わり頃に画塾に通い出す。
                 </p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">大学生時代</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">大学生時代</p>
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <p>
                   美術大学でイラスト科を専攻。主にアナログのイラストを描いていました。
                   <br />
@@ -104,43 +116,50 @@ const Home: NextPage = () => {
                   <br />
                   ブレイクダンスをはじめる。卒業目前にしてぎりぎりウィンドミルを習得。
                 </p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">職業訓練校</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">職業訓練校</p>
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <p>
                   ホームページの基礎を学び、
                   その後、大阪の高度総合事務センター事業でWeb制作に携わる。
                 </p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">社会人</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">社会人</p>
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <h3>大阪のWEB制作会社に就職。</h3>
                 <p>
                   コーディングやCMSの構築、アクセス解析などの業務を経験しました。
                   <br />
                 </p>
-              </div>
-            </li>
-            <li>
-              <p className="timeline-date">現在</p>
-              <div className="timeline-content">
+              </ScrollRevealContainer>
+            </div>
+          </li>
+          <li>
+            <p className="timeline-date">現在</p>
+            <div className="timeline-content">
+              <ScrollRevealContainer move="left">
                 <h3>自社開発アプリのフロントエンド/UI設計を担当しています。</h3>
-                <p className="txt02">随時更新...</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </ScrollRevealContainer>
+                <p className="txt02">随時更新中...</p>
+              </ScrollRevealContainer>
+            </div>
+          </li>
+        </ul>
+      </div>
 
       <h1 className="ttl">
         Skill<span className="ttl__read">スキル</span>
       </h1>
-      <ScrollRevealContainer move="left">
-        <div className="Skill__body">
+
+      <div className="Skill__body">
+        <ScrollRevealContainer move="left">
           <div className="Skill__box">
             <h2 className="sttl">
               HTML5プロフェッショナル認定試験 レベル1 取得
@@ -149,6 +168,8 @@ const Home: NextPage = () => {
               HTML5、CSS3などの最新のマークアップを使ってマルチデバイスに対応したWebコンテンツをデザイン・制作できる。
             </p>
           </div>
+        </ScrollRevealContainer>
+        <ScrollRevealContainer move="left">
           <div className="Skill__box">
             <h2 className="sttl">
               HTML5プロフェッショナル認定試験 レベル2 取得
@@ -157,6 +178,8 @@ const Home: NextPage = () => {
               JavaScriptなどの最新のマークアップを使ってシステム間連携や最新のマルチメディア技術に対応したWebアプリケーションや動的Webコンテンツの開発・設計ができる。
             </p>
           </div>
+        </ScrollRevealContainer>
+        <ScrollRevealContainer move="left">
           <div className="Skill__box">
             <h2 className="sttl">Google認定資格 取得</h2>
             <ul className="list">
@@ -167,16 +190,20 @@ const Home: NextPage = () => {
             </ul>
             <p className="txt"></p>
           </div>
+        </ScrollRevealContainer>
+        <ScrollRevealContainer move="left">
           <div className="Skill__box">
             <h2 className="sttl">基本情報技術者試験 取得予定</h2>
             <p className="txt">只今、学習中</p>
           </div>
+        </ScrollRevealContainer>
+        <ScrollRevealContainer move="left">
           <div className="Skill__box">
             <h2 className="sttl">普通自動二輪・普通自動車免許 取得</h2>
             <p className="txt">年に数回運転します。</p>
           </div>
-        </div>
-      </ScrollRevealContainer>
+        </ScrollRevealContainer>
+      </div>
 
       <h1 className="ttl">
         Illustration<span className="ttl__read">イラストレーション</span>
