@@ -2,7 +2,7 @@
 import { Modal } from "src/components/Modal/Modal";
 import { useState } from "react";
 import Link from "next/link";
-export default function Parts() {
+export default function Books() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <div>
@@ -17,9 +17,6 @@ export default function Parts() {
           </p>
         </Modal>
       </div>
-      <Link href="/parts/" className="">
-        <p className="Parts__list_txt">一覧へ戻る</p>
-      </Link>
     </div>
   );
 }

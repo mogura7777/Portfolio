@@ -25,11 +25,17 @@ export const Links: NextPage = () => {
       >
         Library
       </Link>
-      <Link
+      {/* <Link
         href="/parts"
         className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
       >
         Parts
+      </Link> */}
+      <Link
+        href="/books"
+        className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded"
+      >
+        Books
       </Link>
       <Link
         href="/work"
