@@ -36,6 +36,14 @@ export default function Library() {
             <p className="Library__list_txt">チャットツール</p>
           </Link>
         </li>
+        <li className="Library__list_itme">
+          <Link href="./library/gourmet" className="">
+            <div className="Library__img">
+              <MyImage fname="../img/sample.png" size={300} />
+            </div>
+            <p className="Library__list_txt">グルメ店検索アプリ</p>
+          </Link>
+        </li>
       </ul>
     </div>
   );

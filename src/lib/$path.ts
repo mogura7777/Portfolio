@@ -13,6 +13,9 @@ export const pagesPath = {
     },
     $url: (url?: { hash?: string }) => ({ pathname: '/blog' as const, hash: url?.hash })
   },
+  "books": {
+    $url: (url?: { hash?: string }) => ({ pathname: '/books' as const, hash: url?.hash })
+  },
   "contact": {
     "contact_success": {
       $url: (url?: { hash?: string }) => ({ pathname: '/contact/contact_success' as const, hash: url?.hash })
@@ -25,6 +28,9 @@ export const pagesPath = {
   "library": {
     "chat": {
       $url: (url?: { hash?: string }) => ({ pathname: '/library/chat' as const, hash: url?.hash })
+    },
+    "gourmet": {
+      $url: (url?: { hash?: string }) => ({ pathname: '/library/gourmet' as const, hash: url?.hash })
     },
     "pokemon": {
       $url: (url?: { hash?: string }) => ({ pathname: '/library/pokemon' as const, hash: url?.hash })
