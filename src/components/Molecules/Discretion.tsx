@@ -10,11 +10,11 @@ export const Discretion = (props: Props) => {
   return (
     <dl className="discretion">
       <div className="discretion__box">
-        <dt className="discretion__ttl">説明：</dt>
+        <dt className="discretion__ttl">説明</dt>
         <dd className="discretion__txt">{props.text}</dd>
       </div>
       <div className="discretion__box">
-        <dt className="discretion__ttl">参考:</dt>
+        <dt className="discretion__ttl">参考</dt>
         <dd className="discretion__txt discretion__link_wrap">
           {props.linkList.map((id: string, index) => (
             <Link

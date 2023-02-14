@@ -496,11 +496,22 @@ details[open] summary::after {
     padding: 20px 20px;
   }
   .discretion__ttl {
+    position: relative;
     min-width: 50px;
     margin: 0 0 20px 0;
     font-weight: bold;
     @media (width <= 480px) {
       margin: 0 0;
+    }
+  }
+  .discretion__ttl::after {
+    content: ":";
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-size: 14px;
+    @media (width <= 480px) {
+      visibility: hidden;
     }
   }
   .discretion__link_wrap {
