@@ -1,9 +1,6 @@
 /** @format */
 
 import { useEffect, useState } from "react";
-import { GetServerSideProps, NextPage } from "next";
-import { Discretion } from "src/components/Molecules/Discretion";
-import styles from "src/styles/Home.module.scss";
 import Link from "next/link";
 
 const defaultEndpoint = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.GOURMET_API_KEY}&format=json&large_area=Z023`;
@@ -46,9 +43,6 @@ const IndexPage = ({ data }) => {
       const res = await fetch(`/api/search?${query}`);
       const data = await res.json();
       const nextData = data.results;
-      console.log("🚀 ~ file: index.js:49 ~ request ~ nextData", nextData);
-      console.log("🚀 ~ file: index.js:49 ~ request ~ nextData", query);
-      console.log("🚀 ~ file: index.js:49 ~ request ~ nextData", params);
       updatePage({
         results_available: nextData.results_available,
         results_returned: nextData.results_returned,

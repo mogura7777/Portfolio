@@ -2,11 +2,9 @@
 
 import fetch from "node-fetch";
 
-// const defaultEndpoint = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.GOURMET_API_KEY}&format=json&large_area=Z011`;
 const defaultEndpoint = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.GOURMET_API_KEY}&format=json&large_area=Z011`;
 export default async (req, res) => {
   let url = defaultEndpoint;
-  console.log("🚀 ~ file: search.js:9 ~ url", url);
 
   if (typeof req.query.keyword !== undefined) {
     url = `${url}&keyword=${req.query.keyword}`;
