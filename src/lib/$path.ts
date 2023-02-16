@@ -29,6 +29,9 @@ export const pagesPath = {
     "chat": {
       $url: (url?: { hash?: string }) => ({ pathname: '/library/chat' as const, hash: url?.hash })
     },
+    "dog": {
+      $url: (url?: { hash?: string }) => ({ pathname: '/library/dog' as const, hash: url?.hash })
+    },
     "gourmet": {
       $url: (url?: { hash?: string }) => ({ pathname: '/library/gourmet' as const, hash: url?.hash })
     },
