@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { GetServerSideProps, NextPage } from "next";
 import { Discretion } from "src/components/Molecules/Discretion";
-import styles from "src/styles/Home.module.scss";
+import styles from "src/styles/Library.module.scss";
 interface IndexPageProps {
   data: HotpepperResponseType;
 }

@@ -1,11 +1,10 @@
 /** @format */
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { MyImage } from "src/components/Atoms/Image";
 import { GetServerSideProps, NextPage } from "next";
 import { Discretion } from "src/components/Molecules/Discretion";
-import styles from "src/styles/Home.module.scss";
+import styles from "src/styles/Library.module.scss";
 
 type Params = {
   initialCatImageUrl: string;
@@ -46,7 +45,7 @@ export default function Home({ initialCatImageUrl }: Params) {
       <div className="">
         <h2 className="sttl02">ワンちゃんde癒やし</h2>
         <div className={styles.container}>
-          <MyImage fulname={catImage} size={400} />
+          <MyImage className={styles.img} fulname={catImage} size={400} />
           <button className="btn" onClick={handleClick}>
             次のワンちゃん
           </button>
