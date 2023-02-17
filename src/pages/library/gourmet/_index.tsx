@@ -65,7 +65,6 @@ const IndexPage: NextPage<IndexPageProps> = (props: IndexPageProps) => {
 
     const params = { keyword: keyword };
     const query = new URLSearchParams(params);
-    console.log("🚀！！ query", query);
 
     // リクエスト、レスポンスの取得
     const request = async () => {

@@ -5,9 +5,7 @@ import {
   Box,
   Button,
   chakra,
-  Container,
   Flex,
-  Heading,
   Input,
   Spacer,
   Text,
@@ -15,9 +13,7 @@ import {
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { getDatabase, onChildAdded, push, ref } from "@firebase/database";
 import { FirebaseError } from "@firebase/util";
-import { Layout } from "src/components/Layout";
 import { Discretion } from "src/components/Molecules/Discretion";
-import { AuthGuard } from "src/feature/auth/component/AuthGuard/AuthGuard";
 type MessageProps = {
   message: string;
 };

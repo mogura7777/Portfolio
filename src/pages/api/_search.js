@@ -1,8 +1,11 @@
 /** @format */
 
-export default async function handler(req, res) {
-  const defaultEndpoint = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.GOURMET_API_KEY}&format=json&large_area=Z011`;
+import fetch from "node-fetch";
+
+const defaultEndpoint = `https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=${process.env.GOURMET_API_KEY}&format=json&large_area=Z011`;
+export default async (req, res) => {
   let url = defaultEndpoint;
+
   if (typeof req.query.keyword !== undefined) {
     url = `${url}&keyword=${req.query.keyword}`;
   }
@@ -12,8 +15,7 @@ export default async function handler(req, res) {
   }
 
   url = encodeURI(url);
+
   const result = await fetch(url);
-  const users = await result.json();
-  res.status(200).json(users);
-  // res.json(result.body);
-}
+  res.json(result.body);
+};
