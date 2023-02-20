@@ -17,8 +17,8 @@ import {
   DragEndEvent,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
-import { SortableContainer } from "src/components/dndKit/SortableContainer";
-import { Item } from "src/components/dndKit/Item";
+import { SortableContainer } from "src/components/model/dndKit/SortableContainer";
+import { Item } from "src/components/model/dndKit/Item";
 import { Discretion } from "src/components/Molecules/Discretion";
 interface IndexPageProps {
   id: number;

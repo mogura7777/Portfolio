@@ -1,8 +1,8 @@
 /** @format */
 import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { TodoForm } from "src/components/Todo/TodoForm";
-import { TodoList } from "src/components/Todo/TodoList";
+import { TodoForm } from "src/components/model/Todo/TodoForm";
+import { TodoList } from "src/components/model/Todo/TodoList";
 import { Discretion } from "src/components/Molecules/Discretion";
 const TodoApp = () => {
   const initialState = () => JSON.parse(localStorage.getItem("Tasks")) || [];
