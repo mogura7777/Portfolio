@@ -18,9 +18,7 @@ import {
 import { FormEvent, useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { FirebaseError } from "@firebase/util";
-import { Layout } from "src/components/Layout";
 import { useRouter } from "src/hooks/useRouter/useRouter";
-import { Navigate } from "src/components/Molecules/Navigate";
 export const Page = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");

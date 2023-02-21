@@ -116,7 +116,7 @@ const IndexPage = ({ data }) => {
               type="search"
               name="query"
               className="rounded py-2 px-4 text-left border-red-500"
-              placeholder="キーワードを入力して下さい"
+              placeholder="キーワード"
             />
             <button className="btn">検索</button>
           </form>
@@ -154,10 +154,7 @@ const IndexPage = ({ data }) => {
         <div></div>
       ) : (
         <div className="text-center pt-4 pb-8">
-          <button
-            className="bg-red-500 rounded text-white tracking-wider font-medium hover:opacity-75 py-2 px-6 "
-            onClick={handlerOnClickReadMore}
-          >
+          <button className="btn" onClick={handlerOnClickReadMore}>
             もっと読む
           </button>
         </div>

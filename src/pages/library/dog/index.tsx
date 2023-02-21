@@ -76,7 +76,7 @@ export default function Home({ initialCatImageUrl }: Params) {
             minCropBoxWidth={10}
             background={false}
             responsive={true}
-            checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
+            checkOrientation={false}
             onInitialized={(instance) => {
               setCropper(instance);
             }}
@@ -90,7 +90,11 @@ export default function Home({ initialCatImageUrl }: Params) {
               <h2 className="sttl">Crop</h2>
               <div className={`${styles.preview}`}>
                 {cropData !== "#" ? (
-                  <img style={{ width: "100%" }} src={cropData} alt="cropped" />
+                  <img
+                    className={styles.preview__img}
+                    src={cropData}
+                    alt="cropped"
+                  />
                 ) : null}
               </div>
             </div>

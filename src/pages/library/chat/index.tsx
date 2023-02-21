@@ -14,6 +14,7 @@ import { FormEvent, useEffect, useRef, useState } from "react";
 import { getDatabase, onChildAdded, push, ref } from "@firebase/database";
 import { FirebaseError } from "@firebase/util";
 import { Discretion } from "src/components/Molecules/Discretion";
+import styles from "src/styles/Library.module.scss";
 type MessageProps = {
   message: string;
 };
@@ -88,7 +89,6 @@ export const Page = () => {
         flexDirection={"column"}
         overflowY={"auto"}
         gap={2}
-        height={400}
         ref={messagesElementRef}
       >
         {chats.map((chat, index) => (
