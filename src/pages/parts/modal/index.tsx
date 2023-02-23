@@ -1,7 +1,6 @@
 /** @format */
 import { Modal } from "src/components/Modal/Modal";
 import { useState } from "react";
-import Link from "next/link";
 export default function Books() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (

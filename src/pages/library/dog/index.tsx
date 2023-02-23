@@ -34,7 +34,6 @@ export default function Home({ initialCatImageUrl }: Params) {
   ]);
   const [text, setText] = useState("ワンちゃんの画像を見て癒やされるページ");
   const [catImage, setCatImage] = useState(initialCatImageUrl);
-  const [image, setImage] = useState(initialCatImageUrl);
   const [cropData, setCropData] = useState("#");
   const [cropper, setCropper] = useState<Cropper>();
   const imageRef = useRef<HTMLImageElement>(null);
@@ -53,7 +52,7 @@ export default function Home({ initialCatImageUrl }: Params) {
       <h1 className="ttl">
         Library<span className="ttl__read">ライブラリ</span>
       </h1>
-      <div className="">
+      <div className={styles.body}>
         <h2 className="sttl02">ワンちゃんde癒やし</h2>
         <div className={styles.container}>
           <div className={styles.btn_box}>

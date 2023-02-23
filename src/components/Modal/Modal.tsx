@@ -5,9 +5,10 @@ import { Fragment, ReactNode } from "react";
 type Props = {
   children: ReactNode;
   isOpen: boolean;
+  id?: number;
   onClose: VoidFunction;
 };
-export const Modal = ({ isOpen, children, onClose }: Props) => {
+export const Modal = ({ isOpen, id, children, onClose }: Props) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog
